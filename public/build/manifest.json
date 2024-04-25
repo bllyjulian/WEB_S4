@@ -1,0 +1,108 @@
+{
+  "public/assets/images/other-images/maintenance-bg.jpg": {
+    "file": "assets/maintenance-bg.f2645f66.jpg",
+    "src": "public/assets/images/other-images/maintenance-bg.jpg"
+  },
+  "public/assets/images/details_open.png": {
+    "file": "assets/details_open.f848d63f.png",
+    "src": "public/assets/images/details_open.png"
+  },
+  "public/assets/images/details_close.png": {
+    "file": "assets/details_close.d54863d6.png",
+    "src": "public/assets/images/details_close.png"
+  },
+  "public/assets/images/landing/Footer-background.jpg": {
+    "file": "assets/Footer-background.8d079904.jpg",
+    "src": "public/assets/images/landing/Footer-background.jpg"
+  },
+  "public/assets/images/landing/background1.jpg": {
+    "file": "assets/background1.1811939b.jpg",
+    "src": "public/assets/images/landing/background1.jpg"
+  },
+  "public/assets/images/landing/unique-feature.jpg": {
+    "file": "assets/unique-feature.fcd99fb6.jpg",
+    "src": "public/assets/images/landing/unique-feature.jpg"
+  },
+  "public/assets/images/landing/counter-background.jpg": {
+    "file": "assets/counter-background.d2f0a66c.jpg",
+    "src": "public/assets/images/landing/counter-background.jpg"
+  },
+  "public/assets/images/landing/components-background.jpg": {
+    "file": "assets/components-background.b2bb5b17.jpg",
+    "src": "public/assets/images/landing/components-background.jpg"
+  },
+  "public/assets/images/landing/email-template_background.jpg": {
+    "file": "assets/email-template_background.63dd591d.jpg",
+    "src": "public/assets/images/landing/email-template_background.jpg"
+  },
+  "public/assets/images/dashboard/whather_bg.jpg": {
+    "file": "assets/whather_bg.d0de16a9.jpg",
+    "src": "public/assets/images/dashboard/whather_bg.jpg"
+  },
+  "public/assets/images/dashboard/popup.png": {
+    "file": "assets/popup.c25e0a7c.png",
+    "src": "public/assets/images/dashboard/popup.png"
+  },
+  "public/assets/images/dashboard/music.png": {
+    "file": "assets/music.7fe6f777.png",
+    "src": "public/assets/images/dashboard/music.png"
+  },
+  "public/assets/images/other-images/mobile-clock-wallpaper.jpg": {
+    "file": "assets/mobile-clock-wallpaper.6926f318.jpg",
+    "src": "public/assets/images/other-images/mobile-clock-wallpaper.jpg"
+  },
+  "public/assets/images/other-images/clock-face.png": {
+    "file": "assets/clock-face.dcecb01e.png",
+    "src": "public/assets/images/other-images/clock-face.png"
+  },
+  "public/assets/images/sec.svg": {
+    "file": "assets/sec.d22229f8.svg",
+    "src": "public/assets/images/sec.svg"
+  },
+  "public/assets/images/other-images/coming-soon-bg.jpg": {
+    "file": "assets/coming-soon-bg.ee993324.jpg",
+    "src": "public/assets/images/other-images/coming-soon-bg.jpg"
+  },
+  "public/assets/images/min.svg": {
+    "file": "assets/min.a650c1e5.svg",
+    "src": "public/assets/images/min.svg"
+  },
+  "public/assets/images/hour.svg": {
+    "file": "assets/hour.34ba2a99.svg",
+    "src": "public/assets/images/hour.svg"
+  },
+  "public/assets/images/other-images/calender-bg.png": {
+    "file": "assets/calender-bg.f783dd8a.png",
+    "src": "public/assets/images/other-images/calender-bg.png"
+  },
+  "public/assets/images/cursor.png": {
+    "file": "assets/cursor.8779bf5c.png",
+    "src": "public/assets/images/cursor.png"
+  },
+  "public/assets/images/dashboard/bg.jpg": {
+    "file": "assets/bg.c7ee96aa.jpg",
+    "src": "public/assets/images/dashboard/bg.jpg"
+  },
+  "public/assets/images/other-images/login-bg.jpg": {
+    "file": "assets/login-bg.26041410.jpg",
+    "src": "public/assets/images/other-images/login-bg.jpg"
+  },
+  "public/assets/images/other-images/bg-profile.png": {
+    "file": "assets/bg-profile.fc5472b6.png",
+    "src": "public/assets/images/other-images/bg-profile.png"
+  },
+  "public/assets/images/social-app/social-image.png": {
+    "file": "assets/social-image.3689ac72.png",
+    "src": "public/assets/images/social-app/social-image.png"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app.c5a8b814.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "public/assets/scss/style.scss": {
+    "file": "assets/style.5b4daede.css",
+    "src": "public/assets/scss/style.scss",
+    "isEntry": true
+  }
+}
