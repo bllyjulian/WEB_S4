@@ -31,7 +31,7 @@ class ApiDataUser extends Controller
         $user = DataUser::findOrFail($username_mb);
         $user->update($request->all());
 
-        return response()->json(['message' => 'Data user berhasil diperbarui', 'data' => $user]);
+        return response()->json(['message' => 'Data user telah berhasil diperbarui', 'data' => $user]);
     }
 
     public function destroy($username_mb)
