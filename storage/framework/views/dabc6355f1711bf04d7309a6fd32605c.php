@@ -1,33 +1,32 @@
-@extends('layouts.simple.master_mitra')
-@section('title', 'Data Sewa')
+<?php $__env->startSection('title', 'Data Sewa'); ?>
 
-@section('css')
-@endsection
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
 
-@section('style')
-@endsection
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-title')
+<?php $__env->startSection('breadcrumb-title'); ?>
 	<h2>Data Sewa</h2>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-items')
+<?php $__env->startSection('breadcrumb-items'); ?>
 	<li class="breadcrumb-item">Mobil</li>
     <li class="breadcrumb-item">Data Sewa</li>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container-fluid">
    <div class="row">
       <div class="col-xl-3 col-sm-6 box-col-4a">
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m1.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m1.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -47,11 +46,11 @@
             <div class="product-box">
                <div class="product-img">
                   <div class="ribbon ribbon-danger">Sale</div>
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m2.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m2.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -70,11 +69,11 @@
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m3.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m3.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -94,11 +93,11 @@
             <div class="product-box">
                <div class="product-img">
                   <div class="ribbon ribbon-success ribbon-right">50%</div>
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m4.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m4.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -117,11 +116,11 @@
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m5.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m5.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -141,11 +140,11 @@
             <div class="product-box">
                <div class="ribbon ribbon-secondary ribbon-vertical-left"><i class="icon-gift"></i></div>
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m6.jpg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m6.jpg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -164,11 +163,11 @@
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m7.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m7.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -187,11 +186,11 @@
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m8.jpg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m8.jpg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -210,11 +209,11 @@
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m9.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m9.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -233,11 +232,11 @@
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m10.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m10.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -256,11 +255,11 @@
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m7.jpeg')}}" alt="">
+                  <img class="img-fluid" src="<?php echo e(asset('assets/images/mobil/m7.jpeg')); ?>" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="<?php echo e(route('admin.detailsewa.riwayatsewa')); ?>"><li><i class="icon-eye"></i></li></a> 
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
@@ -277,7 +276,8 @@
       </div>
    </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
-@endsection
+<?php $__env->startSection('script'); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.simple.master_mitra', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\webS4\resources\views/admin/detailsewa/index.blade.php ENDPATH**/ ?>

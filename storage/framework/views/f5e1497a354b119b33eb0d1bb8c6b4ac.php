@@ -1,27 +1,26 @@
-@extends('layouts.simple.master_mitra')
-@section('title', 'Product list')
+<?php $__env->startSection('title', 'Product list'); ?>
 
-@section('css')
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatables.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owlcarousel.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/rating.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sweetalert2.css')}}">
-@endsection
+<?php $__env->startSection('css'); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/datatables.css')); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/owlcarousel.css')); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/rating.css')); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/sweetalert2.css')); ?>">
+<?php $__env->stopSection(); ?>
 
-@section('style')
-@endsection
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-title')
+<?php $__env->startSection('breadcrumb-title'); ?>
 	<h2>Product<span>list</span></h2>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-items')
+<?php $__env->startSection('breadcrumb-items'); ?>
 	<li class="breadcrumb-item">Apps</li>
     	<li class="breadcrumb-item">Ecommerce</li>
 	<li class="breadcrumb-item active">Product list</li>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 
 
@@ -45,7 +44,7 @@
             </div> -->
 
             <div class="card-body">
-            <button class="btn btn-warning sweet-5"><a href="{{route('admin.mobil.tambahmobil')}}">Warning alert</a></button>
+            <button class="btn btn-warning sweet-5"><a href="<?php echo e(route('admin.mobil.tambahmobil')); ?>">Warning alert</a></button>
                <div class="table-responsive product-table">
                   <table class="display" id="basic-1">
                      <thead>
@@ -60,7 +59,7 @@
                      </thead>
                      <tbody>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-1.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-1.png')); ?>" alt=""></td>
                            <td>
                               <h6> Red Lipstick </h6>
                               <span>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</span>
@@ -75,7 +74,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-2.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-2.png')); ?>" alt=""></td>
                            <td>
                               <h6> Pink Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -89,7 +88,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-3.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-3.png')); ?>" alt=""></td>
                            <td>
                               <h6> Gray Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -103,7 +102,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-4.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-4.png')); ?>" alt=""></td>
                            <td>
                               <h6> Green Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -117,7 +116,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-5.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-5.png')); ?>" alt=""></td>
                            <td>
                               <h6> Black Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -131,7 +130,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-6.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-6.png')); ?>" alt=""></td>
                            <td>
                               <h6> White Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -145,7 +144,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-1.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-1.png')); ?>" alt=""></td>
                            <td>
                               <h6> light Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -159,7 +158,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-2.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-2.png')); ?>" alt=""></td>
                            <td>
                               <h6> Gliter Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -173,7 +172,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-3.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-3.png')); ?>" alt=""></td>
                            <td>
                               <h6> green Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -187,7 +186,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-4.png')}}" alt=""></td>
+                           <td><img src="<?php echo e(asset('assets/images/ecommerce/product-table-4.png')); ?>" alt=""></td>
                            <td>
                               <h6> Yellow Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -209,15 +208,16 @@
       <!-- Individual column searching (text inputs) Ends-->
    </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
-<script src="{{ asset('assets/js/owlcarousel/owl.carousel.js')}}"></script>
-<script src="{{ asset('assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
-<script src="{{ asset('assets/js/rating/jquery.barrating.js')}}"></script>
-<script src="{{ asset('assets/js/rating/rating-script.js')}}"></script>
-<script src="{{ asset('assets/js/ecommerce.js')}}"></script>
-<script src="{{ asset('assets/js/product-list-custom.js')}}"></script>
-<script src="{{ asset('assets/js/sweet-alert/sweetalert.min.js')}}"></script>
-<script src="{{ asset('assets/js/sweet-alert/app.js')}}"></script>
-@endsection
+<?php $__env->startSection('script'); ?>
+<script src="<?php echo e(asset('assets/js/owlcarousel/owl.carousel.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/datatable/datatables/jquery.dataTables.min.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/rating/jquery.barrating.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/rating/rating-script.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/ecommerce.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/product-list-custom.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/sweet-alert/sweetalert.min.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/sweet-alert/app.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.simple.master_mitra', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\webS4\resources\views/admin/mobil/index.blade.php ENDPATH**/ ?>

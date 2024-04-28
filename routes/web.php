@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function () {
     });
     Route::prefix('data-mobil')->group(function () {
         Route::get('', [AdminMitraController::class, 'mobil'])->name('admin.mobil');
+        Route::get('tambahmobil', [AdminMitraController::class, 'tambahmobil'])->name('admin.mobil.tambahmobil');
     });
     Route::prefix('inbox')->group(function () {
         Route::get('', [AdminMitraController::class, 'inbox'])->name('admin.inbox');
@@ -61,3 +62,9 @@ Route::prefix('admin')->group(function () {
 Route::view('button-builder', 'perk-ui.button-builder')->name('button-builder');
 // Route::view('state-color', 'ui-elements.state-color')->name('state-color');
 // Route::view('typography', 'ui-elements.typography')->name('typography');
+
+Route::get('/refresh', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    return 'Configuration and cache cleared.';
+});

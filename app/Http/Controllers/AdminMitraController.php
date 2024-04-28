@@ -23,6 +23,10 @@ class AdminMitraController extends Controller
     {
         return view('admin.mobil.index');
     }
+    public function tambahmobil()
+    {
+        return view('admin.mobil.tambahmobil');
+    }
     public function inbox()
     {
         return view('admin.inbox.index');

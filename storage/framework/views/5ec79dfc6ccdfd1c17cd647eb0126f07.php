@@ -1,38 +1,37 @@
-@extends('layouts.simple.master_mitra')
-@section('title', 'Detail Sewa')
+<?php $__env->startSection('title', 'Detail Sewa'); ?>
 
-@section('css')
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owlcarousel.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/rating.css')}}">
-@endsection
+<?php $__env->startSection('css'); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/owlcarousel.css')); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/rating.css')); ?>">
+<?php $__env->stopSection(); ?>
 
-@section('style')
-@endsection
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-title')
+<?php $__env->startSection('breadcrumb-title'); ?>
 	<h2>Product<span>Page</span></h2>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-items')
+<?php $__env->startSection('breadcrumb-items'); ?>
 	<li class="breadcrumb-item">Mobil</li>
     <li class="breadcrumb-item">Data Sewa</li>
 	<li class="breadcrumb-item active">Detail Sewa</li>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container-fluid">
    <div class="card">
       <div class="row product-page-main">
          <div class="col-xl-4">
             <div class="product-slider owl-carousel owl-theme" id="sync1">
-               <div class="item"><img src="{{ asset('assets/images/mobil/m1.jpeg')}}" alt=""></div>
-               <div class="item"><img src="{{ asset('assets/images/mobil/m8.jpg')}}" alt=""></div>
-               <div class="item"><img src="{{ asset('assets/images/mobil/m10.jpeg')}}" alt=""></div>
+               <div class="item"><img src="<?php echo e(asset('assets/images/mobil/m1.jpeg')); ?>" alt=""></div>
+               <div class="item"><img src="<?php echo e(asset('assets/images/mobil/m8.jpg')); ?>" alt=""></div>
+               <div class="item"><img src="<?php echo e(asset('assets/images/mobil/m10.jpeg')); ?>" alt=""></div>
             </div>
             <div class="owl-carousel owl-theme" id="sync2">
-            <div class="item"><img src="{{ asset('assets/images/mobil/m1.jpeg')}}" alt=""></div>
-               <div class="item"><img src="{{ asset('assets/images/mobil/m8.jpg')}}" alt=""></div>
-               <div class="item"><img src="{{ asset('assets/images/mobil/m10.jpeg')}}" alt=""></div>
+            <div class="item"><img src="<?php echo e(asset('assets/images/mobil/m1.jpeg')); ?>" alt=""></div>
+               <div class="item"><img src="<?php echo e(asset('assets/images/mobil/m8.jpg')); ?>" alt=""></div>
+               <div class="item"><img src="<?php echo e(asset('assets/images/mobil/m10.jpeg')); ?>" alt=""></div>
             </div>
          </div>
          <div class="col-xl-8">
@@ -126,11 +125,12 @@
       </div>
    </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
-<script src="{{ asset('assets/js/owlcarousel/owl.carousel.js')}}"></script>
-<script src="{{ asset('assets/js/rating/jquery.barrating.js')}}"></script>
-<script src="{{ asset('assets/js/rating/rating-script.js')}}"></script>
-<script src="{{ asset('assets/js/ecommerce.js')}}"></script>
-@endsection
+<?php $__env->startSection('script'); ?>
+<script src="<?php echo e(asset('assets/js/owlcarousel/owl.carousel.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/rating/jquery.barrating.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/rating/rating-script.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/ecommerce.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.simple.master_mitra', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\webS4\resources\views/admin/detailsewa/riwayatsewa.blade.php ENDPATH**/ ?>
