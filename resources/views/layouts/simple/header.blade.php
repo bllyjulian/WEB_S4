@@ -2,7 +2,7 @@
   <div class="main-header-right">
     <div class="main-header-left text-center">
       <div class="logo-wrapper">
-        <a href="{{ asset('') }}"><img src="{{ asset('/assets/images/logo/mobilink1.png') }}" width="130px" alt=""></a>
+        <a href="{{ asset('') }}"><img src="{{ asset('assets/images/logo/mobilink1.png') }}" width="130px" alt=""></a>
       </div>
     </div>
     <div class="mobile-sidebar">

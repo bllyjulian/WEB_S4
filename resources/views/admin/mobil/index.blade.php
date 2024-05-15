@@ -1,5 +1,5 @@
 @extends('layouts.simple.master_mitra')
-@section('title', 'Product list')
+@section('title', 'Data Mobil')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatables.css')}}">
@@ -12,13 +12,12 @@
 @endsection
 
 @section('breadcrumb-title')
-	<h2>Product<span>list</span></h2>
+	<h2>Data<span>Mobil</span></h2>
 @endsection
 
 @section('breadcrumb-items')
-	<li class="breadcrumb-item">Apps</li>
-    	<li class="breadcrumb-item">Ecommerce</li>
-	<li class="breadcrumb-item active">Product list</li>
+	<li class="breadcrumb-item">Mobil</li>
+    	<li class="breadcrumb-item">Data Mobil</li>
 @endsection
 
 @section('content')
@@ -50,34 +49,33 @@
                   <table class="display" id="basic-1">
                      <thead>
                         <tr>
-                           <th>Image</th>
-                           <th>Details</th>
-                           <th>Amount</th>
-                           <th>Stock</th>
-                           <th>Start date</th>
+                           <th>Gambar</th>
+                           <th>Detail</th>
+                           <th>Harga Sewa</th>
+                           <th>Status</th>
+                           <th>Tanggal Terakhir Sewa</th>
                            <th>Action</th>
                         </tr>
                      </thead>
                      <tbody>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-1.png')}}" alt=""></td>
+                           <td><img src="{{ asset('assets/images/mobil/m1.jpeg')}}" alt=""></td>
                            <td>
-                              <h6> Red Lipstick </h6>
+                              <h6> Avanza </h6>
                               <span>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</span>
                            </td>
-                           <td>$10</td>
+                           <td>Rp. 350.000</td>
                            <td class="font-success">In Stock</td>
                            <td>2011/04/25</td>
                            <td>
                               <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
                               <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                              <button class="btn btn-warning sweet-5" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-5']);">Warning alert</button>
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-2.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m2.jpeg')}}" alt=""></td>
                            <td>
-                              <h6> Pink Lipstick </h6>
+                              <h6> Fortuner </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
                            </td>
                            <td>$10</td>
@@ -89,9 +87,9 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-3.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m3.jpeg')}}" alt=""></td>
                            <td>
-                              <h6> Gray Lipstick </h6>
+                              <h6> Supra </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
                            </td>
                            <td>$10</td>
@@ -103,9 +101,9 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-4.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m4.jpeg')}}" alt=""></td>
                            <td>
-                              <h6> Green Lipstick </h6>
+                              <h6> Civic </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
                            </td>
                            <td>$10</td>
@@ -117,9 +115,9 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-5.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m5.jpeg')}}" alt=""></td>
                            <td>
-                              <h6> Black Lipstick </h6>
+                              <h6> Mustang </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
                            </td>
                            <td>$10</td>
@@ -131,7 +129,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-6.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m6.jpg')}}" alt="" width="250px"></td>
                            <td>
                               <h6> White Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -145,7 +143,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-1.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m7.jpeg')}}" alt=""></td>
                            <td>
                               <h6> light Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -159,7 +157,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-2.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m8.jpg')}}" alt=""  width="250px"></td>
                            <td>
                               <h6> Gliter Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -173,7 +171,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-3.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m9.jpeg')}}" alt=""></td>
                            <td>
                               <h6> green Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
@@ -187,7 +185,7 @@
                            </td>
                         </tr>
                         <tr>
-                           <td><img src="{{ asset('assets/images/ecommerce/product-table-4.png')}}" alt=""></td>
+                        <td><img src="{{ asset('assets/images/mobil/m10.jpeg')}}" alt=""></td>
                            <td>
                               <h6> Yellow Lipstick </h6>
                               <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>

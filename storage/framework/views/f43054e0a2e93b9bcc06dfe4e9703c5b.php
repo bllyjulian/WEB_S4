@@ -2,7 +2,7 @@
   <div class="main-header-right">
     <div class="main-header-left text-center">
       <div class="logo-wrapper">
-        <a href="<?php echo e(asset('')); ?>"><img src="<?php echo e(asset('/assets/images/logo/mobilink1.png')); ?>" width="130px" alt=""></a>
+        <a href="<?php echo e(asset('')); ?>"><img src="<?php echo e(asset('assets/images/logo/mobilink1.png')); ?>" width="130px" alt=""></a>
       </div>
     </div>
     <div class="mobile-sidebar">

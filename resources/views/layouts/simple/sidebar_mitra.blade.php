@@ -16,6 +16,10 @@
             <a class="bar-icons" href="{{route('admin.detailsewa')}}"><i class="icon-map-alt"></i><span>Lacak</span></a>
          </li>
          <li>
+            <span class="badge badge-pill badge-danger">48</span><a class="bar-icons" href="{{route('admin.orderan')}}"><i class="pe-7s-diamond"></i><span>Orderan</span></a>
+         
+         </li>
+         <li>
          <a class="bar-icons" href="{{route('admin.inbox')}}"><i class="icon-comments"></i><span>Inbox</span></a>
          </li>
          <li>
