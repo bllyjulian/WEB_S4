@@ -194,17 +194,16 @@
                </div>
             </div>
             <div class="card-body pb-0 pt-0">
-               <div class="music-layer">
-                  <button class="btn btn-pill">View More</button>
+               <div class="d-flex flex-column">
+                  <div class="mobil w-100 text-center">
+                  <img class="img-fluid w-10" src="{{ asset('assets/images/mobil/m4.jpeg')}}" alt="">
+                  </div>
+               <div class="viwmore pt-2 pb-5 text-center">
+               <button class="btn btn-shadow-primary">View More</button>
                </div>
-               <div class="code-box-copy">
-                  <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head2" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                  <pre><code class="language-html" id="example-head2">&lt;!-- Cod Box Copy begin --&gt;
-&lt;div class="music-layer"&gt;
-&lt;button class="btn btn-pill"&gt;
-View More&lt;/button&gt;
-&lt;!-- Cod Box Copy end --&gt;</code></pre>
+                                
                </div>
+                                
             </div>
          </div>
       </div>

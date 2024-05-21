@@ -11,211 +11,104 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-title'); ?>
-	<h2>Data<span>Mobil</span></h2>
+    <h2>Data<span>Mobil</span></h2>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-items'); ?>
-	<li class="breadcrumb-item">Mobil</li>
-    	<li class="breadcrumb-item">Data Mobil</li>
+    <li class="breadcrumb-item">Mobil</li>
+    <li class="breadcrumb-item">Data Mobil</li>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-
-
-
-
-
-
-
 <div class="container-fluid">
-   <div class="row">
-      <!-- Individual column searching (text inputs) Starts-->
-      <div class="col-sm-12">
-         <div class="card">
-            <!-- <div class="card-header">
-               <h5>Individual column searching (text inputs) </h5>
-               <span>The searching functionality provided by DataTables is useful for quickly search through the information in the table - however the search is global, and you may wish to present controls that search on specific columns.</span>
-               <button class="btn btn-warning sweet-5" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-5']);">Warning alert</button>
-               <button class="btn btn-primary sweet-1" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-1']);">Basic</button>
-               <button class="btn btn-primary sweet-2" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-2']);">With Title alert</button>
-               <button class="btn btn-success sweet-3" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-3']);">Success alert</button>
-               <button class="btn btn-info sweet-4" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-4']);">Info alert</button>
-            </div> -->
-
-            <div class="card-body">
-            <button class="btn btn-warning sweet-5"><a href="<?php echo e(route('admin.mobil.tambahmobil')); ?>">Warning alert</a></button>
-               <div class="table-responsive product-table">
-                  <table class="display" id="basic-1">
-                     <thead>
-                        <tr>
-                           <th>Gambar</th>
-                           <th>Detail</th>
-                           <th>Harga Sewa</th>
-                           <th>Status</th>
-                           <th>Tanggal Terakhir Sewa</th>
-                           <th>Action</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td><img src="<?php echo e(asset('assets/images/mobil/m1.jpeg')); ?>" alt=""></td>
-                           <td>
-                              <h6> Avanza </h6>
-                              <span>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</span>
-                           </td>
-                           <td>Rp. 350.000</td>
-                           <td class="font-success">In Stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m2.jpeg')); ?>" alt=""></td>
-                           <td>
-                              <h6> Fortuner </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-primary">Low Stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m3.jpeg')); ?>" alt=""></td>
-                           <td>
-                              <h6> Supra </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-danger">out of stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m4.jpeg')); ?>" alt=""></td>
-                           <td>
-                              <h6> Civic </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-primary">Low Stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m5.jpeg')); ?>" alt=""></td>
-                           <td>
-                              <h6> Mustang </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-success">In Stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m6.jpg')); ?>" alt="" width="250px"></td>
-                           <td>
-                              <h6> White Lipstick </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-primary">Low Stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m7.jpeg')); ?>" alt=""></td>
-                           <td>
-                              <h6> light Lipstick </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-danger">out of stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m8.jpg')); ?>" alt=""  width="250px"></td>
-                           <td>
-                              <h6> Gliter Lipstick </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-danger">out of stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m9.jpeg')); ?>" alt=""></td>
-                           <td>
-                              <h6> green Lipstick </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-success">In Stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                        <tr>
-                        <td><img src="<?php echo e(asset('assets/images/mobil/m10.jpeg')); ?>" alt=""></td>
-                           <td>
-                              <h6> Yellow Lipstick </h6>
-                              <p>Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens</p>
-                           </td>
-                           <td>$10</td>
-                           <td class="font-danger">out of stock</td>
-                           <td>2011/04/25</td>
-                           <td>
-                              <button class="btn btn-danger btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Delete</button>
-                              <button class="btn btn-success btn-xs" type="button" data-original-title="btn btn-danger btn-xs" title="">Edit</button>
-                           </td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
+    <div class="row">
+        <div class="col-sm-12 d-flex justify-content-end mb-3 mr-3">
+            <a style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;" href="<?php echo e(route('admin.mobil.tambahmobil')); ?>" class="btn btn-success">Tambah</a>
+        </div>
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive product-table">
+                        <table class="display" id="basic-1">
+                            <thead>
+                                <tr>
+                                    <th style="width: 100px;">Gambar</th>
+                                    <th>Detail</th>
+                                    <th>Harga Sewa</th>
+                                    <th>Kapasitas Penumpang</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $__currentLoopData = $mobils; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $mobil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr>
+                                        <td><img style="width: 100px;" src="<?php echo e(asset($mobil->foto_mobil)); ?>" alt=""></td>
+                                        <td><?php echo e($mobil->nama_mobil); ?></td>
+                                        <td><?php echo e($mobil->harga_sewa_perhari); ?></td>
+                                        <td><?php echo e($mobil->kapasitas_penumpang); ?></td>
+                                        <td><?php echo e($mobil->username); ?></td>
+                                        <td>
+                                            <div class="d-flex">
+                                                <form action="<?php echo e(route('admin.mobil.hapus', ['id_mobil' => $mobil->id_mobil])); ?>" method="POST" class="form-hapus">
+                                                    <?php echo csrf_field(); ?>
+                                                    <?php echo method_field('DELETE'); ?>
+                                                    <button style="border-radius:5px; margin-right: 6px;" type="submit" class="btn btn-danger btn-hapus" data-id="<?php echo e($mobil->id_mobil); ?>">Hapus</button>
+                                                </form>
+                                                <button style="border-radius:5px;" class="btn btn-info btn-xs" type="button" title="">
+                                                    <a style="color:white;" href="<?php echo e(route('admin.mobil.editmobil', ['id_mobil' => $mobil->id_mobil])); ?>">Edit</a>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-      <!-- Individual column searching (text inputs) Ends-->
-   </div>
+        </div>
+    </div>
 </div>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
+<script src="<?php echo e(asset('assets/js/sweet-alert/sweetalert.min.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/sweet-alert/app.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/owlcarousel/owl.carousel.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/datatable/datatables/jquery.dataTables.min.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/rating/jquery.barrating.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/rating/rating-script.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/ecommerce.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/product-list-custom.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/sweet-alert/sweetalert.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/sweet-alert/app.js')); ?>"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.btn-hapus');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const idMobil = this.getAttribute('data-id');
+            const form = this.closest('form');
+
+            swal({
+                title: "Apakah anda yakin ingin menghapus data ini?",
+                text: "Data Mobil yang dihapus tidak dapat dikembalikan!",
+                icon: "warning",
+                buttons: ["Batal", "Hapus"],
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    swal("Sukses!", "Data Mobil berhasil dihapus.", "success").then(() => {
+                        form.submit();
+                    });
+                }
+            });
+        });
+    });
+});
+</script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.simple.master_mitra', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\webS4\resources\views/admin/mobil/index.blade.php ENDPATH**/ ?>

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,9 +10,8 @@ class DataMobil extends Model
 
     protected $table = 'tb_mobil';
     protected $primaryKey = 'id_mobil';
-    public $incrementing = false;
-    protected $keyType = 'string';
-
+    public $incrementing = false; // Jika id_mobil bukan auto-increment
+    protected $keyType = 'string'; // Jika id_mobil bukan integer
     protected $fillable = [
         'id_mobil',
         'nama_mobil',
@@ -24,8 +22,8 @@ class DataMobil extends Model
         'bahan_bakar',
         'kecepatan',
         'foto_mobil',
-        'username',
+        'username'
     ];
 
-    public $timestamps = false;
+    public $timestamps = false; // Jika tabel tidak memiliki kolom created_at dan updated_at
 }

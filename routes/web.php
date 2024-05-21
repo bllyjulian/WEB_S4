@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\AdminMitraController;
 use App\Http\Controllers\AdminMobilinkController;
 use App\Http\Controllers\LPController;
-
+use App\Http\Controllers\MobilController;
 
 
 // Route::get('/', function(){
@@ -46,9 +46,14 @@ Route::prefix('admin')->group(function () {
         Route::get('', [AdminMitraController::class, 'orderan'])->name('admin.orderan');
     });
     Route::prefix('data-mobil')->group(function () {
-        Route::get('', [AdminMitraController::class, 'mobil'])->name('admin.mobil');
-        Route::get('tambahmobil', [AdminMitraController::class, 'tambahmobil'])->name('admin.mobil.tambahmobil');
+        Route::get('', [MobilController::class, 'index'])->name('admin.mobil');
+        Route::get('tambahmobil', [MobilController::class, 'create'])->name('admin.mobil.tambahmobil');
+        Route::get('editmobil/{id_mobil}', [MobilController::class, 'edit'])->name('admin.mobil.editmobil');
+        Route::post('tambahmobil', [MobilController::class, 'store'])->name('admin.mobil.store');
+        Route::put('updatemobil/{id_mobil}', [MobilController::class, 'update'])->name('admin.mobil.update');
+        Route::delete('hapus/{id_mobil}', [MobilController::class, 'hapus'])->name('admin.mobil.hapus');
     });
+    
     Route::prefix('inbox')->group(function () {
         Route::get('', [AdminMitraController::class, 'inbox'])->name('admin.inbox');
     });
@@ -62,7 +67,6 @@ Route::prefix('admin')->group(function () {
 Route::view('button-builder', 'perk-ui.button-builder')->name('button-builder');
 // Route::view('state-color', 'ui-elements.state-color')->name('state-color');
 // Route::view('typography', 'ui-elements.typography')->name('typography');
-
 Route::get('/refresh', function () {
     Artisan::call('config:clear');
     Artisan::call('cache:clear');

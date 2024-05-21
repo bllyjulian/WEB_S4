@@ -7,12 +7,12 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-title'); ?>
-	<h2>Tambah<span>Mobil</span></h2>
+<h2>Tambah<span>Mobil</span></h2>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-items'); ?>
-	<li class="breadcrumb-item">Mobil</li>
-    <li class="breadcrumb-item">Tambah Mobil</li>	
+<li class="breadcrumb-item">Mobil</li>
+<li class="breadcrumb-item">Tambah Mobil</li>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -24,7 +24,8 @@
                <h5>Silahkan Masukkan Data Mobil Yang Ingin Ditambahkan!</h5>
             </div>
             <div class="card-body">
-               <form class="f1" method="post">
+               <form class="f1" method="POST" action="<?php echo e(route('admin.mobil.store')); ?>" enctype="multipart/form-data" id="tambahMobilForm">
+                  <?php echo csrf_field(); ?>
                   <div class="f1-steps">
                      <div class="f1-progress">
                         <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3"></div>
@@ -44,33 +45,40 @@
                   </div>
                   <fieldset>
                      <div class="form-group">
-                        <label for="f1-first-name">Nama Mobil</label>
-                        <input class="form-control" id="f1-first-name" type="text" name="f1-first-name" placeholder="Masukkan Nama Mobil" required="">
+                        <label for="nama_mobil">Nama Mobil</label>
+                        <input class="form-control" id="nama_mobil" type="text" name="nama_mobil" placeholder="Masukkan Nama Mobil" required>
                      </div>
                      <div class="form-group">
-                        <label for="f1-last-name">Tipe</label>
-                        <input class="f1-last-name form-control" id="f1-last-name" type="text" name="f1-last-name" placeholder="Masukkan Tipe" required="">
+                        <label for="tipe">Tipe</label>
+                        <input class="form-control" id="tipe" type="text" name="tipe" placeholder="Masukkan Tipe" required>
                      </div>
                      <div class="form-group">
-                        <label for="f1-last-name">Warna</label>
-                        <input class="f1-last-name form-control" id="f1-last-name" type="text" name="f1-last-name" placeholder="Masukkan Warna" required="">
+                        <label for="warna">Warna</label>
+                        <input class="form-control" id="warna" type="text" name="warna" placeholder="Masukkan Warna" required>
                      </div>
                      <div class="f1-buttons">
                         <button class="btn btn-primary btn-next" type="button">Next</button>
                      </div>
                   </fieldset>
                   <fieldset>
-                  <div class="form-group">
-                        <label for="f1-first-name">Kapasitas Penumpang</label>
-                        <input class="form-control" id="f1-first-name" type="text" name="f1-first-name" placeholder="Masukkan Kapasitas" required="">
+                     <div class="form-group">
+                        <label for="kapasitas_penumpang">Kapasitas Penumpang</label>
+                        <input class="form-control" id="kapasitas_penumpang" type="text" name="kapasitas_penumpang" placeholder="Masukkan Kapasitas" required>
                      </div>
                      <div class="form-group">
-                        <label for="f1-first-name">Bahan Bakar</label>
-                        <input class="form-control" id="f1-first-name" type="text" name="f1-first-name" placeholder="Masukkan Bahan Bakar Mobil" required="">
+                        <label for="bahan_bakar">Bahan Bakar</label>
+                        <input class="form-control" id="bahan_bakar" type="text" name="bahan_bakar" placeholder="Masukkan Bahan Bakar Mobil" required>
                      </div>
                      <div class="form-group">
-                        <label for="f1-first-name">Kecepatan</label>
-                        <input class="form-control" id="f1-first-name" type="text" name="f1-first-name" placeholder="Masukkan Kecepatan" required="">
+                        <label for="kecepatan">Kecepatan</label>
+                        <input class="form-control" id="kecepatan" type="text" name="kecepatan" placeholder="Masukkan Kecepatan" required>
+                     </div>
+                     <div class="form-group">
+                        <label for="foto-mobil">Foto Mobil</label>
+                        <div class="custom-file">
+                           <input type="file" class="custom-file-input" id="foto-mobil" name="foto_mobil" required>
+                           <label class="custom-file-label" for="foto-mobil">Pilih file</label>
+                        </div>
                      </div>
                      <div class="f1-buttons">
                         <button class="btn btn-primary btn-previous" type="button">Previous</button>
@@ -78,13 +86,17 @@
                      </div>
                   </fieldset>
                   <fieldset>
-                  <div class="form-group">
-                        <label for="f1-first-name">Harga Sewa Per hari</label>
-                        <input class="form-control" id="f1-first-name" type="text" name="f1-first-name" placeholder="Masukkan Harga" required="">
+                     <div class="form-group">
+                        <label for="harga_sewa_perhari">Harga Sewa Per hari</label>
+                        <input class="form-control" id="harga_sewa_perhari" type="text" name="harga_sewa_perhari" placeholder="Masukkan Harga" required>
+                     </div>
+                     <div class="form-group">
+                        <label for="username">Username</label>
+                        <input class="form-control" id="username" type="text" name="username" placeholder="Masukkan Username" required>
                      </div>
                      <div class="f1-buttons">
                         <button class="btn btn-primary btn-previous" type="button">Previous</button>
-                        <button class="btn btn-primary btn-submit" type="submit">Submit</button>
+                        <button class="btn btn-success sweet-8" type="submit">Simpan</button>
                      </div>
                   </fieldset>
                </form>
@@ -96,7 +108,33 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="<?php echo e(asset('assets/js/form-wizard/form-wizard-three.js')); ?>"></script>
 <script src="<?php echo e(asset('assets/js/form-wizard/jquery.backstretch.min.js')); ?>"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>  -->
+<script src="<?php echo e(asset('assets/js/sweet-alert/sweetalert.min.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/sweet-alert/app.js')); ?>"></script>
+
+<script>
+    $(document).on('change', '.custom-file-input', function(event) {
+        $(this).next('.custom-file-label').html(event.target.files[0].name);
+    });
+
+    document.querySelector('.sweet-8').onclick = function(event){
+        event.preventDefault();
+        swal({
+            title: "Berhasil!",
+            text: "Data Mobil berhasil disimpan!",
+            icon: "success",
+            button: "OK"
+        }).then((value) => {
+            if (value) {
+                document.getElementById('tambahMobilForm').submit();
+            }
+        });
+    }
+</script>
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.simple.master_mitra', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\webS4\resources\views/admin/mobil/tambahmobil.blade.php ENDPATH**/ ?>
