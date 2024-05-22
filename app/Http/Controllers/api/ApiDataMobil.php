@@ -13,4 +13,12 @@ class ApiDataMobil extends Controller
         $mobils = DataMobil::all();
         return response()->json($mobils);
     }
+    public function show($username)
+    {
+        $mobils = DataMobil::where('username', $username)->get();
+        if ($mobils->isEmpty()) {
+            return response()->json(['message' => 'Toko ini tidak memiliki mobil'], 404);
+        }
+        return response()->json($mobils);
+    }
 }

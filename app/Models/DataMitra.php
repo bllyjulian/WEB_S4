@@ -10,7 +10,10 @@ class DataMitra extends Model
     use HasFactory;
 
     protected $table = 'tb_akun'; // Sesuaikan dengan nama tabel yang benar
-    // protected $primaryKey = 'username'; 
+    protected $primaryKey = 'username'; 
+    public $incrementing = false; // Tambahkan ini jika username bukan auto increment
+    protected $keyType = 'string'; // Tambahkan ini jika username bukan integer
+    
     protected $fillable = [
         'username',
         'password',

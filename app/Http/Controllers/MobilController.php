@@ -49,7 +49,7 @@ class MobilController extends Controller
 // hosting
         if ($request->hasFile('foto_mobil')) {
             $imageName = time() . '.' . $request->foto_mobil->extension();
-            $request->foto_mobil->move(public_path('https://mobilinkqz.my.id/assets/images/mobil'), $imageName);
+            $request->foto_mobil->move(public_path('assets/images/mobil'), $imageName);
             $mobil->foto_mobil = 'https://mobilinkqz.my.id/assets/images/mobil/' . $imageName;
         }
         $mobil->save();
@@ -99,7 +99,7 @@ class MobilController extends Controller
 // hosting
         // if ($request->hasFile('foto_mobil')) {
         //     $imageName = time() . '.' . $request->foto_mobil->extension();
-        //     $request->foto_mobil->move(public_path('https://mobilinkqz.my.id/assets/images/mobil'), $imageName);
+        //     $request->foto_mobil->move(public_path('assets/images/mobil'), $imageName);
         //     $validatedData['foto_mobil'] = 'https://mobilinkqz.my.id/assets/images/mobil/' . $imageName;
         // }
         $validatedData['id_mobil'] = $this->generateIdMobil();
