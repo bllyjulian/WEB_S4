@@ -10,13 +10,13 @@ class ApiDataMitra extends Controller
 {
     public function index()
     {
-        $mitras = DataMitra::all();
+        $mitras = DataMitra::where('id_lvl', 3)->get();
         return response()->json($mitras);
     }
 
     public function show($username)
     {
-        $mitra = DataMitra::findOrFail($username);
+        $mitra = DataMitra::where('username', $username)->where('id_lvl', 3)->firstOrFail();
         return response()->json($mitra);
     }
 }
