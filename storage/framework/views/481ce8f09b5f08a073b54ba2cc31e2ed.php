@@ -5,7 +5,7 @@
                     <h2 class="mb-0">Do you want to know more or just have a question? write to us.</h2>
                 </div>
                 <div class="col-md-4 col-lg-5 col-xl-6 py-3 py-md-0 d-md-flex align-items-center justify-content-end">
-                    <a href="<?php echo e(route('contact')); ?>" class="btn btn-danger btn-lg">Contact form</a>
+                    <a href="<?php echo e(route('login.daftar')); ?>" class="btn btn-danger btn-lg">Contact form</a>
                 </div>
             </div>
             <div class="row footer-widget-area">

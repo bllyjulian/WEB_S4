@@ -3,16 +3,16 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class DataMitra extends Model
+class DataMitra extends Authenticatable
 {
     use HasFactory;
 
-    protected $table = 'tb_akun'; // Sesuaikan dengan nama tabel yang benar
-    protected $primaryKey = 'username'; 
-    public $incrementing = false; // Tambahkan ini jika username bukan auto increment
-    protected $keyType = 'string'; // Tambahkan ini jika username bukan integer
+    protected $table = 'tb_akun'; // Nama tabel yang benar
+    protected $primaryKey = 'username'; // Kunci utama adalah 'username'
+    public $incrementing = false; // Kunci utama bukan auto increment
+    protected $keyType = 'string'; // Tipe kunci utama adalah string
     
     protected $fillable = [
         'username',
@@ -26,4 +26,6 @@ class DataMitra extends Model
         'id_lvl',
         'tgl_daftar'
     ];
+
+    public $timestamps = false; 
 }

@@ -79,7 +79,7 @@
                 <div class="col-sm-4 col-6 droplet-main"><i data-feather="users"></i><span class="d-block">Contacts</span></div>
                 <div class="col-sm-4 col-6 droplet-main"><i data-feather="clipboard"></i><span class="d-block">Reports</span></div>
                 <div class="col-sm-4 col-6 droplet-main"><i data-feather="anchor"></i><span class="d-block">Automation</span></div>
-                <div class="col-sm-4 col-6 droplet-main"><i data-feather="settings"></i><span class="d-block">Settings</span></div>
+                <div class="col-sm-4 col-6 droplet-main"><i data-feather="settings"></i><span class="d-block">Keluar</span></div>
               </div>
             </li>
             <li class="text-center">
@@ -122,7 +122,7 @@
             <li><i data-feather="user"> </i>Profile</li>
             <li><i data-feather="message-square"> </i>Inbox</li>
             <li><i data-feather="file-text"> </i>Taskboard</li>
-            <li><i data-feather="settings"> </i>Settings</li>
+            <li><i data-feather="settings"> </i><a href="{{ route('login.index') }}">Keluar</a></li>
           </ul>
         </li>
       </ul>

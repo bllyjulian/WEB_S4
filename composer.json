@@ -12,7 +12,8 @@
         "guzzlehttp/guzzle": "^7.5.0",
         "laravel/framework": "^10.4.1",
         "laravel/sanctum": "^3.2.1",
-        "laravel/tinker": "^2.8.1"
+        "laravel/tinker": "^2.8.1",
+        "realrashid/sweet-alert": "^7.1"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^2.0",

@@ -7,7 +7,10 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\AdminMitraController;
 use App\Http\Controllers\AdminMobilinkController;
 use App\Http\Controllers\LPController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\AuthController;
+
 
 
 // Route::get('/', function(){
@@ -22,11 +25,13 @@ Route::get('/faq', [LPController::class, 'faq'])->name('faq-nav');
 Route::get('/contact', [LPController::class, 'contact'])->name('contact');
 Route::get('/privacy-policy', [LPController::class, 'pp'])->name('pp');
 
-Route::prefix('admin')->group(function () {
-    Route::view('dashboard', 'admin.dashboard')->name('dashboard');
-    Route::view('mitra', 'admin.mitra')->name('mitra');
-});
 
+Route::prefix('auth')->group(function () {
+    Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+    Route::get('/daftar', [LoginController::class, 'halamandaftar'])->name('login.daftar');
+    Route::post('/login', [LoginController::class, 'proseslogin'])->name('proseslogin');
+    Route::post('/daftar', [LoginController::class, 'daftar'])->name('prosesdaftar');
+});
 Route::prefix('mobilink')->group(function () {
     Route::prefix('dashboard')->group(function () {
         Route::get('', [AdminMobilinkController::class, 'index'])->name('mobilink.dashboard');
