@@ -257,7 +257,9 @@
             transition: 1s ease-in-out;
             transition-delay: .2s;
         }
-
+.textbwh p {
+    padding-bottom: 30px;
+}
         .img img {
             width: 30vw;
             transition: 1s ease-in-out;
@@ -401,11 +403,14 @@
                 padding: 1rem;
             }
 
+            
             .form button {
                 font-size: 1rem;
                 padding: .5rem;
             }
-
+            .form-daftar p {
+                padding-bottom: 600px;
+            }
             .text h2 {
                 font-size: 1.5rem;
             }
@@ -525,6 +530,7 @@
                         <button type="submit">
                             Daftar
                         </button>
+                        <div class="textbwh">
                         <p>
                             <span>
                                 Sudah memiliki akun?
@@ -533,6 +539,8 @@
                                 Login Sekarang!
                             </b>
                         </p>
+                        </div>
+                       
                     </form>
                 </div>
             </div>
@@ -556,8 +564,8 @@
         Login
     </button>
 </form>
-
-                    <p>
+<div class="textbwh">
+<p>
                         <b>
                             Lupa password?
                         </b>
@@ -570,6 +578,8 @@
                             Daftar Sekarang!
                         </b>
                     </p>
+</div>
+                    
                 </div>
             </div>
         </div>
