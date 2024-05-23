@@ -446,10 +446,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <div class="modal" id="mapModal" style="display: none; width: 100%; padding: 0;">
-    <div id="map" style="width: 100%; height: 94vh;">
+    <div class="modal" id="mapModal" style="display: none; width: 100%; height: 100vh; padding: 0;">
+ 
+    <div id="map" style="width: 100%; height: 92%;">
     </div>
-<div style="display: flex;" class="gg">
+    <div style="display: flex; height: 8%;" class="gg">
 <button style="
  margin: 0;
     padding: 15px;
@@ -477,7 +478,6 @@
     background-color: #823CDD;
     " id="cancel">Batal</button>
 </div>
-    
 </div>
 
 <div id="container" class="container">
