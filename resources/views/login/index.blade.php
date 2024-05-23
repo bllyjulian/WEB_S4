@@ -498,11 +498,12 @@
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required>
+                            <input type="text" name="nama_lengkap" placeholder="Nama Pemilik" required>
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-phone'></i>
-                            <input type="tel" name="nomor_hp" placeholder="Nomor HP" required>
+                            <input type="tel" name="nomor_hp" id="nomor_hp" placeholder="Nomor HP" required maxlength="18">
+
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-store'></i>
@@ -605,7 +606,47 @@
 </div>
 
 <script>
+   function formatNomorHP(input) {
+        // Menghapus semua karakter kecuali angka
+        var nomor_hp = input.value.replace(/\D/g, '');
+        
+        if (!nomor_hp.startsWith('+62')) {
+    if (nomor_hp.startsWith('62')) {
+        nomor_hp = '+' + nomor_hp;
+    } else {
+        nomor_hp = '+62' + nomor_hp;
+    }
+}
 
+        // Menambahkan tanda hubung setelah kode negara (62) dan setelah tiga digit pertama
+        if (nomor_hp.length > 3) {
+            nomor_hp = nomor_hp.substring(0, 3) + ' ' + nomor_hp.substring(3);
+        }
+        
+        // Menambahkan tanda hubung setelah tiga digit kedua
+        if (nomor_hp.length > 7) {
+            nomor_hp = nomor_hp.substring(0, 7) + '-' + nomor_hp.substring(7);
+        }
+        // Menambahkan tanda hubung setelah tiga digit kedua
+        if (nomor_hp.length > 9) {
+            nomor_hp = nomor_hp.substring(0, 12) + '-' + nomor_hp.substring(12);
+        }
+        
+        // Memasukkan hasil format ke dalam input
+        input.value = nomor_hp;
+    }
+
+    // Memanggil fungsi formatNomorHP saat pengguna mengetik
+    document.getElementById('nomor_hp').addEventListener('input', function() {
+        formatNomorHP(this);
+    });
+
+    // Mencegah penggunaan karakter selain angka dan +
+    document.getElementById('nomor_hp').addEventListener('keypress', function(e) {
+        if (e.which < 48 || e.which > 57) {
+            e.preventDefault();
+        }
+    });
 
 document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById('mapModal');

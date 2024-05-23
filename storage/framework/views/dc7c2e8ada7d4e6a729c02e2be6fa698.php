@@ -6,6 +6,8 @@
     <link rel="icon" href="<?php echo e(asset('/assets/images/icontitle.png')); ?>" type="image/x-icon">
     <link rel="shortcut icon" href="<?php echo e(asset('/assets/images/icontitle.png')); ?>" type="image/x-icon">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
+
     <title>Login</title>
     <style>
         :root {
@@ -65,7 +67,18 @@
         }
 
         .form {
-            margin-top: 10rem;
+            margin-top: 13rem;
+            padding: 1rem;
+            background-color: var(--white);
+            border-radius: 10px;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transform: scale(0);
+            transition: .5s ease-in-out;
+            transition-delay: 1s;
+        }
+        .form-daftar {
+            margin-top: 3rem;
             padding: 1rem;
             background-color: var(--white);
             border-radius: 10px;
@@ -397,7 +410,10 @@
                 font-size: 1.5rem;
             }
             .text-daftar h2 {
-                font-size: 1.5rem;
+                font-size: 1rem;
+            }
+            .text-daftar p {
+                font-size: 12px;
             }
 
             .input-group input {
@@ -410,12 +426,9 @@
             background: white;
             border: 1px solid #ccc;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 100;
+            z-index: 10;
             width: 100%; /* Lebih baik menentukan lebar secara eksplisit */
-        }
-        #map {
-            background: white;
-            z-index: 8;
+            transition: transform 0.5s ease-in-out;
         }
         }
     </style>
@@ -428,35 +441,36 @@
     <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
     <div class="modal" id="mapModal" style="display: none; width: 100%; padding: 0;">
-    <div id="map" style="width: 100%; height: 95vh;">
+    <div id="map" style="width: 100%; height: 94vh;">
     </div>
-
-    <button style="
- margin: 0;;
+<div style="display: flex;" class="gg">
+<button style="
+ margin: 0;
     padding: 15px;
     border:none;
     border: radius 10px;
     width: 80%;
     color:white;
     font-family:'Poppins' ,serif;
-    font-weight: 800;
+    font-weight: 500;
     font-size: 16px;
-    background-color: #823CDD;
+    background-color: #4267B2;
     
     
     " class="tombolmaps" id="saveLocation">Simpan Lokasi</button>
         <button  style="
- margin: 0;;
+ margin: 0;
     padding: 15px;
     border:none;
     border: radius 10px;
-    width: 19%;
+    width: 20%;
     color:white;
     font-family:'Poppins' ,serif;
-    font-weight: 800;
+    font-weight: 500;
     font-size: 16px;
     background-color: #823CDD;
     " id="cancel">Batal</button>
+</div>
     
 </div>
 
@@ -467,7 +481,7 @@
         <!-- SIGN UP -->
         <div class="col align-items-center flex-col sign-up">
             <div class="form-wrapper align-items-center">
-                <div class="form sign-up">
+                <div class="form sign-up form-daftar">
                 <form id="daftarForm"> <!-- Sesuaikan dengan route yang Anda tentukan -->
                         <?php echo csrf_field(); ?>
                         <div class="input-group">
@@ -484,11 +498,12 @@
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-user'></i>
-                            <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required>
+                            <input type="text" name="nama_lengkap" placeholder="Nama Pemilik" required>
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-phone'></i>
-                            <input type="tel" name="nomor_hp" placeholder="Nomor HP" required>
+                            <input type="tel" name="nomor_hp" id="nomor_hp" placeholder="Nomor HP" required maxlength="18">
+
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-store'></i>
@@ -591,10 +606,52 @@
 </div>
 
 <script>
- document.addEventListener('DOMContentLoaded', function() {
+   function formatNomorHP(input) {
+        // Menghapus semua karakter kecuali angka
+        var nomor_hp = input.value.replace(/\D/g, '');
+        
+        if (!nomor_hp.startsWith('+62')) {
+    if (nomor_hp.startsWith('62')) {
+        nomor_hp = '+' + nomor_hp;
+    } else {
+        nomor_hp = '+62' + nomor_hp;
+    }
+}
+
+        // Menambahkan tanda hubung setelah kode negara (62) dan setelah tiga digit pertama
+        if (nomor_hp.length > 3) {
+            nomor_hp = nomor_hp.substring(0, 3) + ' ' + nomor_hp.substring(3);
+        }
+        
+        // Menambahkan tanda hubung setelah tiga digit kedua
+        if (nomor_hp.length > 7) {
+            nomor_hp = nomor_hp.substring(0, 7) + '-' + nomor_hp.substring(7);
+        }
+        // Menambahkan tanda hubung setelah tiga digit kedua
+        if (nomor_hp.length > 9) {
+            nomor_hp = nomor_hp.substring(0, 12) + '-' + nomor_hp.substring(12);
+        }
+        
+        // Memasukkan hasil format ke dalam input
+        input.value = nomor_hp;
+    }
+
+    // Memanggil fungsi formatNomorHP saat pengguna mengetik
+    document.getElementById('nomor_hp').addEventListener('input', function() {
+        formatNomorHP(this);
+    });
+
+    // Mencegah penggunaan karakter selain angka dan +
+    document.getElementById('nomor_hp').addEventListener('keypress', function(e) {
+        if (e.which < 48 || e.which > 57) {
+            e.preventDefault();
+        }
+    });
+
+document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById('mapModal');
     var map, marker;
-    var indonesiaBounds = L.latLngBounds(L.latLng(-11.0, 95.0), L.latLng(6.0, 141.0)); // Batas-batas wilayah Indonesia
+    var indonesiaBounds = L.latLngBounds(L.latLng(-11.0, 95.0), L.latLng(6.0, 141.0));
 
     document.querySelector('[placeholder="Pilih Lokasi Toko"]').addEventListener('click', function() {
         modal.style.display = 'block';
@@ -602,11 +659,12 @@
             map = L.map('map', { 
                 maxBounds: indonesiaBounds, 
                 maxBoundsViscosity: 1.0,
-                minZoom: 5 // Atur tingkat zoom minimum agar peta tidak terlalu kecil
-            }).setView([-2.5, 117.0], 6); // Tengah peta pada Indonesia dengan tingkat zoom awal
+                minZoom: 5, 
+                attributionControl: false 
+            }).setView([-2.5, 117.0], 6); 
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: ''
+              
             }).addTo(map);
 
             map.on('click', function(e) {
@@ -621,15 +679,20 @@
 
     document.getElementById('saveLocation').addEventListener('click', function() {
         if (marker) {
-            var latLng = marker.getLatLng();
-            document.querySelector('[name="latitude"]').value = latLng.lat;
-            document.querySelector('[name="longitude"]').value = latLng.lng;
-            modal.style.display = 'none';
-        } else {
-            alert('Silakan pilih lokasi pada peta.');
-        }
+        var latLng = marker.getLatLng();
+        document.querySelector('[name="latitude"]').value = latLng.lat;
+        document.querySelector('[name="longitude"]').value = latLng.lng;
+        document.getElementById('locationPicker').value = 'Lokasi telah ditentukan';
+        modal.style.display = 'none';
+    } else {
+        alert('Silakan pilih lokasi pada peta.');
+    }
     });
+    document.getElementById('cancel').addEventListener('click', function() {
+    modal.style.display = 'none';
 });
+});
+
 
 
 
@@ -699,7 +762,7 @@ document.getElementById('daftarForm').addEventListener('submit', function(event)
                     confirmButtonText: 'OK'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = '<?php echo e(route("login.index")); ?>'; // Redirect ke halaman login setelah OK diklik
+                        window.location.href = '<?php echo e(route("login.index")); ?>';
                     }
                 });
             } else {
