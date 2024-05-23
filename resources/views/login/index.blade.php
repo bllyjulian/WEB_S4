@@ -610,7 +610,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     var modal = document.getElementById('mapModal');
     var map, marker;
-    var indonesiaBounds = L.latLngBounds(L.latLng(-11.0, 95.0), L.latLng(6.0, 141.0)); // Batas-batas wilayah Indonesia
+    var indonesiaBounds = L.latLngBounds(L.latLng(-11.0, 95.0), L.latLng(6.0, 141.0));
 
     document.querySelector('[placeholder="Pilih Lokasi Toko"]').addEventListener('click', function() {
         modal.style.display = 'block';
@@ -618,12 +618,12 @@ document.addEventListener('DOMContentLoaded', function() {
             map = L.map('map', { 
                 maxBounds: indonesiaBounds, 
                 maxBoundsViscosity: 1.0,
-                minZoom: 5, // Atur tingkat zoom minimum agar peta tidak terlalu kecil
-                attributionControl: false // Nonaktifkan kontrol atribusi
-            }).setView([-2.5, 117.0], 6); // Tengah peta pada Indonesia dengan tingkat zoom awal
+                minZoom: 5, 
+                attributionControl: false 
+            }).setView([-2.5, 117.0], 6); 
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                // attribution: '' // Jika ingin menghilangkan atribusi, abaikan atau kosongkan
+              
             }).addTo(map);
 
             map.on('click', function(e) {
@@ -721,7 +721,7 @@ document.getElementById('daftarForm').addEventListener('submit', function(event)
                     confirmButtonText: 'OK'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.location.href = '{{ route("login.index") }}'; // Redirect ke halaman login setelah OK diklik
+                        window.location.href = '{{ route("login.index") }}';
                     }
                 });
             } else {
@@ -745,7 +745,7 @@ document.getElementById('daftarForm').addEventListener('submit', function(event)
     }
 
     setTimeout(() => {
-        container.classList.add('sign-up')
+        container.classList.add('sign-in')
     }, 200)
 </script>
 </body>

@@ -2,10 +2,10 @@
         <div class="container">
             <div class="row footer-content">
                 <div class="col-xl-6 col-lg-7 col-md-8">
-                    <h2 class="mb-0">Do you want to know more or just have a question? write to us.</h2>
+                    <h2 class="mb-0">Ingin Menjadi Mitra Kami?</h2>
                 </div>
                 <div class="col-md-4 col-lg-5 col-xl-6 py-3 py-md-0 d-md-flex align-items-center justify-content-end">
-                    <a href="{{route('login.daftar')}}" class="btn btn-danger btn-lg">Contact form</a>
+                    <a href="{{route('login.daftar')}}" class="btn btn-danger btn-lg">Daftar Sekarang!</a>
                 </div>
             </div>
             <div class="row footer-widget-area">

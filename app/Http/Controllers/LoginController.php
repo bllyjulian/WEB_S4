@@ -29,14 +29,14 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->id_lvl === 3) {
-                // Return a JSON response with success status
+        
                 return response()->json(['success' => true, 'message' => 'Login berhasil!'], 200);
             } else {
-                // Return a JSON response with success status
+   
                 return response()->json(['success' => true, 'message' => 'Login berhasil!'], 200);
             }
         } else {
-            // Return a JSON response with error status
+     
             return response()->json(['success' => false, 'message' => 'Username atau password salah!'], 401);
         }
     }
@@ -59,8 +59,8 @@ class LoginController extends Controller
         $hashedPassword = Hash::make($validatedData['password']);
         $validatedData['password'] = $hashedPassword;
     
-        $validatedData['status_akun'] = 0; // Atau jika 'status_akun' adalah field yang tetap 0
-        $validatedData['id_lvl'] = 3; // Atau jika 'id_lvl' adalah field yang tetap 3
+        $validatedData['status_akun'] = 0; 
+        $validatedData['id_lvl'] = 3;
     
         DataMitra::create($validatedData);
         return response()->json(['success' => true, 'message' => 'Registrasi berhasil!'], 200);

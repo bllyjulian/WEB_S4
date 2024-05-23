@@ -57,7 +57,7 @@
         .align-items-center {
             display: flex;
             align-items: center;
-            /* justify-content: center; */
+
             text-align: center;
         }
 
@@ -427,7 +427,7 @@
             border: 1px solid #ccc;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 10;
-            width: 100%; /* Lebih baik menentukan lebar secara eksplisit */
+            width: 100%; 
             transition: transform 0.5s ease-in-out;
         }
         }
