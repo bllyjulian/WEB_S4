@@ -435,6 +435,7 @@
             width: 100%; /* Lebih baik menentukan lebar secara eksplisit */
             transition: transform 0.5s ease-in-out;
         }
+        
         }
 
     </style>
@@ -448,9 +449,9 @@
 
     <div class="modal" id="mapModal" style="display: none; width: 100%; height: 100vh; padding: 0; overflow-y:scroll;">
  
-    <div id="map" style="width: 100%; height: 90%;">
+    <div id="map" style="width: 100%; height: 100%; z-index: 70;">
     </div>
-    <div style="display: flex; position:absolute; bottom:0; z-index:80; width: 100%; height: 10%" class="gg">
+    <div style="display: flex; position:absolute; bottom: 0px; z-index:80; width: 100%; height: 10%" class="gg">
 <button style="
  margin: 0;
     padding: 15px;
