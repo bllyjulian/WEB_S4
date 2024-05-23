@@ -396,7 +396,7 @@
             }
         }
 
-        @media only screen and (max-width: 425px) {
+        @media only screen and (max-width < 400px) {
             .form-wrapper {
                 padding: 1rem;
             }
