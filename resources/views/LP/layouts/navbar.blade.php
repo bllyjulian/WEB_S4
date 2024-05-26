@@ -10,19 +10,19 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('index')}}">Home</a>
+                            <a class="nav-link" href="{{route('index')}}">Beranda</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{route('about')}}">About <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{route('about')}}">Tentang Kami <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('features')}}">Features</a>
+                            <a class="nav-link" href="{{route('features')}}">Fitur</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('faq-nav')}}">FAQ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('contact')}}">contact</a>
+                            <a class="nav-link" href="{{route('contact')}}">Kontak</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav mt-2 mt-lg-0">

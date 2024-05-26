@@ -1,23 +1,21 @@
-@extends('layouts.simple.master_mobilink')
+<?php $__env->startSection('title', 'Mitra'); ?>
 
-@section('title', 'Mitra')
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
 
-@section('css')
-@endsection
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
 
-@section('style')
-@endsection
-
-@section('breadcrumb-title')
+<?php $__env->startSection('breadcrumb-title'); ?>
     <h2>Mobilink<span>Mitra</span></h2>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-items')
+<?php $__env->startSection('breadcrumb-items'); ?>
     <li class="breadcrumb-item">Mitra</li>
     <li class="breadcrumb-item">Data Mitra</li>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-12">
@@ -41,25 +39,25 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($mitra as $key => $item)
+                            <?php $__currentLoopData = $mitra; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                                <td>{{ $key + 1 }}</td>
-                                <td><img style="width: 100px;" src="{{ asset($item->logo_mitra) }}" alt=""></td>
-                                <td>{{ $item->nama_toko }}</td>
-                                <td>{{ $item->username }}</td>
-                                <td>{{ $item->nama_lengkap }}</td>
-                                <td>{{ $item->nomor_hp }}</td>
-                                <td>{{ $item->tgl_daftar }}</td>
+                                <td><?php echo e($key + 1); ?></td>
+                                <td><img style="width: 100px;" src="<?php echo e(asset($item->logo_mitra)); ?>" alt=""></td>
+                                <td><?php echo e($item->nama_toko); ?></td>
+                                <td><?php echo e($item->username); ?></td>
+                                <td><?php echo e($item->nama_lengkap); ?></td>
+                                <td><?php echo e($item->nomor_hp); ?></td>
+                                <td><?php echo e($item->tgl_daftar); ?></td>
                                 <td>
                                     <div class="media-body icon-state switch-outline">
                                         <label class="switch">
-                                            <input type="checkbox" {{ $item->status_akun == 0 ? '' : 'checked' }} data-username="{{ $item->username }}">
+                                            <input type="checkbox" <?php echo e($item->status_akun == 0 ? '' : 'checked'); ?> data-username="<?php echo e($item->username); ?>">
                                             <span class="switch-state bg-primary"></span>
                                         </label>
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </tbody>
                     </table>
                 </div>
@@ -67,9 +65,9 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
+<?php $__env->startSection('script'); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -101,4 +99,6 @@
         });
     });
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.simple.master_mobilink', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\webS4\resources\views/mobilink/mitra/index.blade.php ENDPATH**/ ?>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
 
-    <title>Login</title>
+    <title>Daftar</title>
     <style>
         :root {
             --primary-color: #6206A8;
@@ -257,7 +257,9 @@
             transition: 1s ease-in-out;
             transition-delay: .2s;
         }
-
+.textbwh p {
+    padding-bottom: 30px;
+}
         .img img {
             width: 30vw;
             transition: 1s ease-in-out;
@@ -396,16 +398,19 @@
             }
         }
 
-        @media only screen and (max-width < 400px) {
+        @media only screen and (max-width < 200px) {
             .form-wrapper {
                 padding: 1rem;
             }
 
+            
             .form button {
                 font-size: 1rem;
                 padding: .5rem;
             }
-
+            .form-daftar p {
+                padding-bottom: 600px;
+            }
             .text h2 {
                 font-size: 1.5rem;
             }
@@ -430,7 +435,9 @@
             width: 100%; /* Lebih baik menentukan lebar secara eksplisit */
             transition: transform 0.5s ease-in-out;
         }
+        
         }
+
     </style>
 </head>
 <body>
@@ -440,10 +447,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
-    <div class="modal" id="mapModal" style="display: none; width: 100%; padding: 0;">
-    <div id="map" style="width: 100%; height: 94vh;">
+    <div class="modal" id="mapModal" style="display: none; width: 100%; height: 100vh; padding: 0; overflow-y:scroll;">
+ 
+    <div id="map" style="width: 100%; height: 100%; z-index: 70;">
     </div>
-<div style="display: flex;" class="gg">
+    <div style="display: flex; position:absolute; bottom: 0px; z-index:80; width: 100%; height: 10%" class="gg">
 <button style="
  margin: 0;
     padding: 15px;
@@ -471,7 +479,6 @@
     background-color: #823CDD;
     " id="cancel">Batal</button>
 </div>
-    
 </div>
 
 <div id="container" class="container">
@@ -524,6 +531,7 @@
                         <button type="submit">
                             Daftar
                         </button>
+                        <div class="textbwh">
                         <p>
                             <span>
                                 Sudah memiliki akun?
@@ -532,6 +540,8 @@
                                 Login Sekarang!
                             </b>
                         </p>
+                        </div>
+                       
                     </form>
                 </div>
             </div>
@@ -555,8 +565,8 @@
         Login
     </button>
 </form>
-
-                    <p>
+<div class="textbwh">
+<p>
                         <b>
                             Lupa password?
                         </b>
@@ -569,6 +579,8 @@
                             Daftar Sekarang!
                         </b>
                     </p>
+</div>
+                    
                 </div>
             </div>
         </div>

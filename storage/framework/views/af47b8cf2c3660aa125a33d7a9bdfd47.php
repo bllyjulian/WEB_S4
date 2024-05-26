@@ -20,9 +20,9 @@
                     <div class="col-md-6">
                         <h1>Sewa Mobil dan Jadikan Setiap Perjalanan Anda Spesial</h1>
                         <p class="text-dark">Temukan kenyamanan dan fleksibilitas dalam perjalanan Anda dengan layanan rental mobil kami.</p>
-                        <button class="btn btn-primary mb-4">Mulai Petualangan</button>
+                        <button class="btn btn-primary mb-4">Mulai Sekarang!</button>
                         <div class="my-2">
-                            <p class="header-app-download-title">Dapatkan Aplikasi Kami Sekarang!</p>
+                            <p class="header-app-download-title">Dapatkan Aplikasi Kami di</p>
                         </div>
                         <div>
                             <button class="btn btn-app-download mr-2"><img src="<?php echo e(asset ('frontend/assets/images/ios.svg')); ?>" alt="App store"></button>

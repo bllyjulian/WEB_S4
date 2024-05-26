@@ -26,4 +26,8 @@ class DataMobil extends Model
     ];
 
     public $timestamps = false; // Jika tabel tidak memiliki kolom created_at dan updated_at
+    public function akun()
+    {
+        return $this->belongsTo(DataMitra::class, 'username', 'username');
+    }
 }
