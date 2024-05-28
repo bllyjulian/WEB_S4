@@ -11,9 +11,9 @@
             <div class="row footer-widget-area">
                 <div class="col-md-3">
                     <div class="py-3">
-                        <img src="{{ asset ('frontend/assets/images/logo-white.svg')}}" alt="FOI">
+                    <img class="img-fluid" src="{{ asset('/assets/images/logo/iconFooter.png') }}" width="100px" alt="">
                     </div>
-                    <p class="font-os font-weight-semibold mb3">Get our mobile app</p>
+                    <p class="font-os font-weight-semibold mb3">Dapatkan Aplikasinya Sekarang!</p>
                     <div>
                         <button class="btn btn-app-download mr-2"><img src="{{ asset ('frontend/assets/images/ios.svg')}}" alt="App store"></button>
                         <button class="btn btn-app-download"><img src="{{ asset ('frontend/assets/images/android.svg')}}" alt="play store"></button>
@@ -23,13 +23,13 @@
                     <nav>
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a href="{{route('index')}}" class="nav-link">Home</a>
+                                <a href="{{route('index')}}" class="nav-link">Beranda</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('about')}}" class="nav-link">About</a>
+                                <a href="{{route('about')}}" class="nav-link">Tentang Kami</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('features')}}" class="nav-link">Features</a>
+                                <a href="{{route('features')}}" class="nav-link">Fitur</a>
                             </li>
                         </ul>
                     </nav>
@@ -38,10 +38,10 @@
                     <nav>
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a href="{{route('pp')}}" class="nav-link">Privacy Policy</a>
+                                <a href="{{route('pp')}}" class="nav-link">Kebijakan Privasi</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{route('faq-nav')}}" class="nav-link">FAQ</a>
+                                <a href="{{route('faq-nav')}}" class="nav-link">Frequently Asked Questions</a>
                             </li>
                         </ul>
                     </nav>
