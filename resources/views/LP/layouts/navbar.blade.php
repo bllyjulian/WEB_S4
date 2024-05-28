@@ -3,7 +3,6 @@
             <nav class="navbar navbar-expand-lg navbar-light foi-navbar">
                 <a class="navbar-brand" href="index.html">
                     <img src="{{ asset ('frontend/assets/images/logoMobilink.png')}}"  width="150px" alt="Mobilink">
-                    
                 </a>
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
