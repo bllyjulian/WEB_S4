@@ -11,7 +11,29 @@ class ApiDataMobil extends Controller
 {
     public function index()
     {
-        $mobils = DataMobil::all();
+        // Mendapatkan semua mobil dan memuat relasi dengan akun
+        $mobils = DataMobil::with('akun')->get();
+
+        // Memetakan data mobil dan menambahkan informasi dari tabel akun
+        $mobils = $mobils->map(function ($mobil) {
+            return [
+                'id_mobil' => $mobil->id_mobil,
+                'nama_mobil' => $mobil->nama_mobil,
+                'kapasitas_penumpang' => $mobil->kapasitas_penumpang,
+                'warna' => $mobil->warna,
+                'harga_sewa_perhari' => $mobil->harga_sewa_perhari,
+                'tipe' => $mobil->tipe,
+                'bahan_bakar' => $mobil->bahan_bakar,
+                'kecepatan' => $mobil->kecepatan,
+                'foto_mobil' => $mobil->foto_mobil,
+                'username' => $mobil->username,
+                'latitude' => $mobil->akun->latitude ?? null,
+                'longitude' => $mobil->akun->longitude ?? null,
+                'nama_toko' => $mobil->akun->nama_toko ?? null,
+                'logo_mitra' => $mobil->akun->logo_mitra ?? null
+            ];
+        });
+
         return response()->json($mobils);
     }
 
