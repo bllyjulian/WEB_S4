@@ -7,8 +7,8 @@
     <meta name="description" content="Poco admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Poco admin template, dashboard template, flat admin template, responsive admin template, web app (Laravel 8)">
     <meta name="author" content="pixelstrap">
-    <link rel="icon" href="{{ asset('/assets/images/icontitle.png') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('/assets/images/icontitle.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('/assets/images/logo/iconTitle.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('/assets/logo/iconTitle.png') }}" type="image/x-icon">
     <title>Mobilink - @yield('title')</title>
     @include('layouts.simple.css')
     @yield('style')

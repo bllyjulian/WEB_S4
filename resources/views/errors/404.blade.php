@@ -16,9 +16,9 @@
          <h2 class="headline font-danger">404</h2>
       </div>
       <div class="col-md-8 offset-md-2">
-         <p class="sub-content">The page you are attempting to reach is currently not available. This may be because the page does not exist or has been moved.</p>
+         <p class="sub-content">Halaman yang ingin Anda buka saat ini tidak tersedia. Ini mungkin terjadi karena halaman tersebut tidak ada atau telah dipindahkan.</p>
       </div>
-      <div><a class="btn btn-danger-gradien btn-lg" href="{{asset('')}}">BACK TO HOME PAGE</a></div>
+      <div><a class="btn btn-danger-gradien btn-lg" href="{{asset('')}}">KEMBALI KE HALAMAN AWAL</a></div>
    </div>
 </div>
 <!-- error-404 end      -->

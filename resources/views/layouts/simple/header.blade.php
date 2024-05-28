@@ -2,7 +2,7 @@
   <div class="main-header-right">
     <div class="main-header-left text-center">
       <div class="logo-wrapper">
-      <img class="img-fluid" src="https://mobilinkqz.my.id/assets/images/logo/Mobilink1.png" width="170px" alt="">
+      <img class="img-fluid" src="{{ asset('/assets/images/logo/logoMobilink.png') }}" width="170px" alt="">
       </div>
     </div>
     <div class="mobile-sidebar">
