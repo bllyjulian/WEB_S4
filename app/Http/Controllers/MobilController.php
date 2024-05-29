@@ -47,11 +47,11 @@ class MobilController extends Controller
             $mobil->foto_mobil = 'assets/images/mobil/' . $imageName;
         }
 // hosting
-        if ($request->hasFile('foto_mobil')) {
-            $imageName = time() . '.' . $request->foto_mobil->extension();
-            $request->foto_mobil->move(public_path('assets/images/mobil'), $imageName);
-            $mobil->foto_mobil = 'https://mobilinkqz.my.id/assets/images/mobil/' . $imageName;
-        }
+        // if ($request->hasFile('foto_mobil')) {
+        //     $imageName = time() . '.' . $request->foto_mobil->extension();
+        //     $request->foto_mobil->move(public_path('assets/images/mobil'), $imageName);
+        //     $mobil->foto_mobil = 'https://mobilink.my.id/assets/images/mobil/' . $imageName;
+        // }
         $mobil->save();
 
         return redirect()->route('admin.mobil')->with('success', 'Mobil berhasil diperbarui');
@@ -100,7 +100,7 @@ class MobilController extends Controller
         // if ($request->hasFile('foto_mobil')) {
         //     $imageName = time() . '.' . $request->foto_mobil->extension();
         //     $request->foto_mobil->move(public_path('assets/images/mobil'), $imageName);
-        //     $validatedData['foto_mobil'] = 'https://mobilinkqz.my.id/assets/images/mobil/' . $imageName;
+        //     $validatedData['foto_mobil'] = 'https://mobilink.my.id/assets/images/mobil/' . $imageName;
         // }
         $validatedData['id_mobil'] = $this->generateIdMobil();
 
