@@ -2,9 +2,9 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ApiDataUser;
-use App\Http\Controllers\Api\ApiDataMitra;
-use App\Http\Controllers\Api\ApiDataMobil;
+use App\Http\Controllers\api\ApiDataUser;
+use App\Http\Controllers\api\ApiDataMitra;
+use App\Http\Controllers\api\ApiDataMobil;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
