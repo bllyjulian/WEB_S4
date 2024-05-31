@@ -45,58 +45,58 @@
                   </div>
                   <fieldset>
                      <div class="form-group">
-                        <label for="nama_mobil">Nama Mobil</label>
-                        <input class="form-control" id="nama_mobil" type="text" name="nama_mobil" placeholder="Masukkan Nama Mobil" required>
+                        <label for="nama_mobil">Brand</label>
+                        <input style="border-radius:5px;" class="form-control" id="nama_mobil" type="text" name="nama_mobil" placeholder="Masukkan Nama Mobil" required>
                      </div>
                      <div class="form-group">
                         <label for="tipe">Tipe</label>
-                        <input class="form-control" id="tipe" type="text" name="tipe" placeholder="Masukkan Tipe" required>
+                        <input style="border-radius:5px;" class="form-control" id="tipe" type="text" name="tipe" placeholder="Masukkan Tipe" required>
                      </div>
                      <div class="form-group">
                         <label for="warna">Warna</label>
-                        <input class="form-control" id="warna" type="text" name="warna" placeholder="Masukkan Warna" required>
+                        <input style="border-radius:5px;" class="form-control" id="warna" type="text" name="warna" placeholder="Masukkan Warna" required>
                      </div>
                      <div class="f1-buttons">
-                        <button class="btn btn-primary btn-next" type="button">Next</button>
+                        <button style="border-radius:5px;" class="btn btn-primary btn-next" type="button">Next</button>
                      </div>
                   </fieldset>
                   <fieldset>
                      <div class="form-group">
                         <label for="kapasitas_penumpang">Kapasitas Penumpang</label>
-                        <input class="form-control" id="kapasitas_penumpang" type="text" name="kapasitas_penumpang" placeholder="Masukkan Kapasitas" required>
+                        <input style="border-radius:5px;" class="form-control" id="kapasitas_penumpang" type="text" name="kapasitas_penumpang" placeholder="Masukkan Kapasitas" required>
                      </div>
                      <div class="form-group">
                         <label for="bahan_bakar">Bahan Bakar</label>
-                        <input class="form-control" id="bahan_bakar" type="text" name="bahan_bakar" placeholder="Masukkan Bahan Bakar Mobil" required>
+                        <input style="border-radius:5px;" class="form-control" id="bahan_bakar" type="text" name="bahan_bakar" placeholder="Masukkan Bahan Bakar Mobil" required>
                      </div>
                      <div class="form-group">
                         <label for="kecepatan">Kecepatan</label>
-                        <input class="form-control" id="kecepatan" type="text" name="kecepatan" placeholder="Masukkan Kecepatan" required>
+                        <input style="border-radius:5px;" class="form-control" id="kecepatan" type="text" name="kecepatan" placeholder="Masukkan Kecepatan" required>
                      </div>
                      <div class="form-group">
                         <label for="foto-mobil">Foto Mobil</label>
                         <div class="custom-file">
-                           <input type="file" class="custom-file-input" id="foto-mobil" name="foto_mobil" required>
+                           <input style="border-radius:5px;" type="file" class="custom-file-input" id="foto-mobil" name="foto_mobil" required>
                            <label class="custom-file-label" for="foto-mobil">Pilih file</label>
                         </div>
                      </div>
                      <div class="f1-buttons">
-                        <button class="btn btn-primary btn-previous" type="button">Previous</button>
-                        <button class="btn btn-primary btn-next" type="button">Next</button>
+                        <button style="border-radius:5px;" class="btn btn-primary btn-previous" type="button">Previous</button>
+                        <button style="border-radius:5px;" class="btn btn-primary btn-next" type="button">Next</button>
                      </div>
                   </fieldset>
                   <fieldset>
                      <div class="form-group">
                         <label for="harga_sewa_perhari">Harga Sewa Per hari</label>
-                        <input class="form-control" id="harga_sewa_perhari" type="text" name="harga_sewa_perhari" placeholder="Masukkan Harga" required>
+                        <input style="border-radius:5px;" class="form-control" id="harga_sewa_perhari" type="text" name="harga_sewa_perhari" placeholder="Masukkan Harga" required>
                      </div>
                      <div class="form-group">
                         <label for="username">Username</label>
-                        <input class="form-control" id="username" type="text" name="username" placeholder="Masukkan Username" required>
+                        <input style="border-radius:5px;" class="form-control" id="username" type="text" name="username" placeholder="Masukkan Username" required>
                      </div>
                      <div class="f1-buttons">
-                        <button class="btn btn-primary btn-previous" type="button">Previous</button>
-                        <button class="btn btn-success sweet-8" type="submit">Simpan</button>
+                        <button style="border-radius:5px;" class="btn btn-primary btn-previous" type="button">Previous</button>
+                        <button style="border-radius:5px;" class="btn btn-success sweet-8" type="submit">Simpan</button>
                      </div>
                   </fieldset>
                </form>

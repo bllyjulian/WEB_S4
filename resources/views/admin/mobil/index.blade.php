@@ -34,7 +34,7 @@
                             <thead>
                                 <tr>
                                     <th style="width: 100px;">Gambar</th>
-                                    <th>Detail</th>
+                                    <th>Brand</th>
                                     <th>Harga Sewa</th>
                                     <th>Kapasitas Penumpang</th>
                                     <th>Status</th>

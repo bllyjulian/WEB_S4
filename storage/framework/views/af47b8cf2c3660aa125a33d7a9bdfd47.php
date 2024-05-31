@@ -40,7 +40,7 @@
     </header>
     <section class="py-5 mb-5">
         <div class="container">
-            <h2 class="section-title">Application Features</h2>
+            <h2 class="section-title">Fitur Aplikasi</h2>
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <h5>Data Aman</h5>

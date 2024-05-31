@@ -114,7 +114,7 @@
           </ul>
         </li>
         <li><a class="right_side_toggle" href="#"><img class="img-fluid img-shadow-success" src="<?php echo e(asset('/assets/images/dashboard/chat.png')); ?>" alt=""></a></li>
-        <li class="onhover-dropdown"> <span class="media user-header"><img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard/user.png')); ?>" alt=""></span>
+        <li class="onhover-dropdown"> <span style="width: 60px;" class="media user-header"><img class="img-fluid"  src="<?php echo e(asset('/assets/images/dashboard/user1.png')); ?>" alt=""></span>
           <ul class="onhover-show-div profile-dropdown">
             <li class="gradient-primary">
               <h5 class="f-w-600 mb-0">Billy Julian</h5><span>Web Designer</span>

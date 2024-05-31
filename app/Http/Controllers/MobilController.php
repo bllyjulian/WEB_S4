@@ -12,6 +12,7 @@ class MobilController extends Controller
         $mobils = DataMobil::all();
         return view('admin.mobil.index', compact('mobils'));
     }
+    
 
     public function create()
     {

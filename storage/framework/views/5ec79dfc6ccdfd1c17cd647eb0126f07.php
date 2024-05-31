@@ -1,42 +1,41 @@
-@extends('layouts.simple.master_mitra')
-@section('title', 'Detail Sewa')
+<?php $__env->startSection('title', 'Detail Sewa'); ?>
 
-@section('css')
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owlcarousel.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/rating.css') }}">
+<?php $__env->startSection('css'); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/owlcarousel.css')); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/rating.css')); ?>">
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('style')
-@endsection
+<?php $__env->startSection('style'); ?>
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-title')
+<?php $__env->startSection('breadcrumb-title'); ?>
     <h2>Detail Sewa</h2>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('breadcrumb-items')
+<?php $__env->startSection('breadcrumb-items'); ?>
     <li class="breadcrumb-item">Mobil</li>
     <li class="breadcrumb-item">Data Sewa</li>
     <li class="breadcrumb-item active">Detail Sewa</li>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container-fluid">
     <div class="card">
         <div class="row product-page-main">
             <div class="col-xl-4">
                 <div class="product-slider owl-carousel owl-theme" id="sync1">
-                    <div class="item"><img src="{{ asset($mobil->foto_mobil) }}" alt=""></div>
+                    <div class="item"><img src="<?php echo e(asset($mobil->foto_mobil)); ?>" alt=""></div>
                     <!-- Tambahkan gambar lain jika ada -->
                 </div>
                 <div class="owl-carousel owl-theme" id="sync2">
-                    <div class="item"><img src="{{ asset($mobil->foto_mobil) }}" alt=""></div>
+                    <div class="item"><img src="<?php echo e(asset($mobil->foto_mobil)); ?>" alt=""></div>
                     <!-- Tambahkan gambar lain jika ada -->
                 </div>
             </div>
             <div class="col-xl-8">
                 <div class="product-page-details">
-                    <h5>{{ $mobil->nama_mobil }}</h5>
+                    <h5><?php echo e($mobil->nama_mobil); ?></h5>
                     <div class="d-flex">
                         <select id="u-rating-fontawesome" name="rating" autocomplete="off">
                             <option value="1">1</option>
@@ -49,9 +48,10 @@
                     </div>
                 </div>
                 <hr>
-                <p>{{ $mobil->deskripsi }}</p>
+                <p><?php echo e($mobil->deskripsi); ?></p>
                 <div class="product-price digits">
-                    <del>Rp. {{ number_format($mobil->harga_sewa_perhari * 1.2, 0, ',', '.') }}</del> Rp. {{ number_format($mobil->harga_sewa_perhari, 0, ',', '.') }}
+                    <del>Rp. <?php echo e(number_format($mobil->harga_sewa_perhari * 1.2, 0, ',', '.')); ?></del> Rp. <?php echo e(number_format($mobil->harga_sewa_perhari, 0, ',', '.')); ?>
+
                 </div>
                 <hr>
                 <div>
@@ -59,7 +59,7 @@
                         <tbody>
                             <tr>
                                 <td>Brand :</td>
-                                <td>{{ $mobil->brand }}</td>
+                                <td><?php echo e($mobil->brand); ?></td>
                             </tr>
                             <tr>
                                 <td>Availability :</td>
@@ -128,17 +128,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($customers as $key => $item)
+                                                <?php $__currentLoopData = $customers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                 <tr>
-                                                    <td>{{ $key + 1 }}</td>
-                                                    <td>{{ $item->username_mb }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->email }}</td>
-                                                    <td>{{ $item->nomor_hp_user }}</td>
-                                                    <td>{{ $item->tgl_lahir }}</td>
-                                                    <td>{{ $item->domisili }}</td>
+                                                    <td><?php echo e($key + 1); ?></td>
+                                                    <td><?php echo e($item->username_mb); ?></td>
+                                                    <td><?php echo e($item->nama); ?></td>
+                                                    <td><?php echo e($item->email); ?></td>
+                                                    <td><?php echo e($item->nomor_hp_user); ?></td>
+                                                    <td><?php echo e($item->tgl_lahir); ?></td>
+                                                    <td><?php echo e($item->domisili); ?></td>
                                                 </tr>
-                                                @endforeach
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -160,13 +160,13 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('script')
-<script src="{{ asset('assets/js/owlcarousel/owl.carousel.js') }}"></script>
-<script src="{{ asset('assets/js/rating/jquery.barrating.js') }}"></script>
-<script src="{{ asset('assets/js/rating/rating-script.js') }}"></script>
-<script src="{{ asset('assets/js/ecommerce.js') }}"></script>
+<?php $__env->startSection('script'); ?>
+<script src="<?php echo e(asset('assets/js/owlcarousel/owl.carousel.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/rating/jquery.barrating.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/rating/rating-script.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/ecommerce.js')); ?>"></script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -189,7 +189,7 @@
                 }).addTo(map);
 
                 // Fetch the location data from the server
-                fetch('{{ route('admin.detailsewa.location', $mobil->id_mobil) }}')
+                fetch('<?php echo e(route('admin.detailsewa.location', $mobil->id_mobil)); ?>')
                     .then(response => response.json())
                     .then(data => {
                         if (data.error) {
@@ -237,4 +237,6 @@
 });
 
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.simple.master_mitra', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\webS4\resources\views/admin/detailsewa/riwayatsewa.blade.php ENDPATH**/ ?>

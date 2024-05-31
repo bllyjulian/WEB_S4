@@ -8,273 +8,44 @@
 @endsection
 
 @section('breadcrumb-title')
-	<h2>Data Sewa</h2>
+    <h2>Data Sewa</h2>
 @endsection
 
 @section('breadcrumb-items')
-	<li class="breadcrumb-item">Mobil</li>
+    <li class="breadcrumb-item">Mobil</li>
     <li class="breadcrumb-item">Data Sewa</li>
 @endsection
 
 @section('content')
 <div class="container-fluid">
    <div class="row">
+      @foreach($mobils as $mobil)
       <div class="col-xl-3 col-sm-6 box-col-4a">
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m1.jpeg')}}" alt="">
+                  <img class="img-fluid" src="{{ asset($mobil->foto_mobil) }}" alt="">
                   <div class="product-hover">
                      <ul>
                         <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
+                        <a href="{{ route('admin.detailsewa.riwayatsewa', ['id' => $mobil->id_mobil]) }}">
+                           <li><i class="icon-eye"></i></li>
+                        </a>
                         <li><i class="icofont icofont-law-alt-2"></i></li>
                      </ul>
                   </div>
                </div>
                <div class="product-details">
-                  <h4>Avanza</h4>
-                  <p>Simply dummy text of the printing.</p>
+                  <h4>{{ $mobil->nama_mobil }}</h4>
+                  <p>{{ $mobil->kapasitas_penumpang }} penumpang, {{ $mobil->warna }}</p>
                   <div class="product-price">
-                     <del>$350.00    </del>Rp. 350.000
+                     <del>Rp. {{ number_format($mobil->harga_sewa_perhari * 1.2, 0, ',', '.') }}</del> Rp. {{ number_format($mobil->harga_sewa_perhari, 0, ',', '.') }}
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <div class="ribbon ribbon-danger">Sale</div>
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m2.jpeg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Panther</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>Rp. 250.000
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m3.jpeg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Kijang</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>Per-hari    </del>Rp. 400.000
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <div class="ribbon ribbon-success ribbon-right">50%</div>
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m4.jpeg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Alphard</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>$26.00
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m5.jpeg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Civic</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>$26.00
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="ribbon ribbon-secondary ribbon-vertical-left"><i class="icon-gift"></i></div>
-               <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m6.jpg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Mc Lareen</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>$26.00
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m7.jpeg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Lamborghini</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>$26.00
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m8.jpg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Avanza</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>$26.00
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m9.jpeg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Kijang</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>$26.00
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m10.jpeg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Sedan</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>$26.00
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="col-xl-3 col-sm-6 box-col-4a">
-         <div class="card">
-            <div class="product-box">
-               <div class="product-img">
-                  <img class="img-fluid" src="{{ asset('assets/images/mobil/m7.jpeg')}}" alt="">
-                  <div class="product-hover">
-                     <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
-                        <a href="{{route('admin.detailsewa.riwayatsewa')}}"><li><i class="icon-eye"></i></li></a> 
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="product-details">
-                  <h4>Panther</h4>
-                  <p>Simply dummy text of the printing.</p>
-                  <div class="product-price">
-                     <del>$350.00    </del>$26.00
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
+      @endforeach
    </div>
 </div>
 @endsection

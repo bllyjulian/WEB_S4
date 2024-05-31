@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminMobilinkController;
 use App\Http\Controllers\LPController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\DetailSewaController;
 use App\Http\Controllers\AuthController;
 
 
@@ -62,11 +63,12 @@ Route::prefix('admin')->group(function () {
     Route::prefix('inbox')->group(function () {
         Route::get('', [AdminMitraController::class, 'inbox'])->name('admin.inbox');
     });
-    // Menempatkan rute berikut di dalam grup 'detail-sewa'
     Route::prefix('detail-sewa')->group(function () {
-        Route::get('', [AdminMitraController::class, 'sewa'])->name('admin.detailsewa');
-        Route::get('riwayatsewa', [AdminMitraController::class, 'riwayatsewa'])->name('admin.detailsewa.riwayatsewa');
+        Route::get('', [DetailSewaController::class, 'index'])->name('admin.detailsewa');
+        Route::get('/detailsewa/{id}', [DetailSewaController::class, 'detail'])->name('admin.detailsewa.riwayatsewa');
+        Route::get('/detailsewa/{id}/location', [DetailSewaController::class, 'getLatitudeLongitude'])->name('admin.detailsewa.location');
     });
+    
 });
 
 Route::view('button-builder', 'perk-ui.button-builder')->name('button-builder');
