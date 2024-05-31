@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="<?php echo e(asset ('frontend/assets/images/app_1.png')); ?>" alt="app" width="388px" class="img-fluid">
+                        <img src="<?php echo e(asset ('frontend/assets/images/app1.png')); ?>" alt="app" width="388px" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -143,7 +143,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-5 mb-md-0">
-                    <img src="<?php echo e(asset ('frontend/assets/images/app_2.png')); ?>" alt="special offers" class="img-fluid" width="492px">
+                    <img src="<?php echo e(asset ('frontend/assets/images/app2.png')); ?>" alt="special offers" class="img-fluid" width="492px">
                 </div>
                 <div class="col-md-6">
                     <h2 class="section-title">Dapatkan penawaran khusus untuk pengalaman berkendara yang Anda cintai</h2>

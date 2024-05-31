@@ -64,21 +64,21 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-3 mb-5">
                         <div class="team-member-card">
-                            <img src="<?php echo e(asset('frontend/assets/images/user/user_1.png')); ?>" alt="Cardarion Hart" class="team-member-avatar">
-                            <h6 class="mb-0">Billy Mohammad</h6>
+                            <img src="<?php echo e(asset('frontend/assets/images/user/user2.jpg')); ?>" alt="Cardarion Hart" class="team-member-avatar">
+                            <h6 class="mb-0">Billy Julian S</h6>
                             <p class="team-member-designation">Web Developer</p>
                         </div>
                     </div>
                     <div class="col-md-3 mb-5">
                         <div class="team-member-card">
-                            <img src="<?php echo e(asset('frontend/assets/images/user/user_2.png')); ?>" alt="Gauthier Drewitt" class="team-member-avatar">
+                            <img src="<?php echo e(asset('frontend/assets/images/user/user3.jpg')); ?>" alt="Gauthier Drewitt" class="team-member-avatar">
                             <h6 class="mb-0">Reyhan Zaynuri</h6>
                             <p class="team-member-designation">Mobile Developer</p>
                         </div>
                     </div>
                     <div class="col-md-3 mb-5">
                         <div class="team-member-card">
-                            <img src="<?php echo e(asset('frontend/assets/images/user/user_3.png')); ?>" alt="Labeeba Al Amer" class="team-member-avatar">
+                            <img src="<?php echo e(asset('frontend/assets/images/user/user1.jpg')); ?>" alt="Labeeba Al Amer" class="team-member-avatar">
                             <h6 class="mb-0">M Akmal Kholiqin</h6>
                             <p class="team-member-designation">Software Quality Assurance</p>
                         </div>

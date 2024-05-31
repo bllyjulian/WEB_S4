@@ -9,7 +9,7 @@
 @endsection
 
 @section('breadcrumb-title')
-    <h2>B-Rental<span>Customer</span></h2>
+    <h2>Admin<span>Customer</span></h2>
 @endsection
 
 @section('breadcrumb-items')
