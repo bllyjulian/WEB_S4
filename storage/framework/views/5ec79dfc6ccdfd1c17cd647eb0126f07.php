@@ -147,7 +147,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="top-profile" role="tabpanel" aria-labelledby="profile-top-tab">
-                        <div id="map" style="height: 100vh; width: 100%;"></div>
+                        <div id="map" style="height: 70vh; width: 100%; border-radius:20px; margin-top: 20px;"></div>
                     </div>
                     <div class="tab-pane fade" id="top-contact" role="tabpanel" aria-labelledby="contact-top-tab">
                         <p class="mb-0 m-t-20">Lorem Ipsum is simply dummy text...</p>
@@ -169,74 +169,66 @@
 <script src="<?php echo e(asset('assets/js/ecommerce.js')); ?>"></script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var map, marker;
-
-        document.getElementById('profile-top-tab').addEventListener('click', function() {
-            if (!map) {
-                // Initialize the map and set its view to the specified geographical coordinates and a zoom level.
-                map = L.map('map', {
-                    maxBounds: [[-11.0, 95.0], [6.0, 141.0]], // Indonesia bounds
-                    maxBoundsViscosity: 1.0,
-                    minZoom: 5,
-                    attributionControl: false
-                }).setView([-2.5, 117.0], 6); // Center of Indonesia
-
-                // Add a tile layer to the map, in this case, OpenStreetMap tiles.
-                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 18,
-                    attribution: '© OpenStreetMap'
-                }).addTo(map);
-
-                // Fetch the location data from the server
-                fetch('<?php echo e(route('admin.detailsewa.location', $mobil->id_mobil)); ?>')
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.error) {
-                            alert(data.error);
-                        } else {
-                            var latLng = [data.latitude, data.longitude];
-                            map.setView(latLng, 15);
-                            
-                            // Define a custom icon for the marker
-                            var customIcon = L.icon({
-                                iconUrl: '/assets/images/dashboard/user1.png', // Replace with the path to your custom icon
-                                iconSize: [38, 95], // Size of the icon
-                                iconAnchor: [22, 94], // Point of the icon which will correspond to marker's location
-                                popupAnchor: [-3, -76] // Point from which the popup should open relative to the iconAnchor
-                            });
-
-                            // Create a marker with the custom icon and add it to the map
-                            marker = L.marker(latLng, {icon: customIcon}).addTo(map)
-                                .bindPopup('<b>Lokasi Mitra</b><br>Latitude: ' + data.latitude + '<br>Longitude: ' + data.longitude)
-                                .openPopup();
-                        }
-                    })
-                    .catch(error => console.error('Error fetching location:', error));
-            }
-        });
-    });
-    document.addEventListener('DOMContentLoaded', function () {
+ document.addEventListener('DOMContentLoaded', function () {
     var map, marker;
+
+    function initializeMap() {
+        if (!map) {
+            // Initialize the map and set its view to the specified geographical coordinates and a zoom level.
+            map = L.map('map', {
+                maxBounds: [[-11.0, 95.0], [6.0, 141.0]], // Indonesia bounds
+                maxBoundsViscosity: 1.0,
+                minZoom: 5,
+                attributionControl: false
+            }).setView([-2.5, 117.0], 6); // Center of Indonesia
+
+            // Add a tile layer to the map, in this case, OpenStreetMap tiles.
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+   
+            fetch('<?php echo e(route('admin.detailsewa.location', $mobil->id_mobil)); ?>')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        var latLng = [data.latitude, data.longitude];
+                        map.setView(latLng, 15);
+                        
+                  
+                        var customIcon = L.icon({
+                            iconUrl: '/assets/images/logo/iconTitle.png', 
+                            iconSize: [100, 100],
+                            iconAnchor: [50, 100], 
+                            popupAnchor: [0, -100] 
+                        });
+
+                        marker = L.marker(latLng, {icon: customIcon}).addTo(map)
+                            .bindPopup('<b>Lokasi Mobil</b><br>Latitude: ' + data.latitude + '<br>Longitude: ' + data.longitude)
+                            .openPopup();
+                    }
+                })
+                .catch(error => console.error('Error fetching location:', error));
+        }
+    }
 
     function resizeMap() {
         if (map) {
-            map.invalidateSize(); // Memperbarui ukuran peta setelah perubahan ukuran kontainer
+            map.invalidateSize();
         }
     }
 
     document.getElementById('profile-top-tab').addEventListener('click', function() {
-        resizeMap(); // Memanggil fungsi untuk memperbarui ukuran peta saat tab 'Lacak' diaktifkan
-        if (!map) {
-            // Kode inisialisasi peta Anda tetap di sini
-        }
+        initializeMap(); 
+        setTimeout(resizeMap, 200); 
     });
 
-    // Memanggil resizeMap() saat window diresize
     window.addEventListener('resize', resizeMap);
 });
 
 </script>
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('layouts.simple.master_mitra', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\xampp\htdocs\webS4\resources\views/admin/detailsewa/riwayatsewa.blade.php ENDPATH**/ ?>

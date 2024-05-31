@@ -26,11 +26,11 @@
                   <img class="img-fluid" src="<?php echo e(asset($mobil->foto_mobil)); ?>" alt="">
                   <div class="product-hover">
                      <ul>
-                        <li><i class="icon-shopping-cart"></i></li>
+                        <!-- <li><i class="icon-shopping-cart"></i></li> -->
                         <a href="<?php echo e(route('admin.detailsewa.riwayatsewa', ['id' => $mobil->id_mobil])); ?>">
                            <li><i class="icon-eye"></i></li>
                         </a>
-                        <li><i class="icofont icofont-law-alt-2"></i></li>
+                        <!-- <li><i class="icofont icofont-law-alt-2"></i></li> -->
                      </ul>
                   </div>
                </div>
