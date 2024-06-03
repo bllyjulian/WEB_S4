@@ -25,14 +25,7 @@
     <div class="card">
         <div class="row product-page-main">
             <div class="col-xl-4">
-                <div class="product-slider owl-carousel owl-theme" id="sync1">
                     <div class="item"><img src="{{ asset($mobil->foto_mobil) }}" alt=""></div>
-                    <!-- Tambahkan gambar lain jika ada -->
-                </div>
-                <div class="owl-carousel owl-theme" id="sync2">
-                    <div class="item"><img src="{{ asset($mobil->foto_mobil) }}" alt=""></div>
-                    <!-- Tambahkan gambar lain jika ada -->
-                </div>
             </div>
             <div class="col-xl-8">
                 <div class="product-page-details">
@@ -40,9 +33,9 @@
                     <div class="d-flex">
                         <select id="u-rating-fontawesome" name="rating" autocomplete="off">
                             <option value="1">1</option>
-                            <option value="2">2</option>
+                            <option value="1">2</option>
                             <option value="3">3</option>
-                            <option value="4">4</option>
+                            <option value="1">4</option>
                             <option value="5">5</option>
                         </select>
                         <span>(250 review)</span>
@@ -59,28 +52,28 @@
                         <tbody>
                             <tr>
                                 <td>Brand :</td>
-                                <td>{{ $mobil->brand }}</td>
+                                <td>{{ $mobil->tipe }}</td>
                             </tr>
                             <tr>
-                                <td>Availability :</td>
-                                <td class="in-stock">In stock</td>
+                                <td>Status :</td>
+                                <td class="in-stock">Tersedia</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <hr>
-                <ul class="product-color m-t-15">
+                <!-- <ul class="product-color m-t-15">
                     <li class="bg-primary"></li>
                     <li class="bg-secondary"></li>
                     <li class="bg-success"></li>
                     <li class="bg-info"></li>
                     <li class="bg-warning"></li>
-                </ul>
-                <div class="m-t-15">
+                </ul> -->
+                <!-- <div class="m-t-15">
                     <button class="btn btn-primary-gradien m-r-10" type="button" title="">Add To Cart</button>
                     <button class="btn btn-secondary-gradien m-r-10" type="button" title="">Quick View</button>
                     <button class="btn btn-success-gradien" type="button" title="">Buy Now</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -89,30 +82,30 @@
             <div class="col-sm-12">
                 <ul class="nav nav-tabs nav-material mb-0" id="top-tab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="top-home-tab" data-toggle="tab" href="#top-home" role="tab" aria-controls="top-home" aria-selected="true">Riwayat</a>
+                        <a class="nav-link active" id="top-home-tab" data-toggle="tab" href="#top-home" role="tab" aria-controls="top-home" aria-selected="true">Riwayat Sewa</a>
                         <div class="material-border"></div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="profile-top-tab" data-toggle="tab" href="#top-profile" role="tab" aria-controls="top-profile" aria-selected="false">Lacak</a>
                         <div class="material-border"></div>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" id="contact-top-tab" data-toggle="tab" href="#top-contact" role="tab" aria-controls="top-contact" aria-selected="false">Details</a>
                         <div class="material-border"></div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="brand-top-tab" data-toggle="tab" href="#top-brand" role="tab" aria-controls="top-brand" aria-selected="false">Brand</a>
                         <div class="material-border"></div>
-                    </li>
+                    </li> -->
                 </ul>
                 <div class="tab-content" id="top-tabContent">
                     <div class="tab-pane fade show active" id="top-home" role="tabpanel" aria-labelledby="top-home-tab">
-                        <div class="row">
+                        <div style="margin-top: 20px;" class="row">
                             <div class="col-sm-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h5>Data Customer</h5>
-                                        <span>21 Customer Terdaftar</span>
+                                        <h5>Data Penyewa</h5>
+                                        <span>23 Customer telah menyewa mobil ini</span>
                                     </div>
                                     <div class="table-responsive">
                                         <table class="table table-xl">
@@ -147,7 +140,7 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="top-profile" role="tabpanel" aria-labelledby="profile-top-tab">
-                        <div id="map" style="height: 70vh; width: 100%; border-radius:20px; margin-top: 20px;"></div>
+                        <div id="map" style="height: 60vh; width: 100%; border-radius:20px; margin-top: 20px;"></div>
                     </div>
                     <div class="tab-pane fade" id="top-contact" role="tabpanel" aria-labelledby="contact-top-tab">
                         <p class="mb-0 m-t-20">Lorem Ipsum is simply dummy text...</p>
@@ -200,14 +193,14 @@
                         
                   
                         var customIcon = L.icon({
-                            iconUrl: '/assets/images/logo/iconTitle.png', 
-                            iconSize: [100, 100],
-                            iconAnchor: [50, 100], 
+                            iconUrl: '/assets/images/logo/location.png', 
+                            iconSize: [80, 80],
+                            iconAnchor: [45, 100], 
                             popupAnchor: [0, -100] 
                         });
 
                         marker = L.marker(latLng, {icon: customIcon}).addTo(map)
-                            .bindPopup('<b>Lokasi Mobil</b><br>Latitude: ' + data.latitude + '<br>Longitude: ' + data.longitude)
+                            .bindPopup('<b>Lokasi Mobil saat ini</b><br><br>Latitude: ' + data.latitude + '<br>Longitude: ' + data.longitude)
                             .openPopup();
                     }
                 })

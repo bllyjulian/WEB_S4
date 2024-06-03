@@ -34,7 +34,7 @@
                            <div class="sale-chart">
                               <div class="media-body m-l-40">
                                  <h6 class="f-w-100 m-l-10">Rp. 943.000</h6>
-                                 <h4 class="mb-0 f-w-700 m-l-10">Total Sale</h4>
+                                 <h4 class="mb-0 f-w-700 m-l-10">Pendapatan</h4>
                               </div>
                            </div>
                         </div>
@@ -53,8 +53,8 @@
                            </div>
                            <div class="sale-chart">
                               <div class="media-body m-l-40">
-                                 <h6 class="f-w-100 m-l-10">Rp. 943.000</h6>
-                                 <h4 class="mb-0 f-w-700 m-l-10">Total Sale</h4>
+                                 <h6 class="f-w-100 m-l-10">36 Mobil</h6>
+                                 <h4 class="mb-0 f-w-700 m-l-10">Jumlah Mobil</h4>
                               </div>
                            </div>
                         </div>
@@ -73,8 +73,8 @@
                            </div>
                            <div class="sale-chart">
                               <div class="media-body m-l-40">
-                                 <h6 class="f-w-100 m-l-10">Rp. 943.000</h6>
-                                 <h4 class="mb-0 f-w-700 m-l-10">Total Sale</h4>
+                                 <h6 class="f-w-100 m-l-10">14 Mobil</h6>
+                                 <h4 class="mb-0 f-w-700 m-l-10">Mobil Disewa</h4>
                               </div>
                            </div>
                         </div>
@@ -93,8 +93,8 @@
                            </div>
                            <div class="sale-chart">
                               <div class="media-body m-l-40">
-                                 <h6 class="f-w-100 m-l-10">Rp. 943.000</h6>
-                                 <h4 class="mb-0 f-w-700 m-l-10">Total Sale</h4>
+                                 <h6 class="f-w-100 m-l-10">242 Customer</h6>
+                                 <h4 class="mb-0 f-w-700 m-l-10">Total Customer</h4>
                               </div>
                            </div>
                         </div>
@@ -108,7 +108,7 @@
       <div class="col-xl-12 xl-100 box-col-12">
          <div class="card crypto-revenue">
             <div class="card-header pb-0 d-flex">
-               <h5>Statistik Laporan<span class="badge badge-pill pill-badge-secondary f-14 f-w-600">2021</span></h5>
+               <h5>Statistik Laporan<span class="badge badge-pill pill-badge-secondary f-14 f-w-600">2024</span></h5>
                <ul class="creative-dots">
                   <li class="bg-primary big-dot"></li>
                   <li class="bg-secondary semi-big-dot"></li>
@@ -119,7 +119,7 @@
                </ul>
                <div class="header-right pull-right text-right">
                   <h5 class="mb-2">80 / 100</h5>
-                  <h6 class="f-w-700 mb-0">Total 81,67,536 $</h6>
+                  <h6 class="f-w-700 mb-0">Total Rp. 1.281.000</h6>
                </div>
             </div>
             <div class="card-body pt-0">
@@ -159,126 +159,62 @@
                               <div class="recent-images"><img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/1.png')); ?>" alt=""></div>
                            </td>
                            <td>
-                              <h5 class="default-text mb-0 f-w-700 f-18">Earton Men Running Shoes</h5>
+                              <h5 class="default-text mb-0 f-w-700 f-18">MITSUBISHI	</h5>
                            </td>
-                           <td><span class="badge badge-pill recent-badge f-12">Men wear</span></td>
-                           <td class="f-w-700">$45.00</td>
+                           <td><span class="badge badge-pill recent-badge f-12">ACURA</span></td>
+                           <td class="f-w-700">Rp. 350.000</td>
                            <td>
-                              <h6 class="mb-0">Stock</h6>
+                              <h6 class="mb-0">Tersedia</h6>
                            </td>
-                           <td><span class="badge badge-pill recent-badge"><i data-feather="more-horizontal"></i></span></td>
+                           <td><span class="badge badge-pill recent-badge">102 Kali</span></td>
                         </tr>
                         <tr>
                            <td>
                               <div class="recent-images-primary"><img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/2.png')); ?>" alt=""></div>
                            </td>
                            <td>
-                              <h5 class="font-primary mb-0 f-w-700 f-18">Kanvas Katha Women Bag</h5>
+                              <h5 class="font-primary mb-0 f-w-700 f-18">ALFA</h5>
                            </td>
-                           <td><span class="badge badge-pill recent-badge f-12">Brazil</span></td>
-                           <td class="f-w-700">$78.00</td>
+                           <td><span class="badge badge-pill recent-badge f-12">ROMEO</span></td>
+                           <td class="f-w-700">Rp. 700.000</td>
                            <td>
-                              <h6 class="mb-0">Stock</h6>
+                              <h6 class="mb-0">Disewa</h6>
                            </td>
-                           <td><span class="badge badge-pill recent-badge"><i data-feather="more-horizontal"></i></span></td>
+                           <td><span class="badge badge-pill recent-badge">67 Kali</span></td>
                         </tr>
                         <tr>
                            <td>
                               <div class="recent-images-secondary"><img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/3.png')); ?>" alt=""></div>
                            </td>
                            <td>
-                              <h5 class="font-secondary mb-0 f-w-700 f-18">Unisex Aviator Sunglasses</h5>
+                              <h5 class="font-secondary mb-0 f-w-700 f-18">NISSAN</h5>
                            </td>
-                           <td><span class="badge badge-pill recent-badge f-12">London</span></td>
-                           <td class="f-w-700">$50.00</td>
+                           <td><span class="badge badge-pill recent-badge f-12">GTR</span></td>
+                           <td class="f-w-700">Rp. 500.000</td>
                            <td>
-                              <h6 class="mb-0">Stock</h6>
+                              <h6 class="mb-0">Tersedia</h6>
                            </td>
-                           <td><span class="badge badge-pill recent-badge"><i data-feather="more-horizontal"></i></span></td>
+                           <td><span class="badge badge-pill recent-badge">56 Kali</span></td>
                         </tr>
                         <tr>
                            <td>
                               <div class="recent-images-warning"><img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/4.png')); ?>" alt=""></div>
                            </td>
                            <td>
-                              <h5 class="font-warning mb-0 f-w-700 f-18">Men’s Cotton Round T-shirt</h5>
+                              <h5 class="font-warning mb-0 f-w-700 f-18">LAND</h5>
                            </td>
-                           <td><span class="badge badge-pill recent-badge f-12">U.S.A</span></td>
-                           <td class="f-w-700">$38.00</td>
+                           <td><span class="badge badge-pill recent-badge f-12">ROVER</span></td>
+                           <td class="f-w-700">Rp. 100.000</td>
                            <td>
-                              <h6 class="mb-0">Stock</h6>
+                              <h6 class="mb-0">Tersedia</h6>
                            </td>
-                           <td><span class="badge badge-pill recent-badge"><i data-feather="more-horizontal"> </i></span></td>
+                           <td><span class="badge badge-pill recent-badge">43 Kali</span></td>
                         </tr>
                      </tbody>
                   </table>
                </div>
                <div class="code-box-copy">
                   <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#example-head5" title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                  <pre><code class="language-html" id="example-head5">&lt;!-- Cod Box Copy begin --&gt;
-&lt;div class="activity-table table-responsive recent-table"&gt;
-&lt;table class="table table-bordernone"&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;
-&lt;div class="recent-images"&gt;&lt;img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/1.png')); ?>" alt=""&gt;&lt;/div&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;h5 class="default-text mb-0 f-w-700 f-18"&gt;Earton Men Running Shoes&lt;/h5&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;span class="badge badge-pill recent-badge f-12"&gt;Men wear&lt;/span&gt;&lt;/td&gt;
-&lt;td class="f-w-700"&gt;$45.00&lt;/td&gt;
-&lt;td&gt;
-&lt;h6 class="mb-0"&gt;Stock&lt;/h6&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;span class="badge badge-pill recent-badge"&gt;&lt;i data-feather="more-horizontal"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;
-&lt;div class="recent-images-primary"&gt;&lt;img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/2.png')); ?>" alt=""&gt;&lt;/div&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;h5 class="font-primary mb-0 f-w-700 f-18"&gt;Kanvas Katha Women Bag&lt;/h5&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;span class="badge badge-pill recent-badge f-12"&gt;Brazil&lt;/span&gt;&lt;/td&gt;
-&lt;td class="f-w-700"&gt;$78.00&lt;/td&gt;
-&lt;td&gt;
-&lt;h6 class="mb-0"&gt;Stock&lt;/h6&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;span class="badge badge-pill recent-badge"&gt;&lt;i data-feather="more-horizontal"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;
-&lt;div class="recent-images-secondary"&gt;&lt;img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/3.png')); ?>" alt=""&gt;&lt;/div&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;h5 class="font-secondary mb-0 f-w-700 f-18"&gt;Unisex Aviator Sunglasses&lt;/h5&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;span class="badge badge-pill recent-badge f-12"&gt;London&lt;/span&gt;&lt;/td&gt;
-&lt;td class="f-w-700"&gt;$50.00&lt;/td&gt;
-&lt;td&gt;
-&lt;h6 class="mb-0"&gt;Stock&lt;/h6&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;span class="badge badge-pill recent-badge"&gt;&lt;i data-feather="more-horizontal"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;
-&lt;div class="recent-images-warning"&gt;&lt;img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/4.png')); ?>" alt=""&gt;&lt;/div&gt;
-&lt;/td&gt;
-&lt;td&gt;
-&lt;h5 class="font-warning mb-0 f-w-700 f-18"&gt;Men&rsquo;s Cotton Round T-shirt&lt;/h5&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;span class="badge badge-pill recent-badge f-12"&gt;U.S.A&lt;/span&gt;&lt;/td&gt;
-&lt;td class="f-w-700"&gt;$38.00&lt;/td&gt;
-&lt;td&gt;
-&lt;h6 class="mb-0"&gt;Stock&lt;/h6&gt;
-&lt;/td&gt;
-&lt;td&gt;&lt;span class="badge badge-pill recent-badge"&gt;&lt;i data-feather="more-horizontal"&gt; &lt;/i&gt;&lt;/span&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;!-- Cod Box Copy end --&gt;</code></pre>
                </div>
             </div>
          </div>
@@ -287,8 +223,7 @@
          <div class="card gradient-secondary o-hidden monthly-overview">
             <div class="card-header no-border bg-transparent pb-0">
                <h5>Mobil Unggulan</h5>
-               <h6 class="mb-2">60% OFF</h6>
-               <span class="pull-right right-badge"><span class="badge badge-pill">$301</span></span>
+               <span class="pull-right right-badge"><span class="badge badge-pill">Rp. 700.000</span></span>
             </div>
             <div class="card-body pt-0">
                <ul class="rounds-decore">
@@ -298,7 +233,7 @@
                   <li>                                       </li>
                </ul>
                <span class="overview-dots full-lg-dots"><span class="dots-group"><span class="dots dots1"></span><span class="dots dots2 dot-small"></span><span class="dots dots3 dot-small"></span><span class="dots dots4 dot-medium"></span><span class="dots dots5 dot-small"></span><span class="dots dots6 dot-small"></span><span class="dots dots7 dot-small-semi"></span><span class="dots dots8 dot-small-semi"></span><span class="dots dots9 dot-small"></span></span></span>
-               <div class="p-watch"><img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/watch.png')); ?>" alt=""></div>
+               <div class="p-watch"><img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/m1.png')); ?>" alt=""></div>
             </div>
          </div>
       </div>
@@ -307,7 +242,7 @@
             <div class="card-body pb-0" id="customers-ratio">
                <div class="media customers">
                   <div class="media-body">
-                     <h5>New Customers</h5>
+                     <h5>Customer Baru</h5>
                   </div>
                   <div class="setting-dot">
                      <div class="setting-bg-primary date-picker-setting position-set pull-right"><i class="fa fa-spin fa-cog"></i></div>
@@ -320,9 +255,9 @@
       <div class="col-xl-8 xl-100 box-col-12">
          <div class="card month-overview">
             <div class="card-header pb-3">
-               <h5>This Month Revenue</h5>
-               <h2 class="m-t-20 f-w-800">$57k</h2>
-               <span class="badge badge-pill pill-badge-secondary f-14 f-w-600">14%</span>
+               <h5>Pendapatan Bulan ini</h5>
+               <h2 class="m-t-20 f-w-800">+Rp. 143.000</h2>
+               <span class="badge badge-pill pill-badge-secondary f-14 f-w-600"></span>
                <ul class="creative-dots">
                   <li class="bg-primary big-dot"></li>
                   <li class="bg-secondary semi-big-dot"></li>
