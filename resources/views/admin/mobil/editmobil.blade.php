@@ -35,14 +35,17 @@
                            <img id="preview-image" style="width: 100%;" src="{{ asset($mobil->foto_mobil) }}" alt="Preview Image">
                         </div>
                         <div class="form-group pt-4">
-                           <label for="nama_mobil">Nama Mobil</label>
+                           <label for="nama_mobil">Brand</label>
                            <input style="border-radius:5px;" class="form-control" type="text" id="nama_mobil" name="nama_mobil" value="{{ $mobil->nama_mobil }}" required>
                         </div>
                         <div class="form-group">
                            <label class="col-form-label">Tipe</label>
                            <input style="border-radius:5px;" class="form-control" type="text" id="tipe" name="tipe" value="{{ $mobil->tipe }}" required>
                         </div>
-
+                        <div class="form-group">
+                           <label class="col-form-label">Jenis Transmisi</label>
+                           <input style="border-radius:5px;" class="form-control" type="text" id="transmisi" name="transmisi" value="{{ $mobil->transmisi }}" required>
+                        </div>
                      </div>
                      <div class="col-sm-6">
                      <div class="form-group">
@@ -59,7 +62,7 @@
                         </div>
                         <div class="form-group">
                            <label class="col-form-label">Kecepatan</label>
-                           <input style="border-radius:5px;" class="form-control" type="text" id="kecepatan" name="kecepatan" value="{{ $mobil->kecepatan }}" required>
+                           <input style="border-radius:5px;" class="form-control" type="number" id="kecepatan" name="kecepatan" value="{{ $mobil->kecepatan }}" required>
                         </div>
                         <div class="form-group">
                            <label class="col-form-label">Foto Mobil</label>
@@ -70,7 +73,7 @@
                         </div>
                         <div class="form-group">
                            <label class="col-form-label">Harga Sewa Per Hari</label>
-                           <input style="border-radius:5px;" class="form-control" type="text" id="harga_sewa_perhari" name="harga_sewa_perhari" value="{{ $mobil->harga_sewa_perhari }}" required>
+                           <input style="border-radius:5px;" class="form-control" type="number" id="harga_sewa_perhari" name="harga_sewa_perhari" value="{{ $mobil->harga_sewa_perhari }}" required>
                         </div>
                      </div>
                   </div>

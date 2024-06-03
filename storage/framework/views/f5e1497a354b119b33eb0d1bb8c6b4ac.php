@@ -36,7 +36,7 @@
                                     <th>Brand</th>
                                     <th>Harga Sewa</th>
                                     <th>Kapasitas Penumpang</th>
-                                    <th>Status</th>
+                                    <th>Transmisi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -47,7 +47,7 @@
                                         <td><?php echo e($mobil->nama_mobil); ?></td>
                                         <td><?php echo e($mobil->harga_sewa_perhari); ?></td>
                                         <td><?php echo e($mobil->kapasitas_penumpang); ?></td>
-                                        <td><?php echo e($mobil->username); ?></td>
+                                        <td><?php echo e($mobil->transmisi); ?></td>
                                         <td>
                                             <div class="d-flex">
                                                 <form action="<?php echo e(route('admin.mobil.hapus', ['id_mobil' => $mobil->id_mobil])); ?>" method="POST" class="form-hapus">

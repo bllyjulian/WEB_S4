@@ -21,6 +21,7 @@ class DataMobil extends Model
         'tipe',
         'bahan_bakar',
         'kecepatan',
+        'transmisi',
         'foto_mobil',
         'username'
     ];

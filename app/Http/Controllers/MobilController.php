@@ -39,6 +39,7 @@ class MobilController extends Controller
         $mobil->kapasitas_penumpang = $request->kapasitas_penumpang;
         $mobil->bahan_bakar = $request->bahan_bakar;
         $mobil->kecepatan = $request->kecepatan;
+        $mobil->transmisi = $request->transmisi;
         $mobil->harga_sewa_perhari = $request->harga_sewa_perhari;
 
 // local
@@ -88,6 +89,7 @@ class MobilController extends Controller
             'tipe' => 'required|string|max:255',
             'bahan_bakar' => 'required|string|max:255',
             'kecepatan' => 'required|string|max:255',
+            'transmisi' => 'required|string|max:255',
             'foto_mobil' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'username' => 'required|string|max:15',
         ]);

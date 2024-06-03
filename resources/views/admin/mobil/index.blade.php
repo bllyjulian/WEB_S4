@@ -37,7 +37,7 @@
                                     <th>Brand</th>
                                     <th>Harga Sewa</th>
                                     <th>Kapasitas Penumpang</th>
-                                    <th>Status</th>
+                                    <th>Transmisi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -48,7 +48,7 @@
                                         <td>{{ $mobil->nama_mobil }}</td>
                                         <td>{{ $mobil->harga_sewa_perhari }}</td>
                                         <td>{{ $mobil->kapasitas_penumpang }}</td>
-                                        <td>{{ $mobil->username }}</td>
+                                        <td>{{ $mobil->transmisi }}</td>
                                         <td>
                                             <div class="d-flex">
                                                 <form action="{{ route('admin.mobil.hapus', ['id_mobil' => $mobil->id_mobil]) }}" method="POST" class="form-hapus">

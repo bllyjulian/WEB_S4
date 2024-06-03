@@ -73,7 +73,7 @@
                      </div>
                      <div class="form-group">
                         <label for="kecepatan">Kecepatan</label>
-                        <input style="border-radius:5px;" class="form-control" id="kecepatan" type="text" name="kecepatan" placeholder="Masukkan Kecepatan" required>
+                        <input style="border-radius:5px;" class="form-control" id="kecepatan" type="number" name="kecepatan" placeholder="Masukkan Kecepatan" required>
                      </div>
                      <div class="form-group">
                         <label for="foto-mobil">Foto Mobil</label>
@@ -88,6 +88,10 @@
                      </div>
                   </fieldset>
                   <fieldset>
+                     <div class="form-group">
+                        <label for="harga_sewa_perhari">Transmisi</label>
+                        <input style="border-radius:5px;" class="form-control" id="transmisi" type="text" name="transmisi" placeholder="Jenis Transmisi" required>
+                     </div>
                      <div class="form-group">
                         <label for="harga_sewa_perhari">Harga Sewa Per hari</label>
                         <input style="border-radius:5px;" class="form-control" id="harga_sewa_perhari" type="text" name="harga_sewa_perhari" placeholder="Masukkan Harga" required>
