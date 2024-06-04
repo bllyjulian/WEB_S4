@@ -41,7 +41,8 @@
         .container {
             position: relative;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: scroll;
         }
 
         .row {
@@ -293,7 +294,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            height: 100vh;
+            height: 120vh;
             width: 300vw;
             transform: translate(35%, 0);
             background-image: linear-gradient(-45deg, var(--primary-color) 0%, var(--secondary-color) 100%);

@@ -41,7 +41,8 @@
         .container {
             position: relative;
             min-height: 100vh;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: scroll;
         }
 
         .row {
@@ -293,7 +294,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            height: 100vh;
+            height: 120vh;
             width: 300vw;
             transform: translate(35%, 0);
             background-image: linear-gradient(-45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -432,7 +433,7 @@
             border: 1px solid #ccc;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 10;
-            width: 100%; /* Lebih baik menentukan lebar secara eksplisit */
+            width: 100%;
             transition: transform 0.5s ease-in-out;
         }
         
