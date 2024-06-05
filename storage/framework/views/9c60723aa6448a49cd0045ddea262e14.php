@@ -41,13 +41,12 @@
         .container {
             position: relative;
             min-height: 100vh;
-            overflow-x: hidden;
-            overflow-y: scroll;
+            overflow: hidden;
         }
 
         .row {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: wrap;z
             height: 100vh;
         }
 
@@ -294,7 +293,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            height: 120vh;
+            height: 100vh;
             width: 300vw;
             transform: translate(35%, 0);
             background-image: linear-gradient(-45deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -499,10 +498,6 @@
                         <div class="input-group">
                             <i class='bx bxs-lock-alt'></i>
                             <input type="password" name="password" placeholder="Password" required>
-                        </div>
-                        <div class="input-group">
-                            <i class='bx bxs-lock-alt'></i>
-                            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
                         </div>
                         <div class="input-group">
                             <i class='bx bxs-user'></i>

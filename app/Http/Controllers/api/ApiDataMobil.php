@@ -11,10 +11,7 @@ class ApiDataMobil extends Controller
 {
     public function index()
     {
-        // Mendapatkan semua mobil dan memuat relasi dengan akun
         $mobils = DataMobil::with('akun')->get();
-
-        // Memetakan data mobil dan menambahkan informasi dari tabel akun
         $mobils = $mobils->map(function ($mobil) {
             return [
                 'id_mobil' => $mobil->id_mobil,
@@ -67,7 +64,6 @@ class ApiDataMobil extends Controller
                 'logo_mitra' => $mobil->akun->logo_mitra ?? null
             ];
         });
-
         return response()->json($mobils);
     }
 }

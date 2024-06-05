@@ -83,41 +83,6 @@
                             <p class="team-member-designation">Software Quality Assurance</p>
                         </div>
                     </div>
-                    <!-- <div class="col-md-3 mb-5">
-                        <div class="team-member-card">
-                            <img src="assets/images/user/user_4.png" alt="Onyama Limba" class="team-member-avatar">
-                            <h6 class="mb-0">Onyama Limba</h6>
-                            <p class="team-member-designation">Software Engineer</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-5">
-                        <div class="team-member-card">
-                            <img src="assets/images/user/user_5.png" alt="Athar Malakooti" class="team-member-avatar">
-                            <h6 class="mb-0">Athar Malakooti</h6>
-                            <p class="team-member-designation">CEO</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-5">
-                        <div class="team-member-card">
-                            <img src="assets/images/user/user_6.png" alt="Kung Jiyeon" class="team-member-avatar">
-                            <h6 class="mb-0">Kung Jiyeon</h6>
-                            <p class="team-member-designation">HR Manager</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-5">
-                        <div class="team-member-card">
-                            <img src="assets/images/user/user_7.png" alt="Mathijn Agter" class="team-member-avatar">
-                            <h6 class="mb-0">Mathijn Agter</h6>
-                            <p class="team-member-designation">Finance Manager</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-5">
-                        <div class="team-member-card">
-                            <img src="assets/images/user/user_8.png" alt="Jontray Arnold" class="team-member-avatar">
-                            <h6 class="mb-0">Jontray Arnold</h6>
-                            <p class="team-member-designation">Software Engineer</p>
-                        </div>
-                    </div> -->
                 </div>
             </section>
         </div>

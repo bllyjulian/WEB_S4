@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\ApiDataUser;
 use App\Http\Controllers\api\ApiDataMitra;
 use App\Http\Controllers\api\ApiDataMobil;
+use App\Http\Controllers\api\ApiDataBooking;
 use App\Http\Controllers\api\ApiDataTransaksi;
 use App\Http\Controllers\api\ApiDataJenisPembayaran;
 
@@ -28,9 +29,14 @@ Route::prefix($token)->group(function () {
     Route::get('/mobil', [ApiDataMobil::class, 'index']);
     Route::get('/mobil/{username}', [ApiDataMobil::class, 'show']);
 
+    Route::get('/transaksi', [ApiDataTransaksi::class, 'index']);
+    Route::get('/transaksi/status/{status}', [ApiDataTransaksi::class, 'showByStatus']); 
     Route::post('/transaksi', [ApiDataTransaksi::class, 'store']);
     Route::post('/upload-bukti', [ApiDataTransaksi::class, 'update']);
 
     Route::get('/jenis-pembayaran', [ApiDataJenisPembayaran::class, 'index']);
     Route::get('/jenis-pembayaran/{id_jenis}', [ApiDataJenisPembayaran::class, 'show']);
+
+    Route::get('/booking', [ApiDataBooking::class, 'index']);
+    Route::get('/booking/mobil/{id_mobil}', [ApiDataBooking::class, 'showByMobil']);
 });

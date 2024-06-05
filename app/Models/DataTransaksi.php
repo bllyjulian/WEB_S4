@@ -27,7 +27,21 @@ class DataTransaksi extends Model
         'tipe_bayar',
         'tgl_transaksi',
     ];
-    
-    
+
+    public function mitra()
+    {
+        return $this->belongsTo(DataMitra::class, 'username', 'username');
+    }
+
+    public function mobil()
+    {
+        return $this->belongsTo(DataMobil::class, 'id_mobil', 'id_mobil');
+    }
+
+    public function jenisPembayaran()
+    {
+        return $this->belongsTo(DataJenisPembayaran::class, 'id_jenis', 'id_jenis');
+    }
+
     public $timestamps = false;
 }

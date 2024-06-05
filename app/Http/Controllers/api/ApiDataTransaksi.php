@@ -3,11 +3,64 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\DataTransaksi;
+use App\Models\DataMitra;
+use App\Models\DataMobil;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class ApiDataTransaksi extends Controller
 {
+    public function index()
+    {
+        $datatransaksi = DataTransaksi::with(['mitra', 'mobil', 'jenisPembayaran'])->get()
+            ->map(function($transaksi) {
+                return [
+                    'id_transaksi' => $transaksi->id_transaksi,
+                    'total' => $transaksi->total,
+                    'status' => $transaksi->status,
+                    'bukti_pembayaran' => $transaksi->bukti_pembayaran,
+                    'username' => $transaksi->username,
+                    'nama_mitra' => $transaksi->mitra->nama_lengkap,
+                    'id_mobil' => $transaksi->id_mobil,
+                    'nama_mobil' => $transaksi->mobil->nama_mobil,
+                    'id_jenis' => $transaksi->id_jenis,
+                    'nama_pembayaran' => $transaksi->jenisPembayaran->nama_pembayaran,
+                    'tanggal_mulai' => $transaksi->tanggal_mulai,
+                    'tanggal_akhir' => $transaksi->tanggal_akhir,
+                    'tipe_bayar' => $transaksi->tipe_bayar,
+                    'tgl_transaksi' => $transaksi->tgl_transaksi,
+                ];
+            });
+
+        return response()->json($datatransaksi);
+    }
+
+    public function showByStatus($status)
+    {
+        $datatransaksi = DataTransaksi::with(['mitra', 'mobil', 'jenisPembayaran'])
+            ->where('status', $status)
+            ->get()
+            ->map(function($transaksi) {
+                return [
+                    'id_transaksi' => $transaksi->id_transaksi,
+                    'total' => $transaksi->total,
+                    'status' => $transaksi->status,
+                    'bukti_pembayaran' => $transaksi->bukti_pembayaran,
+                    'username' => $transaksi->username,
+                    'nama_mitra' => $transaksi->mitra->nama_lengkap,
+                    'id_mobil' => $transaksi->id_mobil,
+                    'nama_mobil' => $transaksi->mobil->nama_mobil,
+                    'id_jenis' => $transaksi->id_jenis,
+                    'nama_pembayaran' => $transaksi->jenisPembayaran->nama_pembayaran,
+                    'tanggal_mulai' => $transaksi->tanggal_mulai,
+                    'tanggal_akhir' => $transaksi->tanggal_akhir,
+                    'tipe_bayar' => $transaksi->tipe_bayar,
+                    'tgl_transaksi' => $transaksi->tgl_transaksi,
+                ];
+            });
+
+        return response()->json($datatransaksi);
+    }
     public function store(Request $request)
     {
         $tanggalSekarang = Carbon::now()->format('Ymd');
@@ -72,3 +125,5 @@ class ApiDataTransaksi extends Controller
         return response()->json($response, 200);
     }
 }
+
+
