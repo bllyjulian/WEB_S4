@@ -20,6 +20,7 @@ class ApiDataTransaksi extends Controller
                     'status' => $transaksi->status,
                     'bukti_pembayaran' => $transaksi->bukti_pembayaran,
                     'username' => $transaksi->username,
+                    'username_mb' => $transaksi->username_mb,
                     'nama_mitra' => $transaksi->mitra->nama_lengkap,
                     'id_mobil' => $transaksi->id_mobil,
                     'nama_mobil' => $transaksi->mobil->nama_mobil,
@@ -47,6 +48,64 @@ class ApiDataTransaksi extends Controller
                     'status' => $transaksi->status,
                     'bukti_pembayaran' => $transaksi->bukti_pembayaran,
                     'username' => $transaksi->username,
+                    'username_mb' => $transaksi->username_mb,
+                    'nama_mitra' => $transaksi->mitra->nama_lengkap,
+                    'id_mobil' => $transaksi->id_mobil,
+                    'nama_mobil' => $transaksi->mobil->nama_mobil,
+                    'id_jenis' => $transaksi->id_jenis,
+                    'nama_pembayaran' => $transaksi->jenisPembayaran->nama_pembayaran,
+                    'tanggal_mulai' => $transaksi->tanggal_mulai,
+                    'tanggal_akhir' => $transaksi->tanggal_akhir,
+                    'tipe_bayar' => $transaksi->tipe_bayar,
+                    'tgl_transaksi' => $transaksi->tgl_transaksi,
+                ];
+            });
+
+        return response()->json($datatransaksi);
+    }
+
+    public function showByUsernameMb($username_mb)
+    {
+        $datatransaksi = DataTransaksi::with(['mitra', 'mobil', 'jenisPembayaran'])
+            ->where('username_mb', $username_mb)
+            ->get()
+            ->map(function($transaksi) {
+                return [
+                    'id_transaksi' => $transaksi->id_transaksi,
+                    'total' => $transaksi->total,
+                    'status' => $transaksi->status,
+                    'bukti_pembayaran' => $transaksi->bukti_pembayaran,
+                    'username' => $transaksi->username,
+                    'username_mb' => $transaksi->username_mb,
+                    'nama_mitra' => $transaksi->mitra->nama_lengkap,
+                    'id_mobil' => $transaksi->id_mobil,
+                    'nama_mobil' => $transaksi->mobil->nama_mobil,
+                    'id_jenis' => $transaksi->id_jenis,
+                    'nama_pembayaran' => $transaksi->jenisPembayaran->nama_pembayaran,
+                    'tanggal_mulai' => $transaksi->tanggal_mulai,
+                    'tanggal_akhir' => $transaksi->tanggal_akhir,
+                    'tipe_bayar' => $transaksi->tipe_bayar,
+                    'tgl_transaksi' => $transaksi->tgl_transaksi,
+                ];
+            });
+
+        return response()->json($datatransaksi);
+    }
+
+    public function showByStatusAndUsernameMb($status, $username_mb)
+    {
+        $datatransaksi = DataTransaksi::with(['mitra', 'mobil', 'jenisPembayaran'])
+            ->where('status', $status)
+            ->where('username_mb', $username_mb)
+            ->get()
+            ->map(function($transaksi) {
+                return [
+                    'id_transaksi' => $transaksi->id_transaksi,
+                    'total' => $transaksi->total,
+                    'status' => $transaksi->status,
+                    'bukti_pembayaran' => $transaksi->bukti_pembayaran,
+                    'username' => $transaksi->username,
+                    'username_mb' => $transaksi->username_mb,
                     'nama_mitra' => $transaksi->mitra->nama_lengkap,
                     'id_mobil' => $transaksi->id_mobil,
                     'nama_mobil' => $transaksi->mobil->nama_mobil,

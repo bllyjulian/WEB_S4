@@ -30,7 +30,10 @@ Route::prefix($token)->group(function () {
     Route::get('/mobil/{username}', [ApiDataMobil::class, 'show']);
 
     Route::get('/transaksi', [ApiDataTransaksi::class, 'index']);
-    Route::get('/transaksi/status/{status}', [ApiDataTransaksi::class, 'showByStatus']); 
+    Route::get('/transaksi/status/{status}', [ApiDataTransaksi::class, 'showByStatus']);
+    Route::get('/transaksi/username_mb/{username_mb}', [ApiDataTransaksi::class, 'showByUsernameMb']);
+    Route::get('/transaksi/status/{status}/username_mb/{username_mb}', [ApiDataTransaksi::class, 'showByStatusAndUsernameMb']);
+    
     Route::post('/transaksi', [ApiDataTransaksi::class, 'store']);
     Route::post('/upload-bukti', [ApiDataTransaksi::class, 'update']);
 
