@@ -26,10 +26,7 @@
          <a class="bar-icons" href=""><i class="icon-wallet"></i><span>Dompet</span></a>
          </li>
          <li>
-            <span class="badge badge-pill badge-primary">New</span><a class="bar-icons" href="#"><i class="pe-7s-gift"></i><span>Apps</span></a>
-         </li>
-         <li>
-            <a class="bar-icons" href="#"><i class="pe-7s-copy-file"></i><span>Pages</span></a>
+        <a class="bar-icons" href="{{route('admin.profil')}}"><i class="icon-stamp"></i><span>Profil</span></a>
          </li>
       </ul>
    </div>

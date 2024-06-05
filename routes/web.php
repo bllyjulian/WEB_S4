@@ -11,6 +11,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\TransaksiAdminController;
 use App\Http\Controllers\DetailSewaController;
+use App\Http\Controllers\ProfilAdminController;
 use App\Http\Controllers\AuthController;
 
 
@@ -69,6 +70,11 @@ Route::prefix('admin')->group(function () {
         Route::get('/detailsewa/{id}', [DetailSewaController::class, 'detail'])->name('admin.detailsewa.riwayatsewa');
         Route::get('/detailsewa/{id}/location', [DetailSewaController::class, 'getLatitudeLongitude'])->name('admin.detailsewa.location');
     });
+    Route::prefix('profil')->group(function () {
+        Route::get('', [ProfilAdminController::class, 'index'])->name('admin.profil');
+        Route::post('/update-logo-mitra', [ProfilAdminController::class, 'updateLogoMitra'])->name('update-logo-mitra');
+
+    });
     
 });
 
@@ -78,5 +84,6 @@ Route::view('button-builder', 'perk-ui.button-builder')->name('button-builder');
 Route::get('/refresh', function () {
     Artisan::call('config:clear');
     Artisan::call('cache:clear');
-    return 'Configuration and cache cleared.';
+    Artisan::call('route:clear');
+    return 'Done bg';
 });

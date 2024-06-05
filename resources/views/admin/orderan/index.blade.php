@@ -1,6 +1,6 @@
 @extends('layouts.simple.master_mitra')
 
-@section('title', 'Order History')
+@section('title', 'Riwayat Pesanan')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatables.css') }}">

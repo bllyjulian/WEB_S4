@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DataMitra;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -29,14 +30,12 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->id_lvl === 3) {
-                // Return a JSON response with success status
+                $request->session()->put('user', $user);
                 return response()->json(['success' => true, 'message' => 'Login berhasil!'], 200);
             } else {
-                // Return a JSON response with success status
                 return response()->json(['success' => true, 'message' => 'Login berhasil!'], 200);
             }
         } else {
-            // Return a JSON response with error status
             return response()->json(['success' => false, 'message' => 'Username atau password salah!'], 401);
         }
     }
