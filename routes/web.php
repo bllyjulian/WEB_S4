@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminMobilinkController;
 use App\Http\Controllers\LPController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MobilController;
+use App\Http\Controllers\TransaksiAdminController;
 use App\Http\Controllers\DetailSewaController;
 use App\Http\Controllers\AuthController;
 
@@ -49,7 +50,7 @@ Route::prefix('admin')->group(function () {
         Route::get('', [AdminMitraController::class, 'customer'])->name('admin.customer');
     });
     Route::prefix('orderan')->group(function () {
-        Route::get('', [AdminMitraController::class, 'orderan'])->name('admin.orderan');
+        Route::get('', [TransaksiAdminController::class, 'index'])->name('admin.orderan');
     });
     Route::prefix('data-mobil')->group(function () {
         Route::get('', [MobilController::class, 'index'])->name('admin.mobil');

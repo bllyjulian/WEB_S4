@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\DataCustomer;
 use Illuminate\Http\Request;
+use App\Models\DataTransaksi;
+
 
 class AdminMitraController extends Controller
 {
@@ -17,6 +19,7 @@ class AdminMitraController extends Controller
     }
     public function orderan()
     {
+        $transaksis = DataTransaksi::all();
         return view('admin.orderan.index');
     }
     public function mobil()

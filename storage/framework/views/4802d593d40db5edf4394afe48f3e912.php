@@ -16,7 +16,7 @@
             <a class="bar-icons" href="<?php echo e(route('admin.detailsewa')); ?>"><i class="icon-map-alt"></i><span>Lacak</span></a>
          </li>
          <li>
-            <span class="badge badge-pill badge-danger">48</span><a class="bar-icons" href="<?php echo e(route('admin.orderan')); ?>"><i class="pe-7s-diamond"></i><span>Orderan</span></a>
+            <span class="badge badge-pill badge-danger">8</span><a class="bar-icons" href="<?php echo e(route('admin.orderan')); ?>"><i class="pe-7s-diamond"></i><span>Orderan</span></a>
          
          </li>
          <li>
