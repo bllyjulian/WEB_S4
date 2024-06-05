@@ -20,13 +20,11 @@ class ProfilAdminController extends Controller
         ]);
 
         $user = Auth::user();
-
         if ($request->hasFile('logo_mitra')) {
             $imageName = time() . '.' . $request->logo_mitra->extension();
             $request->logo_mitra->move(public_path('assets/images/fp_mitra'), $imageName);
             $user->logo_mitra = 'assets/images/fp_mitra/' . $imageName;
             $user->save();
-
             return response()->json(['logo_mitra' => asset($user->logo_mitra)], 200);
         }
 

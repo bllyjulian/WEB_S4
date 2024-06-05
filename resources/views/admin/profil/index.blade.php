@@ -157,11 +157,9 @@
         L.marker([{{ $user->latitude }}, {{ $user->longitude }}]).addTo(map)
             .bindPopup('{{ $user->nama_toko }}')
             .openPopup();
-
         document.getElementById('editProfileImage').addEventListener('click', function () {
             document.getElementById('profileImageInput').click();
         });
-
         document.getElementById('profileImageInput').addEventListener('change', function () {
             var formData = new FormData(document.getElementById('profileImageForm'));
             $.ajax({
