@@ -1,18 +1,22 @@
-<?php $__env->startSection('title', 'Customer'); ?>
+<?php $__env->startSection('title', 'Data Mobil'); ?>
 
 <?php $__env->startSection('css'); ?>
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/datatables.css')); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/owlcarousel.css')); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/rating.css')); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/sweetalert2.css')); ?>">
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('style'); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-title'); ?>
-    <h2>Admin<span>Customer</span></h2>
+    <h2>Data<span>Mobil</span></h2>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-items'); ?>
-    <li class="breadcrumb-item">Customer</li>
-    <li class="breadcrumb-item">Data Customer</li>
+    <li class="breadcrumb-item">Mobil</li>
+    <li class="breadcrumb-item">Data Mobil</li>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -20,37 +24,39 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
-                <div class="card-header">
+            <div class="card-header">
                     <h5>Data Customer</h5>
-                    <span>21 Customer Terdaftar</span>
+                    <span><?php echo e(count($customers)); ?> Customer Terdaftar</span>
                 </div>
-                <div class="table-responsive">
-                    <table class="table table-xl">
-                        <thead>
-                            <tr>
+                <div class="card-body">
+                    <div class="table-responsive product-table">
+                        <table class="display" id="basic-1">
+                            <thead>
+                                <tr>
                                 <th>No</th>
-                                <th>Username</th>
-                                <th>Nama Lengkap</th>
-                                <th>Email</th>
-                                <th>Nomor Hp</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Domisili</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $__currentLoopData = $customer; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <tr>
-                                <td><?php echo e($key + 1); ?></td>
-                                <td><?php echo e($item->username_mb); ?></td>
-                                <td><?php echo e($item->nama); ?></td>
-                                <td><?php echo e($item->email); ?></td>
-                                <td><?php echo e($item->nomor_hp_user); ?></td>
-                                <td><?php echo e($item->tgl_lahir); ?></td>
-                                <td><?php echo e($item->domisili); ?></td>
-                            </tr>
-                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        </tbody>
-                    </table>
+                                    <th>Username</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>Email</th>
+                                    <th>Nomor Hp</th>
+                                    <th>Tanggal Lahir</th>
+                                    <th>Domisili</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php $__currentLoopData = $customers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <tr>
+                                    <td><?php echo e($key + 1); ?></td>
+                                        <td><?php echo e($item->username_mb); ?></td>
+                                        <td><?php echo e($item->nama); ?></td>
+                                        <td><?php echo e($item->email); ?></td>
+                                        <td><?php echo e($item->nomor_hp_user); ?></td>
+                                        <td><?php echo e($item->tgl_lahir); ?></td>
+                                        <td><?php echo e($item->domisili); ?></td>
+                                    </tr>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,36 +65,41 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="<?php echo e(asset('assets/js/sweet-alert/sweetalert.min.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/sweet-alert/app.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/owlcarousel/owl.carousel.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/datatable/datatables/jquery.dataTables.min.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/rating/jquery.barrating.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/rating/rating-script.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/ecommerce.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/product-list-custom.js')); ?>"></script>
 <script>
-    $(document).ready(function() {
-        $('input[type="checkbox"]').on('change', function() {
-            var username = $(this).data('username');
-            if ($(this).is(':checked')) {
-                if (confirm('Apakah Anda ingin mengaktifkan akun ini?')) {
-                    // Kirim permintaan AJAX untuk mengubah status_akun menjadi 1
-                    $.ajax({
-                        type: 'POST',
-                        url: '/mobilink/mitra/activate-account',
-                        data: {
-                            username: username
-                        },
-                        success: function(response) {
-                            console.log(response);
-                            // Tambahkan logika untuk menangani respons dari server
-                        },
-                        error: function(xhr, status, error) {
-                            console.error(error);
-                            // Tambahkan penanganan kesalahan di sini
-                        }
+document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.btn-hapus');
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const idMobil = this.getAttribute('data-id');
+            const form = this.closest('form');
+
+            swal({
+                title: "Apakah anda yakin ingin menghapus data ini?",
+                text: "Data Mobil yang dihapus tidak dapat dikembalikan!",
+                icon: "warning",
+                buttons: ["Batal", "Hapus"],
+                dangerMode: true,
+            }).then((willDelete) => {
+                if (willDelete) {
+                    swal("Sukses!", "Data Mobil berhasil dihapus.", "success").then(() => {
+                        form.submit();
                     });
-                } else {
-                    // Batalkan tindakan jika pengguna membatalkan konfirmasi
-                    $(this).prop('checked', false);
                 }
-            }
+            });
         });
     });
+});
 </script>
 <?php $__env->stopSection(); ?>
 

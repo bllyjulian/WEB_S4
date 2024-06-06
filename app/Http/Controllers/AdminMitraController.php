@@ -14,8 +14,8 @@ class AdminMitraController extends Controller
     }
     public function customer()
     {
-        $customer = DataCustomer::all();
-        return view('admin.customer.index', compact('customer'));
+        $customers = DataCustomer::all();
+        return view('admin.customer.index', compact('customers'));
     }
     public function orderan()
     {

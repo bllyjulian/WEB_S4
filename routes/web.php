@@ -9,6 +9,7 @@ use App\Http\Controllers\MobilController;
 use App\Http\Controllers\TransaksiAdminController;
 use App\Http\Controllers\DetailSewaController;
 use App\Http\Controllers\ProfilAdminController;
+use App\Http\Controllers\Admin\CustomerAdminController;
 
 // Public routes
 Route::get('/', [LPController::class, 'index'])->name('index');
@@ -42,7 +43,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('', [AdminMitraController::class, 'index'])->name('admin.dashboard');
         });
         Route::prefix('customer')->group(function () {
-            Route::get('', [AdminMitraController::class, 'customer'])->name('admin.customer');
+            Route::get('', [CustomerAdminController::class, 'customer'])->name('admin.customer');
         });
         Route::prefix('orderan')->group(function () {
             Route::get('', [TransaksiAdminController::class, 'index'])->name('admin.orderan');

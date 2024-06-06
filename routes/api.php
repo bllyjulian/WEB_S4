@@ -42,4 +42,5 @@ Route::prefix($token)->group(function () {
 
     Route::get('/booking', [ApiDataBooking::class, 'index']);
     Route::get('/booking/mobil/{id_mobil}', [ApiDataBooking::class, 'showByMobil']);
+    Route::get('/booking/username/{username_mb}', [ApiDataBooking::class, 'showByUserName']);
 });
