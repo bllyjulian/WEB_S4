@@ -11,12 +11,12 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-title'); ?>
-    <h2>Data<span>Mobil</span></h2>
+    <h2>Data<span>Customers</span></h2>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-items'); ?>
-    <li class="breadcrumb-item">Mobil</li>
-    <li class="breadcrumb-item">Data Mobil</li>
+    <li class="breadcrumb-item">Customers</li>
+    <li class="breadcrumb-item">Data Customer</li>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
-            <div class="card-header">
+                <div class="card-header">
                     <h5>Data Customer</h5>
                     <span><?php echo e(count($customers)); ?> Customer Terdaftar</span>
                 </div>
@@ -33,27 +33,29 @@
                         <table class="display" id="basic-1">
                             <thead>
                                 <tr>
-                                <th>No</th>
+                                    <th>Profil</th>
                                     <th>Username</th>
                                     <th>Nama Lengkap</th>
                                     <th>Email</th>
                                     <th>Nomor Hp</th>
                                     <th>Tanggal Lahir</th>
                                     <th>Domisili</th>
+                                    <th>Menyewa Sebanyak</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php $__currentLoopData = $customers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <tr>
-                                    <td><?php echo e($key + 1); ?></td>
-                                        <td><?php echo e($item->username_mb); ?></td>
-                                        <td><?php echo e($item->nama); ?></td>
-                                        <td><?php echo e($item->email); ?></td>
-                                        <td><?php echo e($item->nomor_hp_user); ?></td>
-                                        <td><?php echo e($item->tgl_lahir); ?></td>
-                                        <td><?php echo e($item->domisili); ?></td>
-                                    </tr>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php $__currentLoopData = $customers; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <tr>
+                                <td><img style="width: 50px; border-radius: 50%" src="<?php echo e(asset($item['foto_profil'])); ?>"></td>
+                                    <td><?php echo e($item['username_mb']); ?></td>
+                                    <td><?php echo e($item['nama']); ?></td>
+                                    <td><?php echo e($item['email']); ?></td>
+                                    <td><?php echo e($item['nomor_hp_user']); ?></td>
+                                    <td><?php echo e($item['tgl_lahir']); ?></td>
+                                    <td><?php echo e($item['domisili']); ?></td>
+                                    <td><?php echo e($item['penyewaan_count']); ?> kali</td>
+                                </tr>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
                         </table>
                     </div>

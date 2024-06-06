@@ -2,14 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminMitraController;
-use App\Http\Controllers\AdminMobilinkController;
+use App\Http\Controllers\Mobilink\AdminMobilinkController;
 use App\Http\Controllers\LPController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\MobilController;
-use App\Http\Controllers\TransaksiAdminController;
-use App\Http\Controllers\DetailSewaController;
-use App\Http\Controllers\ProfilAdminController;
+use App\Http\Controllers\Admin\MobilController;
+use App\Http\Controllers\Admin\TransaksiAdminController;
+use App\Http\Controllers\Admin\DetailSewaController;
+use App\Http\Controllers\Admin\ProfilAdminController;
 use App\Http\Controllers\Admin\CustomerAdminController;
+use App\Http\Controllers\Admin\DashboardAdminController;
 
 // Public routes
 Route::get('/', [LPController::class, 'index'])->name('index');
@@ -40,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('admin')->group(function () {
         Route::prefix('dashboard')->group(function () {
-            Route::get('', [AdminMitraController::class, 'index'])->name('admin.dashboard');
+            Route::get('', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
         });
         Route::prefix('customer')->group(function () {
             Route::get('', [CustomerAdminController::class, 'customer'])->name('admin.customer');
@@ -57,9 +58,6 @@ Route::middleware(['auth'])->group(function () {
             Route::delete('hapus/{id_mobil}', [MobilController::class, 'hapus'])->name('admin.mobil.hapus');
         });
         
-        Route::prefix('inbox')->group(function () {
-            Route::get('', [AdminMitraController::class, 'inbox'])->name('admin.inbox');
-        });
         Route::prefix('detail-sewa')->group(function () {
             Route::get('', [DetailSewaController::class, 'index'])->name('admin.detailsewa');
             Route::get('/detailsewa/{id}', [DetailSewaController::class, 'detail'])->name('admin.detailsewa.riwayatsewa');

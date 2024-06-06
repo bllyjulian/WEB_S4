@@ -22,6 +22,7 @@ class DataUser extends Model
         'nomor_hp_user',
         'tgl_lahir',
         'domisili',
+        'foto_profil',
     ];
 
     public $timestamps = false;

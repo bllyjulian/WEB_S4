@@ -1,4 +1,5 @@
 @extends('layouts.simple.master_mitra')
+
 @section('title', 'Data Mobil')
 
 @section('css')
@@ -12,12 +13,12 @@
 @endsection
 
 @section('breadcrumb-title')
-    <h2>Data<span>Mobil</span></h2>
+    <h2>Data<span>Customers</span></h2>
 @endsection
 
 @section('breadcrumb-items')
-    <li class="breadcrumb-item">Mobil</li>
-    <li class="breadcrumb-item">Data Mobil</li>
+    <li class="breadcrumb-item">Customers</li>
+    <li class="breadcrumb-item">Data Customer</li>
 @endsection
 
 @section('content')
@@ -25,7 +26,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="card">
-            <div class="card-header">
+                <div class="card-header">
                     <h5>Data Customer</h5>
                     <span>{{ count($customers) }} Customer Terdaftar</span>
                 </div>
@@ -34,27 +35,29 @@
                         <table class="display" id="basic-1">
                             <thead>
                                 <tr>
-                                <th>No</th>
+                                    <th>Profil</th>
                                     <th>Username</th>
                                     <th>Nama Lengkap</th>
                                     <th>Email</th>
                                     <th>Nomor Hp</th>
                                     <th>Tanggal Lahir</th>
                                     <th>Domisili</th>
+                                    <th>Menyewa Sebanyak</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            @foreach($customers as $key => $item)
-                                    <tr>
-                                    <td>{{ $key + 1 }}</td>
-                                        <td>{{ $item->username_mb }}</td>
-                                        <td>{{ $item->nama }}</td>
-                                        <td>{{ $item->email }}</td>
-                                        <td>{{ $item->nomor_hp_user }}</td>
-                                        <td>{{ $item->tgl_lahir }}</td>
-                                        <td>{{ $item->domisili }}</td>
-                                    </tr>
-                                @endforeach
+                            @foreach($customers as $item)
+                                <tr>
+                                <td><img style="width: 50px; border-radius: 50%" src="{{ asset($item['foto_profil']) }}"></td>
+                                    <td>{{ $item['username_mb'] }}</td>
+                                    <td>{{ $item['nama'] }}</td>
+                                    <td>{{ $item['email'] }}</td>
+                                    <td>{{ $item['nomor_hp_user'] }}</td>
+                                    <td>{{ $item['tgl_lahir'] }}</td>
+                                    <td>{{ $item['domisili'] }}</td>
+                                    <td>{{ $item['penyewaan_count'] }} kali</td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>

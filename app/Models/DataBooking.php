@@ -30,7 +30,7 @@ class DataBooking extends Model
     {
         return $this->belongsTo(DataUser::class, 'username_mb', 'username_mb');
     }
-    public function akun()
+    public function mitra()
     {
         return $this->belongsTo(DataMitra::class, 'username', 'username');
     }
