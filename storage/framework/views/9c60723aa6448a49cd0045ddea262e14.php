@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
 
-    <title>Daftar</title>
+    <title>Login</title>
     <style>
         :root {
             --primary-color: #6206A8;
@@ -46,7 +46,7 @@
 
         .row {
             display: flex;
-            flex-wrap: wrap;z
+            flex-wrap: wrap;
             height: 100vh;
         }
 
@@ -398,7 +398,7 @@
             }
         }
 
-        @media only screen and (max-width > 200px) {
+        @media only screen and (width < 100px) {
             .form-wrapper {
                 padding: 1rem;
             }
@@ -432,7 +432,7 @@
             border: 1px solid #ccc;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 10;
-            width: 100%;
+            width: 100%; /* Lebih baik menentukan lebar secara eksplisit */
             transition: transform 0.5s ease-in-out;
         }
         

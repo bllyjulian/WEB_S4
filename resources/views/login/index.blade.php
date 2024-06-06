@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css">
 
-    <title>Daftar</title>
+    <title>Login</title>
     <style>
         :root {
             --primary-color: #6206A8;
@@ -398,7 +398,7 @@
             }
         }
 
-        @media only screen and (max-width < 200px) {
+        @media only screen and (width < 100px) {
             .form-wrapper {
                 padding: 1rem;
             }
