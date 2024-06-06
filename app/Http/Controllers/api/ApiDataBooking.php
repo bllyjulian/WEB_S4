@@ -15,6 +15,7 @@ class ApiDataBooking extends Controller
             return [
                 'id_booking' => $booking->id_booking,
                 'id_mobil' => $booking->id_mobil,
+                'username_mb' => $booking->username_mb,
                 'nama_mobil' => $booking->mobil->nama_mobil,
                 'tanggal_mulai' => $booking->tanggal_mulai,
                 'tanggal_akhir' => $booking->tanggal_akhir,
@@ -36,6 +37,7 @@ class ApiDataBooking extends Controller
             return [
                 'id_booking' => $booking->id_booking,
                 'id_mobil' => $booking->id_mobil,
+                'username_mb' => $booking->username_mb,
                 'nama_mobil' => $booking->mobil->nama_mobil,
                 'tanggal_mulai' => $booking->tanggal_mulai,
                 'tanggal_akhir' => $booking->tanggal_akhir,

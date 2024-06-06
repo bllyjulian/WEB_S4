@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Order History'); ?>
+<?php $__env->startSection('title', 'Riwayat Pesanan'); ?>
 
 <?php $__env->startSection('css'); ?>
 <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/datatables.css')); ?>">
