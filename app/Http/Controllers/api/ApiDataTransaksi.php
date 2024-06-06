@@ -12,7 +12,9 @@ class ApiDataTransaksi extends Controller
 {
     public function index()
     {
-        $datatransaksi = DataTransaksi::with(['mitra', 'mobil', 'jenisPembayaran'])->get()
+        $datatransaksi = DataTransaksi::with(['mitra', 'mobil', 'jenisPembayaran'])
+            ->orderBy('tgl_transaksi', 'desc') 
+            ->get()
             ->map(function($transaksi) {
                 return [
                     'id_transaksi' => $transaksi->id_transaksi,
@@ -200,5 +202,3 @@ class ApiDataTransaksi extends Controller
         return response()->json($response, 200);
     }
 }
-
-

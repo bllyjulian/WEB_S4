@@ -63,7 +63,7 @@
                   <fieldset>
                      <div class="form-group">
                         <label for="kapasitas_penumpang">Kapasitas Penumpang</label>
-                        <input style="border-radius:5px;" class="form-control" id="kapasitas_penumpang" type="text" name="kapasitas_penumpang" placeholder="Masukkan Kapasitas" required>
+                        <input style="border-radius:5px;" class="form-control" id="kapasitas_penumpang" type="number" name="kapasitas_penumpang" placeholder="Masukkan Kapasitas" required>
                      </div>
                      <div class="form-group">
                         <label for="bahan_bakar">Bahan Bakar</label>
@@ -71,7 +71,7 @@
                      </div>
                      <div class="form-group">
                         <label for="kecepatan">Kecepatan</label>
-                        <input style="border-radius:5px;" class="form-control" id="kecepatan" type="number" name="kecepatan" placeholder="Masukkan Kecepatan" required>
+                        <input style="border-radius:5px;" class="form-control" id="kecepatan" type="text" name="kecepatan" placeholder="ex : 140KM/Jam" required>
                      </div>
                      <div class="form-group">
                         <label for="foto-mobil">Foto Mobil</label>
@@ -96,7 +96,7 @@
                      </div>
                      <div class="form-group">
                         <label for="username">Username</label>
-                        <input style="border-radius:5px;" class="form-control" id="username" type="text" name="username" placeholder="Masukkan Username" required>
+                        <input style="border-radius:5px;" class="form-control" id="username" type="text" name="username" placeholder="Masukkan Username"  value="<?php echo e(Auth::user()->username); ?>">
                      </div>
                      <div class="f1-buttons">
                         <button style="border-radius:5px;" class="btn btn-primary btn-previous" type="button">Previous</button>

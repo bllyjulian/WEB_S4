@@ -13,15 +13,15 @@
             <a class="bar-icons" href="<?php echo e(route('admin.mobil')); ?>"><i class="icon-car"></i><span>Mobil</span></a>
          </li>
          <li>
-            <a class="bar-icons" href="<?php echo e(route('admin.detailsewa')); ?>"><i class="icon-map-alt"></i><span>Lacak</span></a>
+            <a class="bar-icons" href="<?php echo e(route('admin.detailsewa')); ?>"><i class="icon-map-alt"></i><span>Detail Sewa</span></a>
          </li>
          <li>
             <span class="badge badge-pill badge-danger">8</span><a class="bar-icons" href="<?php echo e(route('admin.orderan')); ?>"><i class="pe-7s-diamond"></i><span>Orderan</span></a>
          
          </li>
-         <li>
+         <!-- <li>
          <a class="bar-icons" href="<?php echo e(route('admin.inbox')); ?>"><i class="icon-comments"></i><span>Inbox</span></a>
-         </li>
+         </li> -->
          <li>
          <a class="bar-icons" href=""><i class="icon-wallet"></i><span>Dompet</span></a>
          </li>

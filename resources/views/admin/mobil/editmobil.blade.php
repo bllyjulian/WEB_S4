@@ -62,7 +62,7 @@
                         </div>
                         <div class="form-group">
                            <label class="col-form-label">Kecepatan</label>
-                           <input style="border-radius:5px;" class="form-control" type="number" id="kecepatan" name="kecepatan" value="{{ $mobil->kecepatan }}" required>
+                           <input style="border-radius:5px;" class="form-control" type="text" id="kecepatan" name="kecepatan" value="{{ $mobil->kecepatan }}" required>
                         </div>
                         <div class="form-group">
                            <label class="col-form-label">Foto Mobil</label>

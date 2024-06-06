@@ -26,4 +26,13 @@ class DataBooking extends Model
     {
         return $this->belongsTo(DataMobil::class, 'id_mobil', 'id_mobil');
     }
+    public function user()
+    {
+        return $this->belongsTo(DataUser::class, 'username_mb', 'username_mb');
+    }
+    public function akun()
+    {
+        return $this->belongsTo(DataMitra::class, 'username', 'username');
+    }
+
 }

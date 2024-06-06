@@ -3,14 +3,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\DataMobil;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class MobilController extends Controller
 {
     public function index()
     {
-        $mobils = DataMobil::all();
-        return view('admin.mobil.index', compact('mobils'));
+    $user = Auth::user();
+    $mobils = DataMobil::where('username', $user->username)->get();
+
+    return view('admin.mobil.index', compact('mobils'));
+    
     }
     
 
@@ -42,7 +47,6 @@ class MobilController extends Controller
         $mobil->transmisi = $request->transmisi;
         $mobil->harga_sewa_perhari = $request->harga_sewa_perhari;
 
-// local
         if ($request->hasFile('foto_mobil')) {
             $imageName = time() . '.' . $request->foto_mobil->extension();
             $request->foto_mobil->move(public_path('assets/images/mobil'), $imageName);
@@ -75,6 +79,8 @@ class MobilController extends Controller
 
     public function store(Request $request)
     {
+        $user = Auth::user();
+    
         $validatedData = $request->validate([
             'nama_mobil' => 'required|string|max:255',
             'kapasitas_penumpang' => 'required|integer',
@@ -85,18 +91,19 @@ class MobilController extends Controller
             'kecepatan' => 'required|string|max:255',
             'transmisi' => 'required|string|max:255',
             'foto_mobil' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'username' => 'required|string|max:15',
         ]);
-// local
+    
         if ($request->hasFile('foto_mobil')) {
             $imageName = time() . '.' . $request->foto_mobil->extension();
             $request->foto_mobil->move(public_path('assets/images/mobil'), $imageName);
             $validatedData['foto_mobil'] = 'assets/images/mobil/' . $imageName;
         }
+    
         $validatedData['id_mobil'] = $this->generateIdMobil();
-
+        
+        $validatedData['username'] = $user->username;
+    
         DataMobil::create($validatedData);
-
         return redirect()->route('admin.mobil')->with('success', 'Mobil berhasil ditambahkan');
     }
 

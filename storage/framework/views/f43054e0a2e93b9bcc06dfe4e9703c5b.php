@@ -122,7 +122,13 @@
             <li><i data-feather="user"> </i>Profile</li>
             <li><i data-feather="message-square"> </i>Inbox</li>
             <li><i data-feather="file-text"> </i>Taskboard</li>
-            <li><i data-feather="settings"> </i><a href="<?php echo e(route('login.index')); ?>">Keluar</a></li>
+            <li><i data-feather="settings"></i>
+    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
+    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+        <?php echo csrf_field(); ?>
+    </form>
+</li>
+
           </ul>
         </li>
       </ul>
