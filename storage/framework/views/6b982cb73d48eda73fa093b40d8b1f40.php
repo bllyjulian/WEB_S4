@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', 'Premium Admin Template'); ?>
+<?php $__env->startSection('title', 'Dashboard'); ?>
 
 <?php $__env->startSection('css'); ?>
 <!-- Plugins css start-->

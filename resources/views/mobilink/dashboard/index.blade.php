@@ -1,5 +1,5 @@
 @extends('layouts.simple.master_mobilink')
-@section('title', 'Premium Admin Template')
+@section('title', 'Dashboard')
 
 @section('css')
 <!-- Plugins css start-->

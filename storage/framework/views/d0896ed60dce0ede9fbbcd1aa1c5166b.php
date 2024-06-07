@@ -43,14 +43,15 @@
                         <table class="table display" id="basic-1">
                             <thead>
                                 <tr>
-                                <th>Nama Toko</th>
+                                    <th scope="col">Nama Toko</th>
                                     <th scope="col">ID Transaksi</th>
                                     <th scope="col">Nama Mobil</th>
-                                    <th scope="col">Username Penyewa</th>
+                                    <th scope="col">Username Pembeli</th>
                                     <th scope="col">Jenis Pembayaran</th>
                                     <th scope="col">Durasi</th>
                                     <th scope="col">Total</th>
-                                    <th scope="col">Status</th>
+                                    <th scope="col">Total</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -93,19 +94,17 @@
                                     <td><?php echo e($pesanan['total']); ?></td>
                                     <td>
                                     <?php if($pesanan['status'] == 0): ?>
-    <button style="border-radius:5px;" type="button" class="btn btn-dark" disabled>BelumBayar</button>
-<?php elseif($pesanan['status'] == 1): ?>
-    <button style="border-radius:5px;" type="button" class="btn btn-info"  onclick="accTransaksi('<?php echo e($pesanan['id_transaksi']); ?>')">Pending</button>
-<?php elseif($pesanan['status'] == 2): ?>
-    <button style="border-radius:5px;" type="button" class="btn btn-success" disabled>Disetujui</button>
-<?php elseif($pesanan['status'] == 3): ?>
-    <button style="border-radius:5px;" type="button" class="btn btn-danger" disabled>Ditolak</button>
-<?php elseif($pesanan['status'] == 4): ?>
-    <button style="border-radius:5px;" type="button" class="btn btn-dark" disabled>Dibatalkan</button>
-<?php endif; ?>
-
-</td>
-
+                                    <button style="border-radius:5px;" type="button" class="btn btn-dark" disabled>BelumBayar</button>
+                                <?php elseif($pesanan['status'] == 1): ?>
+                                    <button style="border-radius:5px;" type="button" class="btn btn-info"  onclick="accTransaksi('<?php echo e($pesanan['id_transaksi']); ?>')">Pending</button>
+                                <?php elseif($pesanan['status'] == 2): ?>
+                                    <button style="border-radius:5px;" type="button" class="btn btn-success" disabled>Disetujui</button>
+                                <?php elseif($pesanan['status'] == 3): ?>
+                                    <button style="border-radius:5px;" type="button" class="btn btn-danger" disabled>Ditolak</button>
+                                <?php elseif($pesanan['status'] == 4): ?>
+                                    <button style="border-radius:5px;" type="button" class="btn btn-dark" disabled>Dibatalkan</button>
+                                <?php endif; ?>
+                                </td>
                                 </tr>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </tbody>
@@ -118,7 +117,7 @@
 </div>
 
 <?php $__currentLoopData = $datatransaksi; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $pesanan): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-<!-- Modal Foto Mobil -->
+
 <div class="modal fade" id="modalFotoMobil<?php echo e($pesanan['id_transaksi']); ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -149,8 +148,6 @@
     </div>
 </div>
 
-
-<!-- Modal Bukti Pembayaran -->
 <div class="modal fade" id="modalBuktiPembayaran<?php echo e($pesanan['id_transaksi']); ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -175,10 +172,10 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('script'); ?>
-<script src="<?php echo e(asset('assets/js/datatable/datatables/jquery.dataTables.min.js')); ?>"></script>
-<script src="<?php echo e(asset('assets/js/datatable/datatables/datatable.custom.js')); ?>"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="<?php echo e(asset('assets/js/datatable/datatables/jquery.dataTables.min.js')); ?>"></script>
+<script src="<?php echo e(asset('assets/js/datatable/datatables/datatable.custom.js')); ?>"></script>
 <script>
     $(document).ready(function () {
         $('#filterStatus').on('change', function () {
@@ -192,8 +189,9 @@
             }
         });
     });
-
-    function accTransaksi(id_transaksi) {
+</script>
+<script>
+        function accTransaksi(id_transaksi) {
     Swal.fire({
         title: 'Apakah Anda ingin menyetujui atau menolak transaksi ini?',
         html: `
@@ -205,7 +203,6 @@
         showConfirmButton: false,
     });
 
-    // Menambahkan event listener untuk tombol "Setujui"
     document.getElementById('setujui').addEventListener('click', function() {
         $.ajax({
             type: 'POST',
@@ -232,7 +229,6 @@
         });
     });
 
-    // Menambahkan event listener untuk tombol "Tolak"
     document.getElementById('tolak').addEventListener('click', function() {
         $.ajax({
             type: 'POST',
