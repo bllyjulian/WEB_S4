@@ -35,6 +35,7 @@
                                 <tr>
                                     <th style="width: 100px;">Gambar</th>
                                     <th>Brand</th>
+                                    <th>Tipe</th>
                                     <th>Harga Sewa</th>
                                     <th>Kapasitas Penumpang</th>
                                     <th>Transmisi</th>
@@ -46,6 +47,7 @@
                                     <tr>
                                         <td><img style="width: 100px;" src="{{ asset($mobil->foto_mobil) }}" alt=""></td>
                                         <td>{{ $mobil->nama_mobil }}</td>
+                                        <td>{{ $mobil->tipe }}</td>
                                         <td>{{ $mobil->harga_sewa_perhari }}</td>
                                         <td>{{ $mobil->kapasitas_penumpang }}</td>
                                         <td>{{ $mobil->transmisi }}</td>

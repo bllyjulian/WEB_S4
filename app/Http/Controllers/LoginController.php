@@ -18,7 +18,6 @@ class LoginController extends Controller
     {
         return view('login.daftar');
     }
-
     public function proseslogin(Request $request)
     {
         $request->validate([
@@ -30,15 +29,32 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             if ($user->id_lvl === 3) {
-                $request->session()->put('user', $user);
-                return response()->json(['success' => true, 'message' => 'Login berhasil!'], 200);
+                switch ($user->status_akun) {
+                    case 0:
+                        // Akun belum disetujui oleh admin
+                        return response()->json(['success' => false, 'message' => 'Akun Anda belum disetujui oleh admin.'], 401);
+                    case 1:
+                        // Akun aktif dan dapat login
+                        $request->session()->put('user', $user);
+                        return response()->json(['success' => true, 'redirect' => route('admin.dashboard'), 'message' => 'Login berhasil!'], 200);
+                    case 2:
+                        // Akun dibanned oleh admin
+                        return response()->json(['success' => false, 'message' => 'Akun Anda dibanned oleh admin.'], 401);
+                    case 3:
+                        // Akun ditolak oleh admin
+                        return response()->json(['success' => false, 'message' => 'Akun Anda ditolak oleh admin.'], 401);
+                    default:
+                        return response()->json(['success' => false, 'message' => 'Status akun tidak valid.'], 401);
+                }
             } else {
-                return response()->json(['success' => true, 'message' => 'Login berhasil!'], 200);
+                return response()->json(['success' => true, 'redirect' => route('mobilink.dashboard'), 'message' => 'Login berhasil!'], 200);
             }
         } else {
             return response()->json(['success' => false, 'message' => 'Username atau password salah!'], 401);
         }
     }
+    
+    
     
     public function daftar(Request $request)
     {
@@ -58,8 +74,8 @@ class LoginController extends Controller
         $hashedPassword = Hash::make($validatedData['password']);
         $validatedData['password'] = $hashedPassword;
     
-        $validatedData['status_akun'] = 0; // Atau jika 'status_akun' adalah field yang tetap 0
-        $validatedData['id_lvl'] = 3; // Atau jika 'id_lvl' adalah field yang tetap 3
+        $validatedData['status_akun'] = 0;
+        $validatedData['id_lvl'] = 3; 
     
         DataMitra::create($validatedData);
         return response()->json(['success' => true, 'message' => 'Registrasi berhasil!'], 200);

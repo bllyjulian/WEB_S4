@@ -219,7 +219,7 @@
             </div>
          </div>
       </div>
-      <div class="col-xl-4 xl-50 box-col-6">
+      <!-- <div class="col-xl-4 xl-50 box-col-6">
          <div class="card gradient-secondary o-hidden monthly-overview">
             <div class="card-header no-border bg-transparent pb-0">
                <h5>Mobil Unggulan</h5>
@@ -236,8 +236,8 @@
                <div class="p-watch"><img class="img-fluid" src="<?php echo e(asset('/assets/images/dashboard-ecommerce/m1.png')); ?>" alt=""></div>
             </div>
          </div>
-      </div>
-      <div class="col-xl-4 xl-50 box-col-6">
+      </div> -->
+      <!-- <div class="col-xl-4 xl-50 box-col-6">
          <div class="card gradient-primary o-hidden monthly-overview">
             <div class="card-body pb-0" id="customers-ratio">
                <div class="media customers">
@@ -251,7 +251,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> -->
       <div class="col-xl-8 xl-100 box-col-12">
          <div class="card month-overview">
             <div class="card-header pb-3">

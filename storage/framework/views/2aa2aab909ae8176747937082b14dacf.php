@@ -11,32 +11,7 @@
          
          </li>
          <li>
-            <span class="badge badge-pill badge-danger">48</span><a class="bar-icons" href="<?php echo e(route('admin.orderan')); ?>"><i class="pe-7s-diamond"></i><span>Orderan</span></a>
-         
-         </li>
-         <li>
-            <a class="bar-icons" href="#"><i class="pe-7s-note2"></i><span>Laporan</span></a>
-         
-         </li>
-         <li>
-            <a class="bar-icons" href="#"><i class="pe-7s-id"></i><span>Karyawan</span></a>
-          
-         </li>
-         <li>
-            <a class="bar-icons" href="#"><i class="pe-7s-graph3"></i><span>Grafik</span></a>
-          
-         </li>
-         <li>
-            <a class="bar-icons" href="#"><i class="pe-7s-server"></i><span>Riwayat</span></a>
-      
-         </li>
-         <li>
-            <span class="badge badge-pill badge-primary">New</span><a class="bar-icons" href="#"><i class="pe-7s-gift"></i><span>Apps</span></a>
-         
-         </li>
-         <li>
-            <a class="bar-icons" href="#"><i class="pe-7s-copy-file"></i><span>Pages</span></a>
-         
+            <span class="badge badge-pill badge-danger">8</span><a class="bar-icons" href="<?php echo e(route('mobilink.transaksi')); ?>"><i class="pe-7s-diamond"></i><span>Transaksi</span></a>
          </li>
       </ul>
    </div>

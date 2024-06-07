@@ -34,6 +34,7 @@
                                 <tr>
                                     <th style="width: 100px;">Gambar</th>
                                     <th>Brand</th>
+                                    <th>Tipe</th>
                                     <th>Harga Sewa</th>
                                     <th>Kapasitas Penumpang</th>
                                     <th>Transmisi</th>
@@ -45,6 +46,7 @@
                                     <tr>
                                         <td><img style="width: 100px;" src="<?php echo e(asset($mobil->foto_mobil)); ?>" alt=""></td>
                                         <td><?php echo e($mobil->nama_mobil); ?></td>
+                                        <td><?php echo e($mobil->tipe); ?></td>
                                         <td><?php echo e($mobil->harga_sewa_perhari); ?></td>
                                         <td><?php echo e($mobil->kapasitas_penumpang); ?></td>
                                         <td><?php echo e($mobil->transmisi); ?></td>

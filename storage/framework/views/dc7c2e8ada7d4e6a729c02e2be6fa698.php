@@ -704,12 +704,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     let form = event.target;
     let formData = new FormData(form);
+    
+    // Ambil nilai input username dan password
+    let username = formData.get('username');
+    let password = formData.get('password');
 
+    // Lakukan validasi jika username atau password kosong
+    if (!username || !password) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'Mohon lengkapi username dan password.',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+        return; // Hentikan proses jika ada field yang kosong
+    }
+
+    // Kirim permintaan login hanya jika kedua field sudah terisi
     fetch('<?php echo e(route("proseslogin")); ?>', {
         method: 'POST',
         headers: {
@@ -729,7 +745,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 confirmButtonText: 'OK'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = '<?php echo e(route("admin.dashboard")); ?>';
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    }
                 }
             });
         } else {
@@ -745,6 +763,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Error:', error);
     });
 });
+
+
 document.getElementById('daftarForm').addEventListener('submit', function(event) {
         event.preventDefault();
 

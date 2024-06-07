@@ -18,16 +18,32 @@ class AdminMobilinkController extends Controller
         ->get();
 return view('mobilink.mitra.index', compact('mitra'));
     }
-    public function activateAccount(Request $request)
+    public function banAkun(Request $request)
     {
-        $username = $request->username;
-        $mitra = DataMitra::where('username', $username)->first();
-        if ($mitra) {
-            $mitra->status_akun = 1;
-            $mitra->save();
-            return response()->json(['success' => true, 'message' => 'Akun berhasil diaktifkan.']);
-        } else {
-            return response()->json(['success' => false, 'message' => 'Akun tidak ditemukan.'], 404);
-        }
+        $mitra = DataMitra::findOrFail($request->username);
+
+        $mitra->status_akun = 2;
+        $mitra->save();
+
+        return redirect()->back()->with('success', 'Akun berhasil dibanned');
     }
+    public function aktifkanAkun(Request $request)
+    {
+        $mitra = DataMitra::findOrFail($request->username);
+
+        $mitra->status_akun = 1;
+        $mitra->save();
+
+        return redirect()->back()->with('success', 'Akun berhasil diaktifkan.');
+    }
+    public function tolakAkun(Request $request)
+    {
+        $mitra = DataMitra::findOrFail($request->username);
+
+        $mitra->status_akun = 3;
+        $mitra->save();
+
+        return redirect()->back()->with('success', 'Akun berhasil ditolak.');
+    }
+    
 }
