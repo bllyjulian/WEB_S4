@@ -32,6 +32,10 @@ class DataTransaksi extends Model
     {
         return $this->belongsTo(DataMitra::class, 'username', 'username');
     }
+    public function usermb()
+    {
+        return $this->belongsTo(DataUser::class, 'username_mb', 'username_mb');
+    }
 
     public function mobil()
     {

@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Mobilink\AdminMobilinkController;
+use App\Http\Controllers\Mobilink\DashboardMobilinkController;
+use App\Http\Controllers\Mobilink\MitraMobilinkController;
 use App\Http\Controllers\Mobilink\TransaksiMobilinkController;
 use App\Http\Controllers\LPController;
 use App\Http\Controllers\LoginController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\Admin\DetailSewaController;
 use App\Http\Controllers\Admin\ProfilAdminController;
 use App\Http\Controllers\Admin\CustomerAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
+use App\Http\Controllers\Admin\LaporanAdminController;
 
 // Public routes
 Route::get('/', [LPController::class, 'index'])->name('index');
@@ -31,13 +33,13 @@ Route::prefix('auth')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::prefix('mobilink')->group(function () {
         Route::prefix('dashboard')->group(function () {
-            Route::get('', [AdminMobilinkController::class, 'index'])->name('mobilink.dashboard');
+            Route::get('', [DashboardMobilinkController::class, 'index'])->name('mobilink.dashboard');
         });
         Route::prefix('mitra')->group(function () {
-            Route::get('', [AdminMobilinkController::class, 'mitra'])->name('mobilink.mitra');
-            Route::post('ban/{username}', [AdminMobilinkController::class, 'banAkun'])->name('mobilink.mitra.banned');
-            Route::post('setujui/{username}', [AdminMobilinkController::class, 'aktifkanAkun'])->name('mobilink.mitra.setujui');
-            Route::post('tolak/{username}', [AdminMobilinkController::class, 'tolakAkun'])->name('mobilink.mitra.tolak');
+            Route::get('', [MitraMobilinkController::class, 'mitra'])->name('mobilink.mitra');
+            Route::post('ban/{username}', [MitraMobilinkController::class, 'banAkun'])->name('mobilink.mitra.banned');
+            Route::post('setujui/{username}', [MitraMobilinkController::class, 'aktifkanAkun'])->name('mobilink.mitra.setujui');
+            Route::post('tolak/{username}', [MitraMobilinkController::class, 'tolakAkun'])->name('mobilink.mitra.tolak');
         });
         Route::prefix('transaksi')->group(function () {
             Route::get('', [TransaksiMobilinkController::class, 'index'])->name('mobilink.transaksi');
@@ -69,6 +71,9 @@ Route::middleware(['auth'])->group(function () {
             Route::get('', [DetailSewaController::class, 'index'])->name('admin.detailsewa');
             Route::get('/detailsewa/{id}', [DetailSewaController::class, 'detail'])->name('admin.detailsewa.riwayatsewa');
             Route::get('/detailsewa/{id}/location', [DetailSewaController::class, 'getLatitudeLongitude'])->name('admin.detailsewa.location');
+        });
+        Route::prefix('laporan')->group(function () {
+            Route::get('', [LaporanAdminController::class, 'index'])->name('admin.laporan');
         });
         Route::prefix('profil')->group(function () {
             Route::get('', [ProfilAdminController::class, 'index'])->name('admin.profil');

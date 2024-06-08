@@ -20,7 +20,7 @@
          
          </li>
          <li>
-         <a class="bar-icons" href=""><i class="icon-wallet"></i><span>Dompet</span></a>
+         <a class="bar-icons" href="<?php echo e(route('admin.laporan')); ?>"><i class="icon-wallet"></i><span>Laporan</span></a>
          </li>
          <li>
         <a class="bar-icons" href="<?php echo e(route('admin.profil')); ?>"><i class="icon-stamp"></i><span>Profil</span></a>

@@ -38,7 +38,7 @@
                         <table class="display" id="basic-1">
                             <thead>
                                 <tr>
-                                    <th>Logo Toko</th>
+                                    <th>Nama Toko</th>
                                     <th>Username</th>
                                     <th>Nama Pemilik</th>
                                     <th>Nomor Hp</th>
