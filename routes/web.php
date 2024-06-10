@@ -69,9 +69,11 @@ Route::middleware(['auth'])->group(function () {
         
         Route::prefix('detail-sewa')->group(function () {
             Route::get('', [DetailSewaController::class, 'index'])->name('admin.detailsewa');
-            Route::get('/detailsewa/{id}', [DetailSewaController::class, 'detail'])->name('admin.detailsewa.riwayatsewa');
+            Route::get('/detailsewa/{id}/{id_booking}/{username_mb}', [DetailSewaController::class, 'detail'])->name('admin.detailsewa.riwayatsewa');
             Route::get('/detailsewa/{id}/location', [DetailSewaController::class, 'getLatitudeLongitude'])->name('admin.detailsewa.location');
-        });
+            Route::post('diambil/{id_booking}', [DetailSewaController::class, 'mbdiambil'])->name('admin.detailsewa.diambil');
+            Route::post('selesai/{id_booking}', [DetailSewaController::class, 'mbdikembalikan'])->name('admin.detailsewa.selesai');
+        });        
         Route::prefix('laporan')->group(function () {
             Route::get('', [LaporanAdminController::class, 'index'])->name('admin.laporan');
         });

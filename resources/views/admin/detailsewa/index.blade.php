@@ -19,27 +19,41 @@
 @section('content')
 <div class="container-fluid">
    <div class="row">
-      @foreach($mobils as $mobil)
+      @foreach($databooking as $mobil)
       <div class="col-xl-3 col-sm-6 box-col-4a">
          <div class="card">
             <div class="product-box">
                <div class="product-img">
-                  <img class="img-fluid" src="{{ asset($mobil->foto_mobil) }}" alt="">
+               @if ($mobil['status'] == 'Belum Diambil')
+            <div class="ribbon ribbon-danger">{{ $mobil['status'] }}</div>
+        @elseif ($mobil['status'] == 'Selesai Disewa')
+            <div class="ribbon ribbon-success ribbon-right">{{ $mobil['status'] }}</div>
+        @elseif ($mobil['status'] == 'Sedang Disewa')
+            <div class="ribbon ribbon-clip ribbon-warning">{{ $mobil['status'] }}</div>
+        @endif
+        <div style="height: 200px;" class="ftmobil">
+        <img class="img-fluid" src="{{ asset($mobil['foto_mobil']) }}" alt="">
+        </div>
+                
                   <div class="product-hover">
                      <ul>
-                        <!-- <li><i class="icon-shopping-cart"></i></li> -->
-                        <a href="{{ route('admin.detailsewa.riwayatsewa', ['id' => $mobil->id_mobil]) }}">
-                           <li><i class="icon-eye"></i></li>
-                        </a>
-                        <!-- <li><i class="icofont icofont-law-alt-2"></i></li> -->
+                  <a href="{{ route('admin.detailsewa.riwayatsewa', ['id' => $mobil['id_mobil'], 'id_booking' => $mobil['id_booking'], 'username_mb' => $mobil['username_mb']]) }}">
+    <li><i class="icon-eye"></i></li>
+</a>
+
                      </ul>
                   </div>
                </div>
                <div class="product-details">
-                  <h4>{{ $mobil->nama_mobil }}</h4>
-                  <p>{{ $mobil->kapasitas_penumpang }} penumpang, {{ $mobil->warna }}</p>
+                  <h4>{{ $mobil['nama_mobil'] }}</h4>
+                  <h6>{{ $mobil['tipe'] }}</h6>
+                  <!-- <h6>{{ $mobil['id_booking'] }}</h6> -->
+                  <p>{{ $mobil['kapasitas_penumpang'] }} penumpang, {{ $mobil['warna'] }}</p>
                   <div class="product-price">
-                     <del>Rp. {{ number_format($mobil->harga_sewa_perhari * 1.2, 0, ',', '.') }}</del> Rp. {{ number_format($mobil->harga_sewa_perhari, 0, ',', '.') }}
+                     <del>Rp. {{ number_format($mobil['harga_sewa_perhari'] * 1.2, 0, ',', '.') }}</del> Rp. {{ number_format($mobil['harga_sewa_perhari'], 0, ',', '.') }}
+                  </div>
+                  <div class="text-right mt-4">
+                     <span class="text-primary">Disewa Oleh {{ $mobil['username_mb'] }}</span>
                   </div>
                </div>
             </div>
