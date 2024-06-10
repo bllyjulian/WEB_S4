@@ -39,9 +39,12 @@
         </div>
     </header>
     <section class="py-5 mb-5">
+        
         <div class="container">
+        <div class="sketchfab-embed-wrapper"> <iframe title="Oktahedral" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c1d37d6df8e64dc08a3e4ecef933ca4b/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"></p></div>
             <h2 class="section-title">Fitur Aplikasi</h2>
             <div class="row">
+            
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <h5>Data Aman</h5>
         <p class="text-dark">Tidak peduli mobil apa yang ingin Anda sewa, sistem kami akan menjaga data Anda dengan aman.</p>
