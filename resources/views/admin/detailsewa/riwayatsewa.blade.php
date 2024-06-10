@@ -182,11 +182,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 countdownElement.style.color = 'red';
                 countdownLabel.style.color = 'red'; 
             } else {
-                countdownElement.innerHTML = '-' + days + ' Hari ' + hours + ' Jam ' + minutes + ' Menit ' + seconds + ' Detik ';
+                countdownElement.innerHTML =  days + ' Hari ' + hours + ' Jam ' + minutes + ' Menit ' + seconds + ' Detik ';
             }
         } else if ('{{ $customers[0]['status'] }}' == 'Belum Diambil') {
             if (distance < 0) {
-                countdownElement.innerHTML = days + ' Hari ' + hours + ' Jam ' + minutes + ' Menit ' + seconds + ' Detik ';
+                countdownElement.innerHTML = '-' + days + ' Hari ' + hours + ' Jam ' + minutes + ' Menit ' + seconds + ' Detik ';
                 countdownLabel.textContent = 'Penyewa Belum Mengambil Mobil Ini';
                 countdownElement.style.color = 'red';
                 countdownLabel.style.color = 'red'; 

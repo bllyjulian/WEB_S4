@@ -9,7 +9,7 @@ class ApiDataBooking extends Controller
 {
     public function index()
     {
-        $bookings = DataBooking::with('mobil')->get();
+        $bookings = DataBooking::with('mobil', 'mitra')->get();
         
         $bookings = $bookings->map(function ($booking) {
             return [
@@ -22,10 +22,10 @@ class ApiDataBooking extends Controller
                 'tanggal_mulai' => $booking->tanggal_mulai,
                 'tanggal_akhir' => $booking->tanggal_akhir,
                 'status' => $booking->status,
-                // 'latitude' => $booking->akun->latitude ?? null,
-                // 'longitude' => $booking->akun->longitude ?? null,
-                'nama_toko' => $booking->akun->nama_toko ?? null,
-                'logo_mitra' => $booking->akun->logo_mitra ?? null
+                'latitude' => $booking->mitra->latitude ?? null,
+                'longitude' => $booking->mitra->longitude ?? null,
+                'nama_toko' => $booking->mitra->nama_toko ?? null,
+                'logo_mitra' => $booking->mitra->logo_mitra ?? null
             ];
         });
 
@@ -51,10 +51,10 @@ class ApiDataBooking extends Controller
                 'tanggal_mulai' => $booking->tanggal_mulai,
                 'tanggal_akhir' => $booking->tanggal_akhir,
                 'status' => $booking->status,
-                // 'latitude' => $booking->akun->latitude ?? null,
-                // 'longitude' => $booking->akun->longitude ?? null,
-                'nama_toko' => $booking->akun->nama_toko ?? null,
-                'logo_mitra' => $booking->akun->logo_mitra ?? null
+                'latitude' => $booking->mitra->latitude ?? null,
+                'longitude' => $booking->mitra->longitude ?? null,
+                'nama_toko' => $booking->mitra->nama_toko ?? null,
+                'logo_mitra' => $booking->mitra->logo_mitra ?? null
             ];
         });
 
@@ -78,11 +78,10 @@ class ApiDataBooking extends Controller
             'foto_mobil' => $booking->mobil->foto_mobil,
             'tanggal_mulai' => $booking->tanggal_mulai,
             'tanggal_akhir' => $booking->tanggal_akhir,
-            'status' => $booking->status,
-            // 'latitude' => $booking->akun->latitude ?? null,
-            // 'longitude' => $booking->akun->longitude ?? null,
-            'nama_toko' => $booking->akun->nama_toko ?? null,
-            'logo_mitra' => $booking->akun->logo_mitra ?? null
+            'latitude' => $booking->mitra->latitude ?? null,
+            'longitude' => $booking->mitra->longitude ?? null,
+            'nama_toko' => $booking->mitra->nama_toko ?? null,
+            'logo_mitra' => $booking->mitra->logo_mitra ?? null
         ];
     });
 

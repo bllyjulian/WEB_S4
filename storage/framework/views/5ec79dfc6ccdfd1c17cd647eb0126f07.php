@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 countdownElement.style.color = 'red';
                 countdownLabel.style.color = 'red'; 
             } else {
-                countdownElement.innerHTML = '-' + days + ' Hari ' + hours + ' Jam ' + minutes + ' Menit ' + seconds + ' Detik ';
+                countdownElement.innerHTML =  days + ' Hari ' + hours + ' Jam ' + minutes + ' Menit ' + seconds + ' Detik ';
             }
         } else if ('<?php echo e($customers[0]['status']); ?>' == 'Belum Diambil') {
             if (distance < 0) {
