@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\htd;
 use App\Http\Controllers\Controller;
+use App\Models\DataLaporan;
 use Illuminate\Http\Request;
 use App\Models\DataPendaki;
 
@@ -9,9 +10,12 @@ class DataPendakiController extends Controller
 {
     public function index()
     {
+        $laporan = DataLaporan::with('pendaki') // Load relasi pendaki
+        ->orderBy('timestamp', 'desc') // Urutkan berdasarkan timestamp descending
+        ->get();
         $datapendaki = DataPendaki::orderBy('timestamp', 'desc')->get();
     
-        return view('htdgemastik.datapendaki.index', compact('datapendaki'));
+        return view('htdgemastik.datapendaki.index', compact('datapendaki','laporan'));
     }
     
     public function tambahpendaki(Request $request)

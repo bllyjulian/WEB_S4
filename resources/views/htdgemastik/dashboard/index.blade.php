@@ -76,7 +76,7 @@
 													</svg>
 													<div class="media-body">
 														<span class="fs-12 d-block mb-1">Tanggal</span>
-														<span class="fs-16 text-black">Rabu, 19 Juni 2024</span>
+														<span class="fs-16 text-black">Kamis, 27 Juni 2024</span>
 													</div>
 												</div>
 											</div>
@@ -184,7 +184,7 @@
 									</div>
 									<div class="card-body pt-3">
 										<div class="d-flex justify-content-between align-items-center">	
-											<span class="fs-14">Rabu</span>
+											<span class="fs-14">Kamis</span>
 											<span class="text-black fs-18 font-w500">23 Pendaki</span>
 										</div>
 										<div id="radialBar"></div>
