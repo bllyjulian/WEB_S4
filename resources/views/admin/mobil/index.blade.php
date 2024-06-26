@@ -2,10 +2,7 @@
 @section('title', 'Data Mobil')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/datatables.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owlcarousel.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/rating.css')}}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sweetalert2.css')}}">
+<link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 @endsection
 
 @section('style')

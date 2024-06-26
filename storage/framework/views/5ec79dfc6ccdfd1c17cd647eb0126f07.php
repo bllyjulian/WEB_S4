@@ -7,6 +7,7 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('style'); ?>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('breadcrumb-title'); ?>
@@ -185,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         } else if ('<?php echo e($customers[0]['status']); ?>' == 'Belum Diambil') {
             if (distance < 0) {
-                countdownElement.innerHTML = days + ' Hari ' + hours + ' Jam ' + minutes + ' Menit ' + seconds + ' Detik ';
+                countdownElement.innerHTML = '-' + days + ' Hari ' + hours + ' Jam ' + minutes + ' Menit ' + seconds + ' Detik ';
                 countdownLabel.textContent = 'Penyewa Belum Mengambil Mobil Ini';
                 countdownElement.style.color = 'red';
                 countdownLabel.style.color = 'red'; 

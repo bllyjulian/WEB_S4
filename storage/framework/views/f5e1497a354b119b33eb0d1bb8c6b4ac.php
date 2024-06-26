@@ -1,10 +1,7 @@
 <?php $__env->startSection('title', 'Data Mobil'); ?>
 
 <?php $__env->startSection('css'); ?>
-<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/datatables.css')); ?>">
-<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/owlcarousel.css')); ?>">
-<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/rating.css')); ?>">
-<link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/css/sweetalert2.css')); ?>">
+<link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('style'); ?>

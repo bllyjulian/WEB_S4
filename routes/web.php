@@ -5,6 +5,7 @@ use App\Http\Controllers\Mobilink\DashboardMobilinkController;
 use App\Http\Controllers\Mobilink\MitraMobilinkController;
 use App\Http\Controllers\Mobilink\TransaksiMobilinkController;
 use App\Http\Controllers\LPController;
+use App\Http\Controllers\Gemastik;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\MobilController;
 use App\Http\Controllers\Admin\TransaksiAdminController;
@@ -14,6 +15,11 @@ use App\Http\Controllers\Admin\CustomerAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
 use App\Http\Controllers\Admin\LaporanAdminController;
 
+use App\Http\Controllers\htd\DashboardController;
+use App\Http\Controllers\htd\LaporanController;
+use App\Http\Controllers\htd\DataPendakiController;
+use App\Http\Controllers\htd\LacakController;
+
 // Public routes
 Route::get('/', [LPController::class, 'index'])->name('index');
 Route::get('/about', [LPController::class, 'about'])->name('about');
@@ -21,6 +27,16 @@ Route::get('/features', [LPController::class, 'features'])->name('features');
 Route::get('/faq', [LPController::class, 'faq'])->name('faq-nav');
 Route::get('/contact', [LPController::class, 'contact'])->name('contact');
 Route::get('/privacy-policy', [LPController::class, 'pp'])->name('pp');
+
+
+    Route::get('/gemastik/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/gemastik/Data-Pendaki', [DataPendakiController::class, 'index'])->name('datapendaki');
+    Route::post('/gemastik/tambahpendaki', [DataPendakiController::class, 'tambahpendaki'])->name('tambahpendaki');
+    Route::delete('/gemastik/Data-Pendaki/{id_pendaki}', [DataPendakiController::class, 'hapus'])->name('datapendaki.hapus');
+    Route::get('/gemastik/Lacak-Pendaki/{id_pendaki?}', [LacakController::class, 'index'])->name('lacak');
+    Route::get('/gemastik/Laporan', [LaporanController::class, 'index'])->name('laporan');
+    Route::post('/gemastik/laporan', [LaporanController::class, 'store'])->name('laporan.store');
+
 
 // Authentication routes
 Route::prefix('auth')->group(function () {
@@ -47,6 +63,8 @@ Route::middleware(['auth'])->group(function () {
             Route::post('tolak/{id_transaksi}', [TransaksiMobilinkController::class, 'tolakTransaksi'])->name('mobilink.transaksi.tolak');
         });        
     });
+
+
 
     Route::prefix('admin')->group(function () {
         Route::prefix('dashboard')->group(function () {
@@ -83,6 +101,8 @@ Route::middleware(['auth'])->group(function () {
         });
     });
 
+
+
     Route::view('button-builder', 'perk-ui.button-builder')->name('button-builder');
     
     Route::get('/refresh', function () {
@@ -101,3 +121,4 @@ Route::post('/logout', function () {
     request()->session()->regenerateToken();
     return redirect('/auth/login');
 })->name('logout');
+
