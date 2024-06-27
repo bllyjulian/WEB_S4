@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -16,6 +17,8 @@ class DataPendaki extends Model
         'umur',
         'asal',
         'nohp',
+        'latitude',
+        'longitude'
     ];
 
     public $timestamps = false;

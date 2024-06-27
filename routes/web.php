@@ -105,12 +105,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::view('button-builder', 'perk-ui.button-builder')->name('button-builder');
     
-    Route::get('/refresh', function () {
-        Artisan::call('config:clear');
-        Artisan::call('cache:clear');
-        Artisan::call('route:clear');
-        return 'Done bg';
-    });
+
 });
 Route::middleware(['auth'])->get('/test', function () {
     return "You are authenticated";
@@ -122,3 +117,9 @@ Route::post('/logout', function () {
     return redirect('/auth/login');
 })->name('logout');
 
+Route::get('/refresh', function () {
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('route:clear');
+    return 'Done bg';
+});

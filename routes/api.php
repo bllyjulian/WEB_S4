@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\api\ApiDataUser;
+use App\Http\Controllers\api\APILokasiPendaki;
 use App\Http\Controllers\api\ApiDataMitra;
 use App\Http\Controllers\api\ApiDataMobil;
 use App\Http\Controllers\api\ApiDataBooking;
@@ -13,8 +14,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-$token = 'billy123';
+$token = 'gemastik123';
 
 Route::prefix($token)->group(function () {
     Route::get('/users', [ApiDataUser::class, 'index']);
@@ -43,4 +43,7 @@ Route::prefix($token)->group(function () {
     Route::get('/booking', [ApiDataBooking::class, 'index']);
     Route::get('/booking/mobil/{id_mobil}', [ApiDataBooking::class, 'showByMobil']);
     Route::get('/booking/username/{username_mb}', [ApiDataBooking::class, 'showByUserName']);
+
+    Route::get('/lokasi-pendaki', [APILokasiPendaki::class, 'index']);
+    Route::put('/lokasi-pendaki/{id}', [APILokasiPendaki::class, 'updateLocation']);
 });
