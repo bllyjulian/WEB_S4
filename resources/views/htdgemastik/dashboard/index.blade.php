@@ -7,8 +7,6 @@
 <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">
-
-
 				<!-- Add Order -->
 				<div class="row">
 					<div class="col-xl-9 col-xxl-8">
