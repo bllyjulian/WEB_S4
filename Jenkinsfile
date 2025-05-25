@@ -6,6 +6,7 @@ pipeline {
         IMAGE_NAME = "rzaynuri/webs4"
         KUBECONFIG = "/home/jenkins/.kube/config"  // Sesuaikan dengan lokasi kubeconfig
         NAMESPACE = "default"  // Jika menggunakan namespace tertentu
+        DOCKER_TAG = "${GIT_COMMIT}"  // Use commit hash as the image tag
     }
 
     stages {
@@ -26,18 +27,18 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build Docker image from the correct directory if Dockerfile is in the root
-                    docker.build("${REGISTRY}/${IMAGE_NAME}:${GIT_COMMIT}", '.')
+                    // Build Docker image from the directory containing the Dockerfile
+                    docker.build("${REGISTRY}/${IMAGE_NAME}:${DOCKER_TAG}", '.')
                 }
             }
         }
-        
+
         stage('Push Docker Image') {
             steps {
                 script {
-                    // Push image ke Docker Hub
+                    // Push image ke Docker Hub after building it
                     docker.withRegistry('https://docker.io', 'docker-credentials') {
-                        docker.image("${REGISTRY}/${IMAGE_NAME}:${GIT_COMMIT}").push()
+                        docker.image("${REGISTRY}/${IMAGE_NAME}:${DOCKER_TAG}").push()
                     }
                 }
             }
@@ -46,9 +47,9 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    // Deploy image ke Kubernetes
+                    // Deploy the newly built image to Kubernetes
                     sh '''
-                    kubectl set image deployment/web-s4-deployment web-s4-container=docker.io/${IMAGE_NAME}:${GIT_COMMIT} --namespace=${NAMESPACE}
+                    kubectl set image deployment/web-s4-deployment web-s4-container=docker.io/${IMAGE_NAME}:${DOCKER_TAG} --namespace=${NAMESPACE}
                     '''
                 }
             }
