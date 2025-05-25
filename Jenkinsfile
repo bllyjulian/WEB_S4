@@ -19,8 +19,8 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build Docker image
-                    docker.build("${REGISTRY}/${IMAGE_NAME}:${GIT_COMMIT}")
+                    // Build Docker image from the correct directory if Dockerfile is in a subdirectory
+                    docker.build("${REGISTRY}/${IMAGE_NAME}:${GIT_COMMIT}", './docker') // Change './docker' to the correct path if needed
                 }
             }
         }
@@ -39,7 +39,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    // Deploy image ke Kubernetes (pastikan nama deployment dan container sesuai)
+                    // Deploy image ke Kubernetes
                     sh '''
                     kubectl set image deployment/web-s4-deployment web-s4-container=docker.io/${IMAGE_NAME}:${GIT_COMMIT} --namespace=${NAMESPACE}
                     '''
