@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment {
-        REGISTRY = "docker.io"
-        IMAGE_NAME = "web_s4_image"
+        REGISTRY = "docker.io"  // Docker Hub
+        IMAGE_NAME = "rzaynuri/webs4"
         KUBECONFIG = "/home/jenkins/.kube/config"  // sesuaikan dengan lokasi kubeconfig
     }
 
@@ -27,7 +27,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    // Push image ke Docker registry (gunakan username/password di credentials)
+                    // Push image ke Docker Hub
                     docker.withRegistry('https://docker.io', 'docker-credentials') {
                         docker.image("${REGISTRY}/${IMAGE_NAME}:${GIT_COMMIT}").push()
                     }
