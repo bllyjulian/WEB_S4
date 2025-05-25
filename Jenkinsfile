@@ -15,12 +15,19 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/bllyjulian/WEB_S4.git'
             }
         }
-        
+
+        stage('List Files') {
+            steps {
+                // List the files in the Jenkins workspace to confirm the presence of Dockerfile
+                sh 'ls -R'
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 script {
-                    // Build Docker image from the correct directory if Dockerfile is in the subdirectory ./docker
-                    docker.build("${REGISTRY}/${IMAGE_NAME}:${GIT_COMMIT}", './docker')
+                    // Build Docker image from the correct directory if Dockerfile is in the root
+                    docker.build("${REGISTRY}/${IMAGE_NAME}:${GIT_COMMIT}", '.')
                 }
             }
         }
