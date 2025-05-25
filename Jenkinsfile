@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Clone repository dari GitHub
-                git 'https://github.com/bllyjulian/WEB_S4.git'
+                git branch: 'main', url: 'https://github.com/bllyjulian/WEB_S4.git'
             }
         }
         
