@@ -4,7 +4,8 @@ pipeline {
     environment {
         REGISTRY = "docker.io"  // Docker Hub
         IMAGE_NAME = "rzaynuri/webs4"
-        KUBECONFIG = "/home/jenkins/.kube/config"  // sesuaikan dengan lokasi kubeconfig
+        KUBECONFIG = "/home/jenkins/.kube/config"  // Sesuaikan dengan lokasi kubeconfig
+        NAMESPACE = "default"  // Jika menggunakan namespace tertentu
     }
 
     stages {
@@ -38,8 +39,10 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 script {
-                    // Deploy image ke Kubernetes
-                    sh 'kubectl set image deployment/web-s4-deployment web-s4-container=docker.io/${IMAGE_NAME}:${GIT_COMMIT}'
+                    // Deploy image ke Kubernetes (pastikan nama deployment dan container sesuai)
+                    sh '''
+                    kubectl set image deployment/web-s4-deployment web-s4-container=docker.io/${IMAGE_NAME}:${GIT_COMMIT} --namespace=${NAMESPACE}
+                    '''
                 }
             }
         }
